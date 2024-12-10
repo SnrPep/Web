@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная Станица</title>
+    <link rel="stylesheet" href="{% static 'tomiko/css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/var.css' %}">
+</head>
+
+<body>
+    
+    <header class="header">
+        <img src="{% static 'tomiko/img/bgImage.svg' %}" class="bgImg" alt="My image">
+        <div class="header-info">
+            <nav class="header__nav"></nav>
+            <div class="header__logo">
+                <img src="" alt="">
+            </div>
+            <ul>
+                <li class="header__item">Авто из Кореи</li>
+                <li class="header__item">Авто из Китая</li>
+                <li class="header__item">Авто из Японии</li>
+                <li class="header__item">Контакты</li>
+            </ul>
+            </nav>
+            <div class="header-media">
+                <ul>
+                    <li class="header__link">8 (800) 500-49-46</li>
+                    <li class="header__link"></li>
+                    <li class="header__link"></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+</body>
+
+</html>
