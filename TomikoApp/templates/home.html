@@ -13,24 +13,24 @@
 <body>
     
     <header class="header">
-        <img src="{% static 'tomiko/img/bgImage.svg' %}" class="bgImg" alt="My image">
+        
         <div class="header-info">
             <nav class="header__nav"></nav>
             <div class="header__logo">
-                <img src="" alt="">
+                <img src="{% static 'tomiko/img/bgImage.svg' %}" class="header-logo" alt="">
             </div>
             <ul>
-                <li class="header__item">Авто из Кореи</li>
-                <li class="header__item">Авто из Китая</li>
-                <li class="header__item">Авто из Японии</li>
-                <li class="header__item">Контакты</li>
+                <a href=""><li class="header__item">Авто из Кореи</li></a>
+                <a href=""><li class="header__item">Авто из Китая</li></a>
+                <a href=""><li class="header__item">Авто из Японии</li></a>
+                <a href=""><li class="header__item">Контакты</li></a>
             </ul>
             </nav>
             <div class="header-media">
                 <ul>
-                    <li class="header__link">8 (800) 500-49-46</li>
-                    <li class="header__link"></li>
-                    <li class="header__link"></li>
+                    <a href=""><li class="header__link">8 (800) 500-49-46</li></a>
+                    <a href=""><li class="header__link"><img src="{% static 'tomiko/img/icons/Telegabutton.svg' %}" alt="Telega"></li></a>
+                    <a href=""><li class="header__link"><img src="{% static 'tomiko/img/icons/Whatsbutton.svg' %}" alt="Whatsapp"></li></a>
                 </ul>
             </div>
         </div>

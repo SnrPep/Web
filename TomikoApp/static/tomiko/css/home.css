@@ -1,26 +1,22 @@
-body{
+body {
+    
     background: var(--main-bg-color);
     margin: 0;
     padding: 0;
 }
 
-.header{
-    position: relative;
-}
-
-.bgImg{
+.header-logo{
+    background-size: cover;
+    background-position: center;
     position: absolute;
+    z-index: -1;
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
-    z-index: 1;
+    height: 100%;
+}
+
+.header-info{
+    
     
 }
-
-ul, li {
-    position: relative;
-    z-index: 2;
-    color: #fff
-}
-
