@@ -1,11 +1,31 @@
 body {
-    
     background: var(--main-bg-color);
     margin: 0;
     padding: 0;
 }
 
-.header-logo{
+/*Стили, шрифты, цвета для шапки сайта*/
+.header__items, .td-info, .header-link{
+    color: white;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: "Inter", serif;
+    font-weight: 600;
+    font-size: 16px;
+
+}
+
+.header-media{
+    color: white;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: "Bebas Neue", serif;
+    font-size: 24px;
+}
+
+
+
+.bg-logo {
     background-size: cover;
     background-position: center;
     position: absolute;
@@ -16,7 +36,96 @@ body {
     height: 100%;
 }
 
-.header-info{
-    
+/*распределение по гридам*/
+.header{
+    margin: 0px auto;
+    max-width: 1703px;
+    display: grid;
+    grid-template-columns: [first] 1fr [second] 1fr;
+    grid-template-rows: [first] 1fr [second] 1fr [third] 1fr;
+}
+/*Блок header-info*/
+.header-info, thead{
+    margin-top: 19px;
+    display: flex;
+    justify-content: start;     
+}
+
+.header__items, .td-info{
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.header__items, .header-link {
+    margin-top: 12px;
+}
+
+.header-info__logo, .header-logo__ico {
+    margin-right: 30px;
     
 }
+/*Блок header-media*/
+.header-media{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+.header__links, .td-media{
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.media__text{
+    margin-top: 5px;
+    margin-right: 24px;
+}
+
+/*Блок header-title */
+.header-title {
+    grid-column: first / span 2;
+    grid-row: second;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__title{
+    text-align: center;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 48px;
+}
+
+.header__phrase{
+    font-family: "Inter", serif;
+    font-weight: 300;
+    color: #fff;
+    font-size: 24px;
+    line-height: 36px;
+    width: 563px;
+    text-align: center;
+}
+
+.header__btn{
+    margin-top: 30px;
+        width: 285px;
+        height: 70px;
+        border-radius: 60px;
+        background: linear-gradient(90deg, #0D2F68, #D51117);
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-family: "Inter", serif;
+        font-size: 18px;
+        font-weight: 600;
+}
+
+/* Блок header-feedback*/
+
+

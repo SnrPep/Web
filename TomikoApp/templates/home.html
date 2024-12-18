@@ -8,32 +8,67 @@
     <title>Главная Станица</title>
     <link rel="stylesheet" href="{% static 'tomiko/css/home.css' %}">
     <link rel="stylesheet" href="{% static 'tomiko/css/var.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    
+    <img src="{% static 'tomiko/img/bgImage.svg' %}" class="bg-logo" alt="">
     <header class="header">
-        
         <div class="header-info">
-            <nav class="header__nav"></nav>
-            <div class="header__logo">
-                <img src="{% static 'tomiko/img/bgImage.svg' %}" class="header-logo" alt="">
-            </div>
-            <ul>
-                <a href=""><li class="header__item">Авто из Кореи</li></a>
-                <a href=""><li class="header__item">Авто из Китая</li></a>
-                <a href=""><li class="header__item">Авто из Японии</li></a>
-                <a href=""><li class="header__item">Контакты</li></a>
-            </ul>
-            </nav>
-            <div class="header-media">
-                <ul>
-                    <a href=""><li class="header__link">8 (800) 500-49-46</li></a>
-                    <a href=""><li class="header__link"><img src="{% static 'tomiko/img/icons/Telegabutton.svg' %}" alt="Telega"></li></a>
-                    <a href=""><li class="header__link"><img src="{% static 'tomiko/img/icons/Whatsbutton.svg' %}" alt="Whatsapp"></li></a>
-                </ul>
-            </div>
+            <table class="table-info">
+                <thead>
+                    <tr class="header-info__logo header__text">
+                        <td class="td-info"><a href=""><img class= header-logo__ico src="{% static 'tomiko/img/logo.svg' %}" alt=""></a></td>
+                    </tr>
+                    <tr class="header__items">
+                        <td class="td-info">
+                            <a class="header-link" href="">Авто из Кореи</a>
+                            <a class="header-link" href="">Авто из Кореи</a>
+                            <a class="header-link" href="">Авто из Китая</a>
+                            <a class="header-link" href="">Авто из Японии</a>
+                            <a class="header-link" href="">Контакты</a>
+                        </td>
+                    </tr>
+                </thead>
+            </table>
         </div>
+        <div class="header-media">
+            <table class="table-media">
+                <thead>
+                    <tr class="media__text">
+                        <td class="td-media"><a class="header-media" href="">8 (800) 500-49-46</a></td>
+                    </tr>
+                    <tr class="header__links">
+                        <td class="td-media">
+                            <a class="header-media " href=""><img class="header-media__ico" src="{% static 'tomiko/img/icons/Telegabutton.svg' %}" alt="Telega"></a>
+                            <a class="header-media" href=""><img class="header-media__ico" src="{% static 'tomiko/img/icons/Whatsbutton.svg' %}" alt="Whatsapp"></a>
+                        </td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="header-title">
+            <h1 class="header__title">автомобиль вашей мечты здесь</h1>
+            <div class="header__phrase">Прозрачное ценообразование с подробным разъяснением затрат на каждом этапе</div>
+            <button class="header__btn">Рассчитать стоимость</button>
+        </div>
+
+        <!--<div class="header-feedback">
+            <span class="header-feedback-item">5+</span>
+            <p class="header-feedback-item">Лет на рынке</p>
+            <span class="header-feedback-item ">4000 +</span>
+            <p class="header-feedback-item ">довольных клиентов</p>
+            <span class="header-feedback-item"><img src="{% static 'tomiko/img/icons/strar.png' %}" alt="grade">4.9</span>
+        </div>
+        <div class="header-discount">
+            <div class="discount-container">
+                <h1 class="discount__title">Экономия до <p class="discount__title-proc">30%</p> от рынка авто в наличии</h1><hr>
+                <button type="button" class="discount__btn" >Смотреть пример</button>
+            </div>
+        </div>-->
     </header>
 </body>
 
