@@ -1,11 +1,152 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Каталог</title>
+    <link rel="stylesheet" href="{% static 'tomiko/css/catalog.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/var.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <header class="header">
+        <div class="header-info">
+            <table class="table-info">
+                <thead>
+                    <tr class="header-info__logo header__text">
+                        <td class="td-info"><a href=""><img class= header-logo__ico src="{% static 'tomiko/img/logo.svg' %}" alt=""></a></td>
+                    </tr>
+                    <tr class="header__items">
+                        <td class="td-info">
+                            <a class="header-link" href="">Авто из Кореи</a>
+                            <a class="header-link" href="">Авто из Китая</a>
+                            <a class="header-link" href="">Авто из Японии</a>
+                            <a class="header-link" href="">Контакты</a>
+                        </td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="header-media">
+            <table class="table-media">
+                <thead>
+                    <tr class="media__text">
+                        <td class="td-media"><a class="header-media" href="">8 (800) 500-49-46</a></td>
+                    </tr>
+                    <tr class="header__links">
+                        <td class="td-media">
+                            <a class="header-media " href=""><img class="header-media__ico" src="{% static 'tomiko/img/icons/Telegabutton.svg' %}" alt="Telega"></a>
+                            <a class="header-media" href=""><img class="header-media__ico" src="{% static 'tomiko/img/icons/Whatsbutton.svg' %}" alt="Whatsapp"></a>
+                        </td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </header>
+
+    <section>
+        <div class="menu">
+            <div class="dropdown">
+                <select>
+                    <option value="low-price">Сортировка</option>
+                    <option value="low-price">Сначала недорогие</option>
+                    <option value="high-price">Сначала дорогие</option>
+                    <option value="newest">Сначала новые</option>
+                    <option value="oldest">Сначала старые</option>
+                </select>
+            </div>
+            <button>Какие авто торгуются сейчас?</button>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="catalog">
+            <div class="card">
+                <h3>SUBARU LEVORG VN5</h3>
+                <p>2021 - Гибрид - 10 000 км</p>
+                <img src="https://via.placeholder.com/300x200" alt="Car Image">
+                <div class="actions">
+                    <span class="price">2 115 600 ₽</span>
+                    <button>Оставить заявку</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>SUBARU LEVORG VN5</h3>
+                <p>2021 - Гибрид - 10 000 км</p>
+                <img src="https://via.placeholder.com/300x200" alt="Car Image">
+                <div class="actions">
+                    <span class="price">2 115 600 ₽</span>
+                    <button>Оставить заявку</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>SUBARU LEVORG VN5</h3>
+                <p>2021 - Гибрид - 10 000 км</p>
+                <img src="{% static 'tomiko/img/bgImage.svg' %}" alt="Car Image">
+                <div class="actions">
+                    <span class="price">2 115 600 ₽</span>
+                    <button>Оставить заявку</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>SUBARU LEVORG VN5</h3>
+                <p>2021 - Гибрид - 10 000 км</p>
+                <img src="https://via.placeholder.com/300x200" alt="Car Image">
+                <div class="actions">
+                    <span class="price">2 115 600 ₽</span>
+                    <button>Оставить заявку</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>SUBARU LEVORG VN5</h3>
+                <p>2021 - Гибрид - 10 000 км</p>
+                <img src="https://via.placeholder.com/300x200" alt="Car Image">
+                <div class="actions">
+                    <span class="price">2 115 600 ₽</span>
+                    <button>Оставить заявку</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>SUBARU LEVORG VN5</h3>
+                <p>2021 - Гибрид - 10 000 км</p>
+                <img src="https://via.placeholder.com/300x200" alt="Car Image">
+                <div class="actions">
+                    <span class="price">2 115 600 ₽</span>
+                    <button>Оставить заявку</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>...</button>
+            <button>99</button>
+            <button>Следующая</button>
+        </div>
+    </div>
+
+    <section id="contacts">
+        <div class="contacts">
+            <h2>Контактная информация</h2>
+            <p>Звонок по России бесплатный:</p>
+            <p class="number">8 (800) 775-67-29</p>
+            <p>WhatsApp:</p>
+            <p class="number">+7 924 420-24-32</p>
+            <p>Адрес офиса: г. Владивосток, ул. Жигура 9в, 1 этаж, офис 1</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 ООО «Автоцентр-ВЛ». Автомобили под заказ из Кореи, Китая и Японии.</p>
+    </footer>
 </body>
 </html>
