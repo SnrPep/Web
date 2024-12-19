@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список машин</title>
+</head>
+<body>
+    <h1>Список машин</h1>
+<ul>
+    {% for car in cars %}
+        <li>
+            {{ car.brand_country.brand }} {{ car.model }} ({{ car.year }}) — {{ car.price }} ₽
+            <br>Страна бренда: {{ car.brand_country.country }}
+            <br>Цвет: {{ car.color }}, Привод: {{ car.drive }}, Мощность: {{ car.power_volume }}, КПП: {{ car.transmission }}
+        </li>
+    {% endfor %}
+<picture>
+<img src="https://drive.google.com/uc?export=view&id=1smVoa36EqyEg7969XLItWtcNGMR0zKL7" alt="Резервное изображение">
+    </picture>
+</ul>
+</body>
+</html>

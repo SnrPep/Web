@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог машин</title>
+</head>
+<body>
+    <h1>Каталог машин</h1>
+
+    <form method="get">
+        {{ filter.form.as_p }}
+        <button type="submit">Фильтровать</button>
+    </form>
+
+    <h2>Результаты</h2>
+    <ul>
+        {% for car in filter.qs %}
+            <li>
+                {{ car.brand_country.brand }} {{ car.make }} {{ car.model }} ({{ car.year }}) — {{ car.price }} ₽
+                <br>Страна бренда: {{ car.brand_country.country }}
+                <br>Пробег: {{ car.mileage }} км, Цвет: {{ car.color }}, КПП: {{ car.transmission }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

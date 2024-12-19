@@ -26,5 +26,7 @@ urlpatterns = [
     path("politicy/", include("TomikoApp.urls")),
     path("akcii/", include("TomikoApp.urls")),
     path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
+    path('cars/', include('cars.urls')),
     
 ]
