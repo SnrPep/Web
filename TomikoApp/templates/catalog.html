@@ -62,65 +62,17 @@
 
     <div class="container">
         <div class="catalog">
-            <div class="card">
-                <h3>SUBARU LEVORG VN5</h3>
-                <p>2021 - Гибрид - 10 000 км</p>
-                <img src="https://via.placeholder.com/300x200" alt="Car Image">
-                <div class="actions">
-                    <span class="price">2 115 600 ₽</span>
-                    <button>Оставить заявку</button>
+            {% for car in cars %}
+                <div class="card">
+                    <h3>{{ car.brand_country.brand }} {{ car.model }}</h3>
+                    <p>{{ car.year }} - {{car.mileage}} - {{car.engine_volume}}</p>
+                    <img src="https://via.placeholder.com/300x200" alt="Car Image">
+                    <div class="actions">
+                        <span class="price">{{ car.price }} ₽</span>
+                        <button>Оставить заявку</button>
+                    </div>
                 </div>
-            </div>
-
-            <div class="card">
-                <h3>SUBARU LEVORG VN5</h3>
-                <p>2021 - Гибрид - 10 000 км</p>
-                <img src="https://via.placeholder.com/300x200" alt="Car Image">
-                <div class="actions">
-                    <span class="price">2 115 600 ₽</span>
-                    <button>Оставить заявку</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3>SUBARU LEVORG VN5</h3>
-                <p>2021 - Гибрид - 10 000 км</p>
-                <img src="{% static 'tomiko/img/bgImage.svg' %}" alt="Car Image">
-                <div class="actions">
-                    <span class="price">2 115 600 ₽</span>
-                    <button>Оставить заявку</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3>SUBARU LEVORG VN5</h3>
-                <p>2021 - Гибрид - 10 000 км</p>
-                <img src="https://via.placeholder.com/300x200" alt="Car Image">
-                <div class="actions">
-                    <span class="price">2 115 600 ₽</span>
-                    <button>Оставить заявку</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3>SUBARU LEVORG VN5</h3>
-                <p>2021 - Гибрид - 10 000 км</p>
-                <img src="https://via.placeholder.com/300x200" alt="Car Image">
-                <div class="actions">
-                    <span class="price">2 115 600 ₽</span>
-                    <button>Оставить заявку</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3>SUBARU LEVORG VN5</h3>
-                <p>2021 - Гибрид - 10 000 км</p>
-                <img src="https://via.placeholder.com/300x200" alt="Car Image">
-                <div class="actions">
-                    <span class="price">2 115 600 ₽</span>
-                    <button>Оставить заявку</button>
-                </div>
-            </div>
+            {% endfor %}
         </div>
 
         <div class="pagination">
