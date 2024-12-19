@@ -92,26 +92,35 @@
         <div class="catalog">
             {% for car in cars %}
                 <div class="card">
-                    <h3>{{ car.brand_country.brand }} {{ car.model }}</h3>
-                    <p>{{ car.year }} - {{car.mileage}} - {{car.engine_volume}}</p>
+                    <h3>{{ car.brand.name }} {{ car.model }}</h3>
+                    <p>{{ car.year }} - {{ car.mileage }} км - {{ car.engine_volume }}</p>
                     <img src="https://via.placeholder.com/300x200" alt="Car Image">
                     <div class="actions">
                         <span class="price">{{ car.price }} ₽</span>
                         <button>Оставить заявку</button>
                     </div>
                 </div>
+            {% empty %}
+                <p>Нет доступных машин.</p>
             {% endfor %}
         </div>
 
-        <div class="pagination">
-            <button class="active">1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>4</button>
-            <button>...</button>
-            <button>99</button>
-            <button>Следующая</button>
-        </div>
+    <div class="pagination">
+        {% if cars.has_previous %}
+            <a href="?page={{ cars.previous_page_number }}">Предыдущая</a>
+        {% endif %}
+        {% for num in cars.paginator.page_range %}
+            {% if cars.number == num %}
+                <span>{{ num }}</span>
+            {% else %}
+                <a href="?page={{ num }}">{{ num }}</a>
+            {% endif %}
+        {% endfor %}
+
+        {% if cars.has_next %}
+            <a href="?page={{ cars.next_page_number }}">Следующая</a>
+        {% endif %}
+    </div>
     </div>
 
     <section id="contacts">
