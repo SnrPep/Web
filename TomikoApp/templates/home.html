@@ -6,16 +6,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная Станица</title>
-    <link rel="stylesheet" href="{% static 'tomiko/css/home.css' %}">
-    <link rel="stylesheet" href="{% static 'tomiko/css/var.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/homePage/header.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/homePage/slider.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/homePage/var.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/homePage/footer.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <img src="{% static 'tomiko/img/bgImage.svg' %}" class="bg-logo" alt="">
+    <img src="{% static 'tomiko/img/bgImage.png' %}" class="bg-logo" alt="">
     <header class="header">
         <div class="header-info">
             <table class="table-info">
@@ -25,7 +30,6 @@
                     </tr>
                     <tr class="header__items">
                         <td class="td-info">
-                            <a class="header-link" href="">Авто из Кореи</a>
                             <a class="header-link" href="">Авто из Кореи</a>
                             <a class="header-link" href="">Авто из Китая</a>
                             <a class="header-link" href="">Авто из Японии</a>
@@ -55,21 +59,41 @@
             <div class="header__phrase">Прозрачное ценообразование с подробным разъяснением затрат на каждом этапе</div>
             <button class="header__btn">Рассчитать стоимость</button>
         </div>
-
-        <!--<div class="header-feedback">
-            <span class="header-feedback-item">5+</span>
-            <p class="header-feedback-item">Лет на рынке</p>
-            <span class="header-feedback-item ">4000 +</span>
-            <p class="header-feedback-item ">довольных клиентов</p>
-            <span class="header-feedback-item"><img src="{% static 'tomiko/img/icons/strar.png' %}" alt="grade">4.9</span>
-        </div>
-        <div class="header-discount">
-            <div class="discount-container">
-                <h1 class="discount__title">Экономия до <p class="discount__title-proc">30%</p> от рынка авто в наличии</h1><hr>
-                <button type="button" class="discount__btn" >Смотреть пример</button>
+        <div class="header-feedback">
+            <div class="feedback-container">
+                <div class="block-1 fblock">
+                    5+
+                    <p class="paraphras-block">
+                        Лет на рынке
+                    </p>
+                    
+                </div>
+                
+                <div class="block-2 fblock">
+                    4 000 +
+                    <p class="paraphras-block">
+                        довольных клиентов
+                    </p>
+                </div>
+                <div class="block-3 fblock ">
+                    <img src="{% static 'tomiko/img/icons/strar.png' %}" alt="">
+                    <span class="fblock">4.9</span>
+                </div>
             </div>
-        </div>-->
+        </div>
+        <div class="header-akcii">
+            <h1 class="akcii__title">Экономия до <span class="red__30">30%</span> от рынка авто в наличии</h1>
+            <button class="header-akcii__btn">Смотреть пример</button>
+        </div>
     </header>
+    <main>
+        <div class="wrapper">
+            <!--Здесь будет слайдер-->
+        </div>
+        
+    </main>        
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="{% static 'tomiko/js/slider.js' %}"></script>
 </body>
 
 </html>

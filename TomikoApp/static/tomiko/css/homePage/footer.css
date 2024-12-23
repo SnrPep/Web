@@ -1,0 +1,15 @@
+footer{
+    border-top: solid 3px #D51117;
+    
+    display: grid;
+    grid-template-columns: [first-footer] 1fr [first-footer] 1fr;
+    grid-template-rows: [second-footer] 400px [second-footer] 400px;
+}
+.footer-area{
+    margin: 0px auto;
+    max-width: 1703px;
+}
+.footer-table{
+    display: block;
+    
+}
