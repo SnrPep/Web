@@ -18,5 +18,13 @@ def car_list(request):
 
 
 def car_catalog(request):
-    car_filter = CarFilter(request.GET, queryset=Cars.objects.all())
-    return render(request, 'car_catalog.html', {'filter': car_filter})
+    cars = Cars.objects.all()
+    car_filter = CarFilter(request.GET, queryset=cars)
+
+    # Сортировка(НЕ РАБОТАЕТ ПОКА ЧТО!!!)
+    sort_by = request.GET.get('sort', None)
+    if sort_by:
+        cars = car_filter.qs.order_by(sort_by)
+    else:
+        cars = car_filter.qs
+    return render(request, 'car_catalog.html', {'filter': car_filter, 'cars': cars})

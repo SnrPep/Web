@@ -85,10 +85,11 @@ class Brands(models.Model):
         managed = False
         db_table = 'brands'
 
+    def __str__(self):
+        return self.brand  # Отображать название бренда
+
 
 class Cars(models.Model):
-    # brand = models.ForeignKey(Brands, on_delete=models.CASCADE, related_name="brand_name")
-    # brand = models.ForeignKey(Brands, on_delete=models.CASCADE, related_name="cars")
     model = models.CharField(max_length=100)
     year = models.IntegerField()
     mileage = models.IntegerField()

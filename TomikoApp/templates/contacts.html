@@ -1,11 +1,89 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты</title>
+    <title>Каталог</title>
+    <link rel="stylesheet" href="{% static 'tomiko/css/contacts.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/var.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    qwe
+    <header class="header">
+        <div class="header-info">
+            <table class="table-info">
+                <thead>
+                    <tr class="header-info__logo header__text">
+                        <td class="td-info"><a href=""><img class= header-logo__ico src="{% static 'tomiko/img/logo.svg' %}" alt=""></a></td>
+                    </tr>
+                    <tr class="header__items">
+                        <td class="td-info">
+                            <a class="header-link" href="">Авто из Кореи</a>
+                            <a class="header-link" href="">Авто из Китая</a>
+                            <a class="header-link" href="">Авто из Японии</a>
+                            <a class="header-link" href="">Контакты</a>
+                        </td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="header-media">
+            <table class="table-media">
+                <thead>
+                    <tr class="media__text">
+                        <td class="td-media"><a class="header-media" href="">8 (800) 500-49-46</a></td>
+                    </tr>
+                    <tr class="header__links">
+                        <td class="td-media">
+                            <a class="header-media " href=""><img class="header-media__ico" src="{% static 'tomiko/img/icons/Telegabutton.svg' %}" alt="Telega"></a>
+                            <a class="header-media" href=""><img class="header-media__ico" src="{% static 'tomiko/img/icons/Whatsbutton.svg' %}" alt="Whatsapp"></a>
+                        </td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </header>
+
+
+
+
+    <div class="contacts">
+        <h2>Контактная<br/>информация <img src="{% static 'tomiko/img/contact_title_image.webp' %}" alt="Контактная информация"></h2>
+        <w>Оставьте свою заявку и наш менеджер<br/> свяжется с Вами для уточнения деталей.</w>
+        <table>
+            <tr>
+                <td><p>Адрес</p></td>
+                <td><p>Компания</p></td>
+            </tr>
+            <tr>
+                <td><p class="number"> 690088, г. Владивосток, ул. Жигура 9в</p></td>
+                <td><p class="number"> ООО "АВТОЦЕНТР-ВЛ"</p></td>
+
+            </tr>
+            <tr>
+                <td><p>Звонок по России бесплатный:</p></td>
+                <td><p>ИНН/КПП</p></td>
+            </tr>
+            <tr>
+                <td><p class="number">8 (800) 775-67-29</p></td>
+                <td><p class="number">2536263238/253601001</p></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td><p>ОГРН</p></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td><p class="number">1132536004622</p></td>
+            </tr>
+
+            </table>
+    </div>
+{#            <p>WhatsApp:</p>#}
+{#            <p class="number">+7 924 420-24-32</p>#}
+    <footer>
+        <p>© 2024 ООО «Автоцентр-ВЛ». Автомобили под заказ из Кореи, Китая и Японии.</p>
+    </footer>
 </body>
 </html>

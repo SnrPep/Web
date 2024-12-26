@@ -1,141 +1,83 @@
-{#<!DOCTYPE html>#}
-{#<html lang="ru">#}
-{#<head>#}
-{#    <meta charset="UTF-8">#}
-{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
-{#    <title>Каталог машин</title>#}
-{#</head>#}
-{#<body>#}
-{#    <h1>Каталог машин</h1>#}
-{##}
-{#    <form method="get">#}
-{#        {{ filter.form.as_p }}#}
-{#        <button type="submit">Фильтровать</button>#}
-{#    </form>#}
-{##}
-{#    <h2>Результаты</h2>#}
-{#    <ul>#}
-{#        {% for car in filter.qs %}#}
-{#            <li>#}
-{#                {{ car.brand_country.brand }} {{ car.make }} {{ car.model }} ({{ car.year }}) — {{ car.price }} ₽#}
-{#                <br>Страна бренда: {{ car.brand_country.country }}#}
-{#                <br>Пробег: {{ car.mileage }} км, Цвет: {{ car.color }}, КПП: {{ car.transmission }}#}
-{#            </li>#}
-{#        {% endfor %}#}
-{#    </ul>#}
-{#</body>#}
-{#</html>#}
-
-{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Каталог</title>
-    <link rel="stylesheet" href="{% static 'tomiko/css/catalog.css' %}">
-    <link rel="stylesheet" href="{% static 'tomiko/css/var.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <title>Каталог машин</title>
 </head>
 <body>
-    <header class="header">
-        <div class="header-info">
-            <table class="table-info">
-                <thead>
-                    <tr class="header-info__logo header__text">
-                        <td class="td-info"><a href=""><img class= header-logo__ico src="{% static 'tomiko/img/logo.svg' %}" alt=""></a></td>
-                    </tr>
-                    <tr class="header__items">
-                        <td class="td-info">
-                            <a class="header-link" href="">Авто из Кореи</a>
-                            <a class="header-link" href="">Авто из Китая</a>
-                            <a class="header-link" href="">Авто из Японии</a>
-                            <a class="header-link" href="">Контакты</a>
-                        </td>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-        <div class="header-media">
-            <table class="table-media">
-                <thead>
-                    <tr class="media__text">
-                        <td class="td-media"><a class="header-media" href="">8 (800) 500-49-46</a></td>
-                    </tr>
-                    <tr class="header__links">
-                        <td class="td-media">
-                            <a class="header-media " href=""><img class="header-media__ico" src="{% static 'tomiko/img/icons/Telegabutton.svg' %}" alt="Telega"></a>
-                            <a class="header-media" href=""><img class="header-media__ico" src="{% static 'tomiko/img/icons/Whatsbutton.svg' %}" alt="Whatsapp"></a>
-                        </td>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-    </header>
+    <h1>Каталог машин</h1>
 
-    <section>
-        <div class="menu">
-            <div class="dropdown">
-                <select>
-                    <option value="low-price">Сортировка</option>
-                    <option value="low-price">Сначала недорогие</option>
-                    <option value="high-price">Сначала дорогие</option>
-                    <option value="newest">Сначала новые</option>
-                    <option value="oldest">Сначала старые</option>
-                </select>
-            </div>
-            <button>Какие авто торгуются сейчас?</button>
-        </div>
-    </section>
+    <form method="get">
+        {{ filter.form.as_p }}
+        <button type="submit">Фильтровать</button>
+    </form>
 
-    <div class="container">
-        <div class="catalog">
-            {% for car in cars %}
-                <div class="card">
-                    <h3>{{ car.brand.name }} {{ car.model }}</h3>
-                    <p>{{ car.year }} - {{ car.mileage }} км - {{ car.engine_volume }}</p>
-                    <img src="https://via.placeholder.com/300x200" alt="Car Image">
-                    <div class="actions">
-                        <span class="price">{{ car.price }} ₽</span>
-                        <button>Оставить заявку</button>
-                    </div>
-                </div>
-            {% empty %}
-                <p>Нет доступных машин.</p>
-            {% endfor %}
-        </div>
-
-    <div class="pagination">
-        {% if cars.has_previous %}
-            <a href="?page={{ cars.previous_page_number }}">Предыдущая</a>
-        {% endif %}
-        {% for num in cars.paginator.page_range %}
-            {% if cars.number == num %}
-                <span>{{ num }}</span>
-            {% else %}
-                <a href="?page={{ num }}">{{ num }}</a>
-            {% endif %}
+    <!-- Кнопки сортировки (ПОКА НЕ РАБОТАЮТ)-->
+<div class="sort-buttons">
+    <a href="?{% for key, value in request.GET.items %}{% if key != 'sort' %}{{ key }}={{ value }}&{% endif %}{% endfor %}sort=price">Сортировать по цене</a>
+    <a href="?{% for key, value in request.GET.items %}{% if key != 'sort' %}{{ key }}={{ value }}&{% endif %}{% endfor %}sort=-price">Сортировать по цене (убыв.)</a>
+    <a href="?{% for key, value in request.GET.items %}{% if key != 'sort' %}{{ key }}={{ value }}&{% endif %}{% endfor %}sort=year">Сортировать по году</a>
+    <a href="?{% for key, value in request.GET.items %}{% if key != 'sort' %}{{ key }}={{ value }}&{% endif %}{% endfor %}sort=-year">Сортировать по году (убыв.)</a>
+</div>
+    <h2>Результаты</h2>
+    <ul>
+        {% for car in filter.qs %}
+            <li>
+                {{ car.brand_country.brand }} {{ car.make }} {{ car.model }} ({{ car.year }}) — {{ car.price }} ₽
+                <br>Страна бренда: {{ car.brand_country.country }}
+                <br>Пробег: {{ car.mileage }} км, Цвет: {{ car.color }}, КПП: {{ car.transmission }}
+            </li>
         {% endfor %}
-
-        {% if cars.has_next %}
-            <a href="?page={{ cars.next_page_number }}">Следующая</a>
-        {% endif %}
-    </div>
-    </div>
-
-    <section id="contacts">
-        <div class="contacts">
-            <h2>Контактная информация</h2>
-            <p>Звонок по России бесплатный:</p>
-            <p class="number">8 (800) 775-67-29</p>
-            <p>WhatsApp:</p>
-            <p class="number">+7 924 420-24-32</p>
-            <p>Адрес офиса: г. Владивосток, ул. Жигура 9в, 1 этаж, офис 1</p>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2024 ООО «Автоцентр-ВЛ». Автомобили под заказ из Кореи, Китая и Японии.</p>
-    </footer>
+    </ul>
 </body>
 </html>
+
+
+{#<form method="get">#}
+{#    <div>#}
+{#        {{ filter.form.brand.label_tag }}#}
+{#        {{ filter.form.brand }}#}
+{#    </div>#}
+{#    <div>#}
+{#        {{ filter.form.country.label_tag }}#}
+{#        {{ filter.form.country }}#}
+{#    </div>#}
+{#    <div>#}
+{#        {{ filter.form.model.label_tag }}#}
+{#        {{ filter.form.model }}#}
+{#    </div>#}
+{#    <div>#}
+{#        {{ filter.form.year_from.label_tag }}#}
+{#        {{ filter.form.year_from }}#}
+{#    </div>#}
+{#    <div>#}
+{#        {{ filter.form.year_to.label_tag }}#}
+{#        {{ filter.form.year_to }}#}
+{#    </div>#}
+{#    <div>#}
+{#        {{ filter.form.price_from.label_tag }}#}
+{#        {{ filter.form.price_from }}#}
+{#    </div>#}
+{#    <div>#}
+{#        {{ filter.form.price_to.label_tag }}#}
+{#        {{ filter.form.price_to }}#}
+{#    </div>#}
+{#    <div>#}
+{#        {{ filter.form.color.label_tag }}#}
+{#        {{ filter.form.color }}#}
+{#    </div>#}
+{#    <div>#}
+{#        {{ filter.form.transmission.label_tag }}#}
+{#        {{ filter.form.transmission }}#}
+{#    </div>#}
+{#    <div>#}
+{#        {{ filter.form.drive.label_tag }}#}
+{#        {{ filter.form.drive }}#}
+{#    </div>#}
+{#    <div>#}
+{#        {{ filter.form.engine_volume.label_tag }}#}
+{#        {{ filter.form.engine_volume }}#}
+{#    </div>#}
+{#    <button type="submit">Применить фильтры</button>#}
+{#</form>#}
