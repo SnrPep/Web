@@ -46,6 +46,77 @@
     </header>
 
     <section>
+        <div class="filter">
+            <div class="row">
+                <select name="brand">
+                    <option value="" disabled selected>Марка авто</option>
+                    <option value="subaru">Subaru</option>
+                    <option value="toyota">Toyota</option>
+                    <option value="honda">Honda</option>
+                </select>
+                <select name="year_from">
+                    <option value="" disabled selected>Год от</option>
+                    <option value="2000">2000</option>
+                    <option value="2010">2010</option>
+                    <option value="2020">2020</option>
+                </select>
+                <select name="year_to">
+                    <option value="" disabled selected>до</option>
+                    <option value="2000">2000</option>
+                    <option value="2010">2010</option>
+                    <option value="2020">2020</option>
+                </select>
+                <select name="engine_from">
+                    <option value="" disabled selected>Объем от</option>
+                    <option value="1.0">1.0</option>
+                    <option value="2.0">2.0</option>
+                    <option value="3.0">3.0</option>
+                </select>
+                <select name="engine_to">
+                    <option value="" disabled selected>до</option>
+                    <option value="1.0">1.0</option>
+                    <option value="2.0">2.0</option>
+                    <option value="3.0">3.0</option>
+                </select>
+                <select name="drive">
+                    <option value="" disabled selected>Привод</option>
+                    <option value="awd">Полный</option>
+                    <option value="fwd">Передний</option>
+                    <option value="rwd">Задний</option>
+                </select>
+            </div>
+            <div class="row">
+                <select name="model">
+                    <option value="" disabled selected>Модель авто</option>
+                    <option value="levorg">Levorg</option>
+                    <option value="forester">Forester</option>
+                </select>
+                <select name="mileage_from">
+                    <option value="" disabled selected>Пробег от</option>
+                    <option value="0">0 км</option>
+                    <option value="50000">50 000 км</option>
+                </select>
+                <select name="mileage_to">
+                    <option value="" disabled selected>до</option>
+                    <option value="100000">100 000 км</option>
+                    <option value="200000">200 000 км</option>
+                </select>
+                <select name="transmission">
+                    <option value="" disabled selected>Тип КПП</option>
+                    <option value="automatic">Автомат</option>
+                    <option value="manual">Механика</option>
+                </select>
+                <select name="color">
+                    <option value="" disabled selected>Цвет</option>
+                    <option value="white">Белый</option>
+                    <option value="black">Чёрный</option>
+                </select>
+            </div>
+            <button>Показать</button>
+        </div>
+    </section>
+
+    <section>
         <div class="menu">
             <div class="dropdown">
                 <select>
@@ -65,25 +136,38 @@
             {% for car in cars %}
                 <div class="card">
                     <h3>{{ car.brand_country.brand }} {{ car.model }}</h3>
-                    <p>{{ car.year }} - {{car.mileage}} - {{car.engine_volume}}</p>
+                    <p>{{ car.year }} - {{ car.mileage }} км - {{ car.engine_volume }}</p>
                     <img src="https://via.placeholder.com/300x200" alt="Car Image">
                     <div class="actions">
                         <span class="price">{{ car.price }} ₽</span>
                         <button>Оставить заявку</button>
                     </div>
                 </div>
+            {% empty %}
+                <p>Нет доступных машин.</p>
             {% endfor %}
         </div>
+    </div>
 
-        <div class="pagination">
-            <button class="active">1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>4</button>
-            <button>...</button>
-            <button>99</button>
-            <button>Следующая</button>
-        </div>
+    <div class="pagination">
+        {% if cars.has_previous %}
+            <button onclick="location.href='?page={{ cars.previous_page_number }}';">Предыдущая</button>
+        {% endif %}
+        {% for num in cars.paginator.page_range %}
+            {% if num == cars.number %}
+                <button class="active">{{ num }}</button>
+{#            {% elif num > cars.number - 3 and num < cars.number + 3 %}#}
+{#                <a href="?page={{ num }}" class="page-link">{{ num }}</a>#}
+            {% elif num == 1 or num == cars.paginator.num_pages %}
+                <button onclick="location.href='?page={{ num }}';" class="page-link">{{ num }}</button>
+{#            {% elif num == cars.number - 3 or num == cars.number + 3 %}#}
+{#                <span class="page-link dots">...</span>#}
+            {% endif %}
+        {% endfor %}
+
+        {% if cars.has_next %}
+            <button onclick="location.href='?page={{ cars.next_page_number }}';">Следующая</button>
+        {% endif %}
     </div>
 
     <section id="contacts">

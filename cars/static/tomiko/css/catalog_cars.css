@@ -1,0 +1,477 @@
+body {
+    font-family: Bebas Neue, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-bg-color);
+}
+
+.header__item {
+    display: inline-block;
+    color: gray;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    margin: 40px 20px;
+}
+
+.header__items, .td-info, .header-link{
+    color: white;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: "Inter", serif;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.header-media{
+    color: white;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: "Bebas Neue", serif;
+    font-size: 24px;
+}
+
+/*распределение по гридам*/
+.header{
+    margin: auto 100px;
+    max-width: 1703px;
+    display: grid;
+    grid-template-columns: [first] 1fr [second] 1fr;
+    grid-template-rows: [first] 1fr;
+}
+/*Блок header-info*/
+.header-info, thead{
+    margin-top: 19px;
+    display: flex;
+    justify-content: start;
+}
+
+.header__items, .td-info{
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.header__items, .header-link {
+    margin-top: 12px;
+}
+
+.header-info__logo, .header-logo__ico {
+    margin-right: 30px;
+}
+/*Блок header-media*/
+.header-media{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+.header__links, .td-media{
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.media__text{
+    margin-top: 5px;
+    margin-right: 24px;
+}
+
+.info {
+    display: inline-block;
+    color: gray;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+}
+.header-logo{
+    background-size: cover;
+    background-position: left;
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    left: 50px;
+    width: 80px;
+    height: 80px;
+}
+
+.midle {
+    display: grid;
+}
+
+.catalog-routing {
+    margin: auto 70px;
+    padding-top: 30px;
+    font-family: Inter;
+    font-size: 14px;
+    color: #FFFFFF80;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+}
+
+.catalog-routing a {
+    font-family: Inter;
+    font-size: 14px;
+    color: #FFFFFF80;
+}
+
+.catalog-title {
+    font-family: Bebas-Neue, Arial, sans-serif;
+    padding-top: 40px;
+    padding-bottom: 24px;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 40px;
+    color: #fff;
+    text-align: left;
+    text-transform: uppercase;
+    margin-left: 70px;
+}
+
+/*Фильтры*/
+.filters {
+    background-color: #081e36;
+    border-radius: 24px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-bottom: 20px;
+    width: auto;
+}
+
+.filter .row {
+    display: flex;
+    gap: 12px;
+}
+
+.filters .row select {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    margin-right: 12px;
+    margin-bottom: 12px;
+    background-color: #132640;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    width: auto;
+}
+
+.filters .row select:hover {
+    background-color: #132640;
+}
+
+.filters .row select:after {
+    content: '\25BC';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: black;
+    pointer-events: none;
+}
+
+.filters button {
+    font-weight: bold;
+    align-self: flex-start;
+    background-color: #1a2939;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filters button:hover {
+    background-color: #bf0000;
+}
+
+.filters .doublerow select{
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 12px;
+    background-color: #132640;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+}
+
+.filters .doublerow select:hover {
+    background-color: #132640;
+}
+
+.filters .doublerow select:after {
+    content: '\25BC';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: black;
+    pointer-events: none;
+}
+
+/*Тут каталог*/
+/*Верхние кнопочки*/
+.menu {
+    display: flex;
+    gap: 15px;
+    margin: auto 70px;
+}
+
+.menu .dropdown {
+    position: relative;
+}
+
+.menu .dropdown select {
+    background-color: #1a2939;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.menu .dropdown select:hover {
+    background-color: darkgrey;
+}
+
+.menu .dropdown::after {
+    content: '\25BC';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: black;
+    pointer-events: none;
+}
+
+.menu button {
+    background-color: #1a2939;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.menu button:hover {
+    background-color: #bf0000;
+}
+
+/*Сам каталог*/
+.container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+.catalog {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(auto, 1fr));
+    gap: 12px;
+    margin: 20px auto;
+}
+.card {
+    background: #081E36;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card img {
+    margin: 16px auto;
+    width: 100%;
+    border-radius: 8px;
+}
+.card h3 {
+    color: #FFFFFF;
+    margin: auto 0;
+    font-size: 24px;
+    font-family: 'Bebas Neue', sans-serif;
+}
+.card p {
+    margin: 8px 0;
+    color: gray;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+}
+.card .price {
+    margin: 8px 0;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: 'Bebas Neue', sans-serif;
+}
+.card .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+.card button {
+    padding: 10px 20px;
+    background-color: #20344a;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+    width: auto;
+}
+.card button:hover {
+    background-color: #D51117;
+}
+
+/*Нижние кнопочки*/
+/*Переключатель страниц*/
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    gap: 5px;
+}
+
+.pagination button {
+    background-color: #1a2939;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagination button.active {
+    background-color: #e60000;
+    font-weight: bold;
+}
+
+.pagination button.active:hover {
+    background-color: #e60000;
+    font-weight: bold;
+}
+
+.pagination button:hover {
+    background-color: #03395f;
+}
+
+
+/*Контакты*/
+.contacts {
+    font-family: Arial, sans-serif;
+    margin: auto;
+    padding: 0;
+    background-color: #011224;
+    color: #ffffff;
+}
+
+.contact-section {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.contact-details {
+    max-width: 50%;
+}
+
+.contact-details h1 {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.contact-details p {
+    margin: 10px 0;
+    color: gray;
+    font-size: 16px;
+}
+.contact-details strong {
+    margin: 10px 0;
+    color: white;
+    font-size: 16px;
+}
+
+.contact-form {
+    background-color: #081E36;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 40%;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 30px;
+    background-color: #20344A;
+    color: #ffffff;
+}
+
+.contact-form input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 30px;
+    background-color: #20344A;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #1d4ed8;
+}
+
+.privacy-policy {
+    color: #f87171;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.subscribe {
+    margin: 40px auto;
+}
+
+footer {
+    background-color: #081E36;
+    color: white;
+    text-align: left;
+    padding: 10px 100px;
+    margin-top: 170px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+}
