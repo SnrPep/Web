@@ -1,16 +1,46 @@
-body {
-    font-family: Bebas Neue, sans-serif;
+* {
     margin: 0;
     padding: 0;
+}
+
+.header__item,
+.header__items, .td-info, .header-link {
+    margin: 0 1.25rem;
+}
+
+.container, .catalog-routing, .midle, .filters, .menu, .pagination, .contacts {
+    margin: 0 4.375rem;
+}
+
+.catalog-title {
+    margin-left: 4.375rem;
+    padding-top: 2.5rem;
+    padding-bottom: 1.5rem;
+}
+
+body {
+    font-family: Bebas Neue, sans-serif;
+    margin-top: 9rem;
+    padding: 0;
     background-color: var(--main-bg-color);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--main-bg-color);
+    padding: 1rem;
 }
 
 .header__item {
     display: inline-block;
     color: gray;
-    font-size: 16px;
+    font-size: 1rem;
     font-family: 'Inter', sans-serif;
-    margin: 40px 20px;
+    margin: 2.5rem 1.25rem;
 }
 
 .header__items, .td-info, .header-link{
@@ -19,7 +49,7 @@ body {
     text-decoration: none;
     font-family: "Inter", serif;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .header-media{
@@ -27,20 +57,20 @@ body {
     list-style-type: none;
     text-decoration: none;
     font-family: "Bebas Neue", serif;
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
-/*распределение по гридам*/
+/* распределение по гридам */
 .header{
-    margin: auto 100px;
+    margin: auto 6.25rem;
     max-width: 1703px;
     display: grid;
-    grid-template-columns: [first] 1fr [second] 1fr;
-    grid-template-rows: [first] 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
 }
-/*Блок header-info*/
+
 .header-info, thead{
-    margin-top: 19px;
+    margin-top: 1.2rem;
     display: flex;
     justify-content: start;
 }
@@ -48,49 +78,32 @@ body {
 .header__items, .td-info{
     display: flex;
     justify-content: space-between;
-    gap: 40px;
+    gap: 2.5rem;
 }
 
 .header__items, .header-link {
-    margin-top: 12px;
+    margin-top: 0.75rem;
 }
 
 .header-info__logo, .header-logo__ico {
-    margin-right: 30px;
+    margin-right: 1.875rem;
 }
-/*Блок header-media*/
+
 .header-media{
     display: flex;
     justify-content: flex-end;
-    margin-top: 15px;
+    margin-top: 0.9375rem;
 }
 
 .header__links, .td-media{
     display: flex;
     justify-content: space-between;
-    gap: 8px;
+    gap: 0.5rem;
 }
 
 .media__text{
-    margin-top: 5px;
-    margin-right: 24px;
-}
-
-.info {
-    display: inline-block;
-    color: gray;
-    font-size: 14px;
-    font-family: 'Inter', sans-serif;
-}
-.header-logo{
-    background-size: cover;
-    background-position: left;
-    position: absolute;
-    z-index: 1;
-    top: 20px;
-    left: 50px;
-    width: 80px;
-    height: 80px;
+    margin-top: 0.3125rem;
+    margin-right: 1.5rem;
 }
 
 .midle {
@@ -98,81 +111,60 @@ body {
 }
 
 .catalog-routing {
-    margin: auto 70px;
-    padding-top: 30px;
+    margin: auto 4.375rem;
+    padding-top: 1.875rem;
     font-family: Inter;
-    font-size: 14px;
+    font-size: 0.875rem;
     color: #FFFFFF80;
-    font-size: 14px;
     font-weight: 400;
-    line-height: 17px;
+    line-height: 1.0625rem;
 }
 
 .catalog-routing a {
     font-family: Inter;
-    font-size: 14px;
+    font-size: 0.875rem;
     color: #FFFFFF80;
 }
 
 .catalog-title {
     font-family: Bebas-Neue, Arial, sans-serif;
-    padding-top: 40px;
-    padding-bottom: 24px;
-    font-size: 40px;
+    padding-top: 2.5rem;
+    padding-bottom: 1.5rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    line-height: 40px;
+    line-height: 2.5rem;
     color: #fff;
     text-align: left;
     text-transform: uppercase;
-    margin-left: 70px;
+    margin-left: 4.375rem;
 }
 
-/*Фильтры*/
+/* Фильтры */
 .filters {
     background-color: #081e36;
-    border-radius: 24px;
-    padding: 20px;
+    border-radius: 1.5rem;
+    padding: 1.25rem;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-left: 70px;
-    margin-right: 70px;
-    margin-bottom: 20px;
-    width: auto;
+    gap: 0.75rem;
+    margin: 0 4.375rem 1.25rem 4.375rem;
 }
 
-.filter .row {
+.filters .row {
     display: flex;
-    gap: 12px;
+    gap: 0.75rem;
 }
 
 .filters .row select {
     flex: 1;
-    padding: 10px;
-    font-size: 14px;
-    margin-right: 12px;
-    margin-bottom: 12px;
+    padding: 0.625rem;
+    font-size: 0.875rem;
     background-color: #132640;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     outline: none;
     cursor: pointer;
-    width: auto;
-}
-
-.filters .row select:hover {
-    background-color: #132640;
-}
-
-.filters .row select:after {
-    content: '\25BC';
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    transform: translateY(-50%);
-    color: black;
-    pointer-events: none;
 }
 
 .filters button {
@@ -181,9 +173,9 @@ body {
     background-color: #1a2939;
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-size: 14px;
+    padding: 0.625rem 1.25rem;
+    border-radius: 1.875rem;
+    font-size: 0.875rem;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -192,79 +184,30 @@ body {
     background-color: #bf0000;
 }
 
-.filters .doublerow select{
-    flex: 1;
-    padding: 10px;
-    font-size: 14px;
-    margin-bottom: 12px;
-    background-color: #132640;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    outline: none;
-    cursor: pointer;
-}
-
-.filters .doublerow select:hover {
-    background-color: #132640;
-}
-
-.filters .doublerow select:after {
-    content: '\25BC';
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    transform: translateY(-50%);
-    color: black;
-    pointer-events: none;
-}
-
-/*Тут каталог*/
-/*Верхние кнопочки*/
+/* Меню */
 .menu {
     display: flex;
-    gap: 15px;
-    margin: auto 70px;
-}
-
-.menu .dropdown {
-    position: relative;
+    gap: 0.9375rem;
+    margin: auto 4.375rem;
 }
 
 .menu .dropdown select {
     background-color: #1a2939;
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 14px;
+    padding: 0.625rem 1.25rem;
+    border-radius: 1.25rem;
+    font-size: 0.875rem;
     cursor: pointer;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-
-.menu .dropdown select:hover {
-    background-color: darkgrey;
-}
-
-.menu .dropdown::after {
-    content: '\25BC';
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    transform: translateY(-50%);
-    color: black;
-    pointer-events: none;
 }
 
 .menu button {
     background-color: #1a2939;
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-size: 14px;
+    padding: 0.625rem 1.25rem;
+    border-radius: 1.875rem;
+    font-size: 0.875rem;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -273,44 +216,51 @@ body {
     background-color: #bf0000;
 }
 
-/*Сам каталог*/
+/* Каталог */
 .container {
     width: 90%;
     margin: auto;
-    overflow: hidden;
 }
+
 .catalog {
     display: grid;
-    grid-template-columns: repeat(4, minmax(auto, 1fr));
-    gap: 12px;
-    margin: 20px auto;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    margin: 1.25rem auto;
 }
+
 .card {
     background: #081E36;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+
+
+
 .card img {
-    margin: 16px auto;
+    margin: 1rem auto;
     width: 100%;
-    border-radius: 8px;
+    border-radius: 0.5rem;
 }
+
 .card h3 {
     color: #FFFFFF;
     margin: auto 0;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-family: 'Bebas Neue', sans-serif;
 }
+
 .card p {
-    margin: 8px 0;
+    margin: 0.5rem 0;
     color: gray;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-family: 'Inter', sans-serif;
 }
+
 .card .price {
     margin: 8px 0;
     color: #FFFFFF;
@@ -341,22 +291,22 @@ body {
     background-color: #D51117;
 }
 
-/*Нижние кнопочки*/
-/*Переключатель страниц*/
+
+/* Пагинация */
 .pagination {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px 0;
-    gap: 5px;
+    margin: 1.25rem 0;
+    gap: 0.3125rem;
 }
 
 .pagination button {
     background-color: #1a2939;
     color: white;
     border: none;
-    padding: 8px 12px;
-    border-radius: 50px;
+    padding: 0.5rem 0.75rem;
+    border-radius: 1.875rem;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -366,20 +316,13 @@ body {
     font-weight: bold;
 }
 
-.pagination button.active:hover {
-    background-color: #e60000;
-    font-weight: bold;
-}
-
 .pagination button:hover {
     background-color: #03395f;
 }
 
-
 /*Контакты*/
 .contacts {
     font-family: Arial, sans-serif;
-    margin: auto;
     padding: 0;
     background-color: #011224;
     color: #ffffff;
@@ -402,12 +345,10 @@ body {
 }
 
 .contact-details p {
-    margin: 10px 0;
     color: gray;
     font-size: 16px;
 }
 .contact-details strong {
-    margin: 10px 0;
     color: white;
     font-size: 16px;
 }
@@ -463,15 +404,50 @@ body {
 }
 
 .subscribe {
-    margin: 40px auto;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+    width: auto;
 }
 
 footer {
+    text-align: center;
     background-color: #081E36;
     color: white;
-    text-align: left;
-    padding: 10px 100px;
-    margin-top: 170px;
-    font-size: 14px;
-    font-family: 'Inter', sans-serif;
+    padding: 1rem;
+    font-family: "Inter", sans-serif;
+}
+
+@media (max-width: 1024px) {
+    .contacts {
+        grid-template-columns: 1fr;
+    }
+
+    .filters {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .catalog {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .catalog {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .filters {
+        grid-template-columns: 1fr;
+    }
+
+    .contacts {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .catalog {
+        grid-template-columns: 1fr;
+    }
 }
