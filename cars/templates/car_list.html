@@ -52,70 +52,16 @@
             <a href="/china/">Автомобили из Китая</a>
         </div>
         <h1 class="catalog-title">Автомобили из Китая </h1>
+
         <form method="get" class="filters">
             <div class="row">
-                <select name="brand" id="id_brand">
-                    <option value="">Марка авто</option>
-                    {% for brand in brands %}
-                        <option value="{{ brand }}">{{ brand }}</option>
-                    {% endfor %}
-                </select>
-
-                <select name="model" id="id_model">
-                    <option value="">Модель авто</option>
-                    {% for model in models %}
-                        <option value="{{ model }}">{{ model }}</option>
-                    {% endfor %}
-                </select>
-
-                <select name="year_min" id="id_year_min">
-                    <option value="">Год от</option>
-                    {% for year in years %}
-                        <option value="{{ year }}">{{ year }}</option>
-                    {% endfor %}
-                </select>
-
-                <select name="year_max" id="id_year_max">
-                    <option value="">Год до</option>
-                    {% for year in years %}
-                        <option value="{{ year }}">{{ year }}</option>
-                    {% endfor %}
-                </select>
-
-                <select name="engine_volume_min" id="id_engine_volume_min">
-                    <option value="">Объём от, л</option>
-                    {% for volume in engine_volumes %}
-                        <option value="{{ volume }}">{{ volume }}</option>
-                    {% endfor %}
-                </select>
-
-                <select name="engine_volume_max" id="id_engine_volume_max">
-                    <option value="">Объём до, л</option>
-                    {% for volume in engine_volumes %}
-                        <option value="{{ volume }}">{{ volume }}</option>
-                    {% endfor %}
-                </select>
-
-                <select name="transmission" id="id_transmission">
-                    <option value="">Тип КПП</option>
-                    <option value="Механика">Механика</option>
-                    <option value="Автомат">Автомат</option>
-                </select>
-
-                <select name="drive" id="id_drive">
-                    <option value="">Привод</option>
-                    <option value="Передний">Передний</option>
-                    <option value="Задний">Задний</option>
-                    <option value="Полный">Полный</option>
-                </select>
-
-                <select name="color" id="id_color">
-                    <option value="">Цвет</option>
-                    {% for color in colors %}
-                        <option value="{{ color }}">{{ color }}</option>
-                    {% endfor %}
-                </select>
+                {{ filter.form.as_p }}
             </div>
+{#            {% for key, value in request.GET.items %}#}
+{#                {% if key != "page" %}#}
+{#                    <input type="hidden" name="{{ key }}" value="{{ value }}">#}
+{#                {% endif %}#}
+{#            {% endfor %}#}
             <button type="submit">Показать</button>
         </form>
 
@@ -152,15 +98,15 @@
 
         <div class="pagination">
             {% if cars.has_previous %}
-                <button onclick="location.href='?page={{ cars.previous_page_number }}';">Предыдущая</button>
+                <button onclick="location.href='?page={{ cars.previous_page_number }}&{{ request.GET.urlencode|safe }}';">Предыдущая</button>
             {% endif %}
             {% for num in cars.paginator.page_range %}
                 {% if num == cars.number %}
                     <button class="active">{{ num }}</button>
                 {% elif num > cars.number|add:"-3" and num < cars.number|add:"3" %}
-                    <button onclick="location.href='?page={{ num }}';" class="page-link">{{ num }}</button>
+                    <button onclick="location.href='?page={{ num }}&{{ request.GET.urlencode|safe }}';" class="page-link">{{ num }}</button>
                 {% elif num == 1 or num == cars.paginator.num_pages %}
-                    <button onclick="location.href='?page={{ num }}';" class="page-link">{{ num }}</button>
+                    <button onclick="location.href='?page={{ num }}&{{ request.GET.urlencode|safe }}';" class="page-link">{{ num }}</button>
                 {% elif num == cars.number|add:"-3" or num == cars.number|add:"3" %}
                     <button>...</button>
                 {% endif %}

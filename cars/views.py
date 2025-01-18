@@ -4,6 +4,15 @@ from django_filters.views import FilterView
 from .models import Cars
 from .models import Brands
 from .filters import CarFilter
+from django.http import QueryDict
+
+
+def clean_params(request):
+    params = request.GET.copy()
+    for key in ['page']:  # Удаляем ненужные параметры, например, пагинацию
+        if key in params:
+            del params[key]
+    return params.urlencode()
 
 def car_list(request):
     car_filter = CarFilter(request.GET, queryset=Cars.objects.all())
