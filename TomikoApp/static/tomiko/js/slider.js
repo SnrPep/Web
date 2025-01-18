@@ -1,6 +1,27 @@
-new Swiper('.image-slider');
+const swiper = new Swiper('.swiper', {
+    slidesPerView: 4,               // Количество видимых карточек
+    spaceBetween: 20,               // Расстояние между карточками
+    navigation: {
+        nextEl: '.swiper-button-next',  // Элементы для переключения
+        prevEl: '.swiper-button-prev',
+    },
+    loop: false,                     
 
+    on: {
+        slideChangeTransitionEnd: function () {
+            
+            document.querySelectorAll('.swiper-slide').forEach(slide => {
+                slide.classList.remove('big');
+            });
 
+            
+            const visibleSlides = swiper.slides.slice(swiper.activeIndex, swiper.activeIndex + swiper.params.slidesPerView);
+            if (visibleSlides[0]) {
+                visibleSlides[0].classList.add('big');
+            }
+        },
+    },
+});
 
 
 
