@@ -7,41 +7,38 @@
     <title>Каталог</title>
     <link rel="stylesheet" href="{% static 'tomiko/css/catalog_cars.css' %}">
     <link rel="stylesheet" href="{% static 'tomiko/css/var.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'tomiko/css/general/header_gen.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/homePage/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/general/footer.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
-        <div class="header-info">
-            <table class="table-info">
-                <thead>
-                    <tr class="header-info__logo header__text">
-                        <td class="td-info"><a href=""><img class= header-logo__ico src="{% static 'tomiko/img/logo.svg' %}" alt=""></a></td>
-                    </tr>
-                    <tr class="header__items">
-                        <td class="td-info">
-                            <a class="header-link" href="">Авто из Кореи</a>
-                            <a class="header-link" href="">Авто из Китая</a>
-                            <a class="header-link" href="">Авто из Японии</a>
-                            <a class="header-link" href="">Контакты</a>
-                        </td>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-        <div class="header-media">
-            <table class="table-media">
-                <thead>
-                    <tr class="media__text">
-                        <td class="td-media"><a class="header-media" href="">8 (800) 500-49-46</a></td>
-                    </tr>
-                    <tr class="header__links">
-                        <td class="td-media">
-                            <a class="header-media " href=""><img class="header-media__ico" src="{% static 'tomiko/img/icons/Telegabutton.svg' %}" alt="Telega"></a>
-                            <a class="header-media" href=""><img class="header-media__ico" src="{% static 'tomiko/img/icons/Whatsbutton.svg' %}" alt="Whatsapp"></a>
-                        </td>
-                    </tr>
-                </thead>
-            </table>
+        <div class="header__nav">
+            <ul class="info-list">
+                <li><a href="header-img"><img class="header-logo__ico header-link link-li" src="{% static 'tomiko/img/logo.svg' %}"
+                            alt=""></a></li>
+                <li><a class="header-link link-li" href="">Авто из Кореи</a></li>
+                <li><a class="header-link link-li" href="">Авто из Китая</a></li>
+                <li><a class="header-link link-li" href="">Авто из Японии</a></li>
+                <li><a class="header-link link-li" href="">Контакты</a></li>
+                <!-- Элементы, которые нужно прижать к правому краю -->
+                <div class="header-media-container">
+                    <li><a class="header-link header-number" href="">8 (800) 500-49-46</a></li>
+                    <li><a class="header-link" href=""><img class="header-media__ico"
+                                src="{% static 'tomiko/img/icons/Telegabutton.svg' %}" alt="Telega"></a></li>
+                    <li><a class="header-link" href=""><img class="header-media__ico"
+                                src="{% static 'tomiko/img/icons/Whatsbutton.svg' %}" alt="Whatsapp"></a></li>
+                </div>
+            </ul>
         </div>
     </header>
 
@@ -52,69 +49,10 @@
             <a href="/china/">Автомобили из Китая</a>
         </div>
         <h1 class="catalog-title">Автомобили из Китая </h1>
+
         <form method="get" class="filters">
             <div class="row">
-                <select name="brand" id="id_brand">
-                    <option value="">Марка авто</option>
-                    {% for brand in brands %}
-                        <option value="{{ brand }}">{{ brand }}</option>
-                    {% endfor %}
-                </select>
-
-                <select name="model" id="id_model">
-                    <option value="">Модель авто</option>
-                    {% for model in models %}
-                        <option value="{{ model }}">{{ model }}</option>
-                    {% endfor %}
-                </select>
-
-                <select name="year_min" id="id_year_min">
-                    <option value="">Год от</option>
-                    {% for year in years %}
-                        <option value="{{ year }}">{{ year }}</option>
-                    {% endfor %}
-                </select>
-
-                <select name="year_max" id="id_year_max">
-                    <option value="">Год до</option>
-                    {% for year in years %}
-                        <option value="{{ year }}">{{ year }}</option>
-                    {% endfor %}
-                </select>
-
-                <select name="engine_volume_min" id="id_engine_volume_min">
-                    <option value="">Объём от, л</option>
-                    {% for volume in engine_volumes %}
-                        <option value="{{ volume }}">{{ volume }}</option>
-                    {% endfor %}
-                </select>
-
-                <select name="engine_volume_max" id="id_engine_volume_max">
-                    <option value="">Объём до, л</option>
-                    {% for volume in engine_volumes %}
-                        <option value="{{ volume }}">{{ volume }}</option>
-                    {% endfor %}
-                </select>
-
-                <select name="transmission" id="id_transmission">
-                    <option value="">Тип КПП</option>
-                    <option value="Механика">Механика</option>
-                    <option value="Автомат">Автомат</option>
-                </select>
-
-                <select name="drive" id="id_drive">
-                    <option value="">Привод</option>
-                    <option value="Передний">Передний</option>
-                    <option value="Задний">Задний</option>
-                    <option value="Полный">Полный</option>
-                </select>
-
-                <select name="color" id="id_color">
-                    <option value="">Цвет</option>
-                    {% for color in colors %}
-                        <option value="{{ color }}">{{ color }}</option>
-                    {% endfor %}
-                </select>
+                {{ filter.form.as_p }}
             </div>
             <button type="submit">Показать</button>
         </form>
@@ -152,15 +90,15 @@
 
         <div class="pagination">
             {% if cars.has_previous %}
-                <button onclick="location.href='?page={{ cars.previous_page_number }}';">Предыдущая</button>
+                <button onclick="location.href='?page={{ cars.previous_page_number }}&{{ request.GET.urlencode|safe }}';">Предыдущая</button>
             {% endif %}
             {% for num in cars.paginator.page_range %}
                 {% if num == cars.number %}
                     <button class="active">{{ num }}</button>
                 {% elif num > cars.number|add:"-3" and num < cars.number|add:"3" %}
-                    <button onclick="location.href='?page={{ num }}';" class="page-link">{{ num }}</button>
+                    <button onclick="location.href='?page={{ num }}&{{ request.GET.urlencode|safe }}';" class="page-link">{{ num }}</button>
                 {% elif num == 1 or num == cars.paginator.num_pages %}
-                    <button onclick="location.href='?page={{ num }}';" class="page-link">{{ num }}</button>
+                    <button onclick="location.href='?page={{ num }}&{{ request.GET.urlencode|safe }}';" class="page-link">{{ num }}</button>
                 {% elif num == cars.number|add:"-3" or num == cars.number|add:"3" %}
                     <button>...</button>
                 {% endif %}
@@ -170,45 +108,103 @@
                 <button onclick="location.href='?page={{ cars.next_page_number }}';">Следующая</button>
             {% endif %}
         </div>
-    </div>
 
-    <div class="contacts">
-        <section class="contact-section">
-            <div class="contact-details">
-                <h1>Контактная информация 👋</h1>
-                <p>Оставьте свою заявку и наш менеджер свяжется с Вами для уточнения деталей.</p>
-                <p>Звонок по России бесплатный<br><strong>8 (800) 775-67-29</strong></p>
-                <p>WhatsApp<br><strong>+7 924 420-24-32</strong></p>
-                <p>Офис<br><strong>г. Владивосток, ул. Жигура 9в, 1 этаж, офис 1</strong></p>
-            </div>
-            <div class="contact-form">
-                <form>
-                    <label for="name">Имя</label>
-                    <input type="text" id="name" name="name" placeholder="Введите имя">
+        <div class="contact-info">
+            <div class="contact-con">
+                <div class="title-block">
+                    <h1 class="title-info">
+                        Контактная <br>информация <img src="{% static 'tomiko/img/icons/hi.png' %}" alt="">
+                    </h1>
+                    <p>Оставьте свою заявку и наш менеджер<br>
+                         свяжется с Вами для уточнения деталей</p>
+                    <div class="contacts-block">
+                        <p>Звонок по России бесплатный</p>
+                        <h1>8 800 550 48 32</h1>
 
-                    <label for="phone">Телефон</label>
-                    <input type="tel" id="phone" name="phone" placeholder="+7">
+                        <p>WhatsApp</p>
+                        <h1>+7 (924) 420-24-32</h1>
 
-                    <label for="message">Уточните свой вопрос</label>
-                    <textarea id="message" name="message" rows="4" placeholder="Введите текст сообщения, укажите страну, марку и год машины."></textarea>
+                        <p>Звонок по России бесплатный</p>
+                        <h1>8 800 550 48 32</h1>
 
-                    <div>
-                        <input type="checkbox" id="privacy" name="privacy" required>
-                        <label for="privacy">С <a href="#" class="privacy-policy">правилами политики конфиденциальности</a> ознакомлен</label>
+                        <p>Офис</p>
+                        <h1>г. Владивосток, ул. Тополевая 6</h1>
                     </div>
+                </div>
+                <div class="form-container">
 
-                    <button type="submit">Отправить</button>
-                </form>
+                    <div class="form-group">
+                        <div>
+                            Имя
+                        </div>
+
+                        <div class="form-column">
+
+                            <input type="text" placeholder="Введите имя" />
+                            <input type="tel" value="+7" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            Уточните свой вопрос
+                        </div>
+                        <textarea placeholder="Введите текст сообщения, укажите страну, марку и год машины."></textarea>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="privacy-policy" />
+                        <label for="privacy-policy">С <span>правилами политики конфиденциальности</span> ознакомлен</label>
+                    </div>
+                    <div class="submit-btn">
+                        <button>Отправить</button>
+                    </div>
+                </div>
             </div>
-        </section>
-    </div>
+        </div>
+
 
     <div class="subscribe">
         <img class="header-media__ico" src="{% static 'tomiko/img/hz.svg' %}" alt="Telega">
     </div>
 
     <footer>
-        <p>© 2024 ООО «Автоцентр-ВЛ». Автомобили под заказ из Кореи, Китая и Японии.</p>
+      <div class="footer-container">
+        <div class="footer-logo">
+          <img src="{% static 'tomiko/img/logo.svg' %}" alt="Логотип" />
+        </div>
+        <div class="footer-left">
+          <div class="footer-columns">
+            <div class="footer-column">
+              <h4>КАТАЛОГ</h4>
+              <ul>
+                <li><a href="#">Авто из Кореи</a></li>
+                <li><a href="#">Авто из Китая</a></li>
+                <li><a href="#">Авто из Японии</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>КОМПАНИЯ</h4>
+              <ul>
+                <li><a href="#">О компании</a></li>
+                <li><a href="#">Доставка</a></li>
+                <li><a href="#">Отзывы</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-right">
+          <h4>Звонок по России бесплатный</h4>
+          <p class="phone-number">8 (800) 550 48 32</p>
+          <div class="social-icons">
+            <a href="#"><img src="{% static 'tomiko/img/icons/Telegabutton.svg' %}" alt="Telegram"></a>
+            <a href="#"><img src="{% static 'tomiko/img/icons/Whatsbutton.svg' %}" alt="WhatsApp"></a>
+            <a href="#"><img src="{% static 'tomiko/img/icons/Telegabutton.svg' %}" alt="VK"></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 ООО «Правый руль» Автомобили под заказ из Кореи, Китая и Японии</p>
+        <a href="#" class="privacy-policy">Политика конфиденциальности</a>
+      </div>
     </footer>
 </body>
 </html>
