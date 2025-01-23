@@ -13,6 +13,34 @@
         <button type="submit">Фильтровать</button>
     </form>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const brandSelect = document.getElementById("id_brand");
+        const modelSelect = document.getElementById("id_model");
+
+        brandSelect.addEventListener("change", function () {
+            const brandId = brandSelect.value;
+
+            // Отправляем запрос на сервер, чтобы получить модели
+            fetch(`/cars/get-models/?brand_id=${brandId}`)
+                .then(response => response.json())
+                .then(data => {
+                    // Очищаем предыдущие опции модели
+                    modelSelect.innerHTML = '<option value="">Модель авто</option>';
+
+                    // Добавляем новые модели в выпадающий список
+                    data.models.forEach(function (model) {
+                        const option = document.createElement("option");
+                        option.value = model;
+                        option.textContent = model;
+                        modelSelect.appendChild(option);
+                    });
+                })
+                .catch(error => console.error("Ошибка при загрузке моделей:", error));
+        });
+    });
+</script>
+
     <!-- Кнопки сортировки (ПОКА НЕ РАБОТАЮТ)-->
 <div class="sort-buttons">
     <a href="?{% for key, value in request.GET.items %}{% if key != 'sort' %}{{ key }}={{ value }}&{% endif %}{% endfor %}sort=price">Сортировать по цене</a>

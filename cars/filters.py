@@ -8,18 +8,20 @@ class CarFilter(django_filters.FilterSet):
         label="",
         empty_label="Марка авто"
     )
-    # country = django_filters.ChoiceFilter(
-    #     choices=lambda: [(country, country) for country in
-    #                      Brands.objects.values_list('country', flat=True).distinct()],
-    #     field_name="brand_country__country",
-    #     label="Страна производитель"
-    # )
+
     model = django_filters.ChoiceFilter(
-        choices=lambda: [(model, model) for model in
-                         Cars.objects.values_list('model', flat=True).distinct().order_by('model')],
+        choices=[],
         label="",
         empty_label="Модель авто"
     )
+
+
+    # model = django_filters.ChoiceFilter(
+    #     choices=lambda: [(model, model) for model in
+    #                      Cars.objects.values_list('model', flat=True).distinct().order_by('model')],
+    #     label="",
+    #     empty_label="Модель авто"
+    # )
 
     year_from = django_filters.ChoiceFilter(
         field_name="year",
