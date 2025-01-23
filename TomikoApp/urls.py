@@ -10,5 +10,6 @@ urlpatterns = [
     path("contacts/", views.contacts, name="contacts"),
     path("politicy/", views.politicy, name="politicy"),
     path("akcii/", views.akcii, name="akcii"),
+    path("feedback/", views.feedback_view, name="feedback"),
 ]
 
