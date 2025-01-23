@@ -79,7 +79,32 @@ class CarFilter(django_filters.FilterSet):
         label="",
         empty_label="Привод"
     )
+    # power_volume_from = django_filters.ChoiceFilter(
+    #     field_name="power_volume",
+    #     lookup_expr="gte",
+    #     choices=lambda: [(power_volume, power_volume) for power_volume in
+    #                      Cars.objects.values_list('power_volume', flat=True).distinct().order_by('power_volume')],
+    #     label="",
+    #     empty_label="Пробег от"
+    # )
+    #
+    # power_volume_to = django_filters.ChoiceFilter(
+    #     field_name="power_volume",
+    #     lookup_expr="lte",
+    #     choices=lambda: [(power_volume, power_volume) for power_volume in
+    #                      Cars.objects.values_list('power_volume', flat=True).distinct().order_by('power_volume')],
+    #     label="",
+    #     empty_label="до"
+    # )
 
     class Meta:
         model = Cars
         fields = ['brand', 'model', 'year_from','year_to', 'mileage_from', 'mileage_to', 'color', 'transmission', 'drive']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        brand = self.data.get("brand")  # Получаем выбранную марку из запроса
+        if brand:
+            # Если марка выбрана, фильтруем модели для этой марки
+            models = Cars.objects.filter(brand_country_id=brand).values_list('model', flat=True).distinct()
+            self.filters['model'].extra['choices'] = [(model, model) for model in models]

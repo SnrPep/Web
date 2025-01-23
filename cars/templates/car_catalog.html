@@ -11,6 +11,10 @@
     <form method="get">
         {{ filter.form.as_p }}
         <button type="submit">Фильтровать</button>
+
+        {% if request.GET %}
+            <a href="{% url 'car_catalog' %}" class="btn-reset">Сбросить фильтры</a>
+        {% endif %}
     </form>
 
 <script>
@@ -41,13 +45,25 @@
     });
 </script>
 
-    <!-- Кнопки сортировки (ПОКА НЕ РАБОТАЮТ)-->
-<div class="sort-buttons">
-    <a href="?{% for key, value in request.GET.items %}{% if key != 'sort' %}{{ key }}={{ value }}&{% endif %}{% endfor %}sort=price">Сортировать по цене</a>
-    <a href="?{% for key, value in request.GET.items %}{% if key != 'sort' %}{{ key }}={{ value }}&{% endif %}{% endfor %}sort=-price">Сортировать по цене (убыв.)</a>
-    <a href="?{% for key, value in request.GET.items %}{% if key != 'sort' %}{{ key }}={{ value }}&{% endif %}{% endfor %}sort=year">Сортировать по году</a>
-    <a href="?{% for key, value in request.GET.items %}{% if key != 'sort' %}{{ key }}={{ value }}&{% endif %}{% endfor %}sort=-year">Сортировать по году (убыв.)</a>
-</div>
+<form method="get" class="sorting-form">
+    {% for key, value in request.GET.items %}
+        {% if key != 'sort' %}
+            <input type="hidden" name="{{ key }}" value="{{ value }}">
+        {% endif %}
+    {% endfor %}
+    <label for="sort">Сортировка</label>
+    <select name="sort" id="sort" onchange="this.form.submit()">
+        <option value="" {% if not request.GET.sort %}selected{% endif %}>Сортировка</option>
+        <option value="mileage" {% if request.GET.sort == "mileage" %}selected{% endif %}>Пробег: по возрастанию</option>
+        <option value="-mileage" {% if request.GET.sort == "-mileage" %}selected{% endif %}>Пробег: по убыванию</option>
+        <option value="price" {% if request.GET.sort == "price" %}selected{% endif %}>Стоимость: по возрастанию</option>
+        <option value="-price" {% if request.GET.sort == "-price" %}selected{% endif %}>Стоимость: по убыванию</option>
+        <option value="power_volume" {% if request.GET.sort == "power_volume" %}selected{% endif %}>Объем: по возрастанию</option>
+        <option value="-power_volume" {% if request.GET.sort == "-power_volume" %}selected{% endif %}>Объем: по убыванию</option>
+        <option value="year" {% if request.GET.sort == "year" %}selected{% endif %}>Год: по возрастанию</option>
+        <option value="-year" {% if request.GET.sort == "-year" %}selected{% endif %}>Год: по убыванию</option>
+    </select>
+</form>
     <h2>Результаты</h2>
     <ul>
         {% for car in filter.qs %}
@@ -58,54 +74,14 @@
             </li>
         {% endfor %}
     </ul>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sortSelect = document.getElementById("sort");
+            sortSelect.addEventListener("change", function () {
+                this.form.submit(); // Отправляем форму при изменении значения сортировки
+            });
+        });
+    </script>
 </body>
 </html>
-
-
-{#<form method="get">#}
-{#    <div>#}
-{#        {{ filter.form.brand.label_tag }}#}
-{#        {{ filter.form.brand }}#}
-{#    </div>#}
-{#    <div>#}
-{#        {{ filter.form.country.label_tag }}#}
-{#        {{ filter.form.country }}#}
-{#    </div>#}
-{#    <div>#}
-{#        {{ filter.form.model.label_tag }}#}
-{#        {{ filter.form.model }}#}
-{#    </div>#}
-{#    <div>#}
-{#        {{ filter.form.year_from.label_tag }}#}
-{#        {{ filter.form.year_from }}#}
-{#    </div>#}
-{#    <div>#}
-{#        {{ filter.form.year_to.label_tag }}#}
-{#        {{ filter.form.year_to }}#}
-{#    </div>#}
-{#    <div>#}
-{#        {{ filter.form.price_from.label_tag }}#}
-{#        {{ filter.form.price_from }}#}
-{#    </div>#}
-{#    <div>#}
-{#        {{ filter.form.price_to.label_tag }}#}
-{#        {{ filter.form.price_to }}#}
-{#    </div>#}
-{#    <div>#}
-{#        {{ filter.form.color.label_tag }}#}
-{#        {{ filter.form.color }}#}
-{#    </div>#}
-{#    <div>#}
-{#        {{ filter.form.transmission.label_tag }}#}
-{#        {{ filter.form.transmission }}#}
-{#    </div>#}
-{#    <div>#}
-{#        {{ filter.form.drive.label_tag }}#}
-{#        {{ filter.form.drive }}#}
-{#    </div>#}
-{#    <div>#}
-{#        {{ filter.form.engine_volume.label_tag }}#}
-{#        {{ filter.form.engine_volume }}#}
-{#    </div>#}
-{#    <button type="submit">Применить фильтры</button>#}
-{#</form>#}

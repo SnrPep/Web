@@ -40,7 +40,27 @@ def get_models_by_brand(request):
         return JsonResponse({'models': list(models)})  # Возвращаем список моделей
     return JsonResponse({'models': []})  # Если марка не выбрана
 
+# def car_catalog(request):
+#     cars = Cars.objects.all()
+#     car_filter = CarFilter(request.GET, queryset=cars)
+#
+#     # Получаем параметр сортировки из GET-запроса
+#     sort_by = request.GET.get('sort')
+#     if sort_by:
+#         # Применяем сортировку к отфильтрованным данным
+#         cars = car_filter.qs.order_by(sort_by)
+#     else:
+#         cars = car_filter.qs
+#
+#     return render(request, 'car_catalog.html', {'filter': car_filter, 'cars': cars})
+
 def car_catalog(request):
     cars = Cars.objects.all()
+
+    # Получаем параметр сортировки из GET-запроса
+    sort_param = request.GET.get('sort', None)
+    if sort_param:
+        cars = cars.order_by(sort_param)
+
     car_filter = CarFilter(request.GET, queryset=cars)
     return render(request, 'car_catalog.html', {'filter': car_filter, 'cars': car_filter.qs})
