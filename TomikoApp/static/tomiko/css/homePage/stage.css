@@ -1,0 +1,173 @@
+.stage-container{
+margin: 0 auto auto auto;
+max-width: 1703px;
+align-items: center;
+justify-content: center;
+}
+
+.stage-img{
+    border-radius: 25px;
+    margin: 0 auto auto auto;
+    max-width: 1703px;
+    position: absolute;
+    z-index: -2;
+    background-size: cover;
+    background-position: center;
+}
+
+.stage_block{
+    position: relative;
+    padding: 80px;
+    
+}
+.stage-title {
+    text-align: center;
+    font-family: var(--main-font);
+    
+}
+
+.h-info{
+    font-size: 50px;
+    font-family: "Montserrat", serif;
+        font-weight: 700;
+        font-style: normal;
+        text-transform: uppercase;
+}
+
+.p-info{
+    color: #fff;
+    font-family: "Inter", serif;
+    color: #FFFFFF80;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+}
+
+.stage-info{
+    margin-top: 100px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 50px;
+}
+
+.info-block{
+    max-width: 300px;
+    max-height: 500px;
+    
+
+}
+
+.stage-btn{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 130px;
+}
+
+.btn-s{
+    width: 382px;
+    height: 70px;
+        border-radius: 60px;
+        background: linear-gradient(90deg, #0D2F68, #D51117);
+        color: white;
+        border: none;
+        cursor: pointer;
+
+        font-size: 18px;
+        font-weight: 600;
+        
+}
+
+.red{
+    color: #FD554B;
+}
+
+.white{
+    color:#fff
+}
+
+.ico-s{
+    transform: scale(2);
+}
+
+.img-block{
+    display: flex;
+    
+    gap: 20px;
+    max-height: 50px;
+}
+
+.f-size{
+    font-family: "Montserrat", serif;
+    font-size: 24px;
+}
+
+.p-size{
+    font-family: "Inter", serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color:#fff
+}
+
+
+
+.discount{
+    position: relative;
+    margin: 20px auto auto 100px;
+    max-width: 1703px;
+}
+.discount-text{
+    margin-left: 40px;
+    margin-top: 60px;
+    rotate: 5deg;
+}
+
+.reg{
+    bottom: -72px;
+    position: absolute;
+    rotate: -5deg;
+    border-radius: 30px;
+    height: 150px;
+    z-index: -3;
+    background-color: #D51117;
+    width: 1430px;
+}
+
+.discount-text{
+    top: -6px;
+    position: absolute;
+    
+    width: 1200px;
+}
+
+
+.p-dis{
+    font-family: "Inter", serif;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 29px;
+        color: #fff
+}
+.dis-s{
+    font-family: "Inter", serif;
+        font-weight: 900;
+        font-size: 32px;
+        line-height: 38px;
+        color: #fff
+}
+
+.dis-btn{
+    width: 48px;
+    height: 32px;
+    border-radius: 30px;
+    border-style: none;
+    opacity: 50%;
+}
+
+.arrow-d{
+    color: #fff;
+    opacity: 100%;
+}
+

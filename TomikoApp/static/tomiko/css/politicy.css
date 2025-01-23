@@ -1,0 +1,26 @@
+body {
+    font-family: Bebas Neue, sans-serif;
+    margin-top: 100px;
+    padding: 0;
+    background-color: var(--main-bg-color);
+}
+
+.title {
+    padding-top: 40px;
+    padding-bottom: 1.5rem;
+    font-size: 70px;
+    font-weight: 700;
+    line-height: 2.5rem;
+    color: #fff;
+    text-align: left;
+    text-transform: uppercase;
+    margin: 20px 4.375rem;
+    font-family: "Inter", serif;
+}
+
+.main {
+    padding: 1em;
+    display: grid;
+    margin: 0 4.375rem;
+    text-align: left;
+}
