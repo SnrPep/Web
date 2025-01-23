@@ -1,0 +1,242 @@
+body {
+    background: var(--main-bg-color);
+    margin: 0;
+    padding: 0;
+    
+}
+
+header{
+    
+    border-bottom: solid 1px #FFFFFF29;
+    padding-bottom: 50px;
+}
+
+/*Стили, шрифты, цвета для шапки сайта*/
+.header__items, .td-info, .header-link{
+    color: #FFFFFFB2;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: "Inter", serif;
+    font-weight: 600;
+    font-size: 16px;
+
+}
+
+.header-media{
+    color: white;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: "Bebas Neue", serif;
+    font-size: 24px;
+}
+/*распределение по гридам*/
+.header{
+    
+    margin-top: 24px;
+    margin: 20px auto auto auto;
+    max-width: 1703px;
+}
+
+.bg-logo{
+    margin: 0 auto auto auto;
+    max-width: 1703px;
+    position: absolute;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    background-position: center;
+}
+.bg-logo2{
+    z-index: -1;
+    opacity: 0.2;
+    position: absolute;
+    background: rgba(#FF000000);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(#FF000000), rgba(#FF000000));
+    border-radius: 25px;
+    filter: blur(20px);
+}
+/*Блок header-info*/
+
+
+.header-info {
+    display: flex;
+    justify-content: space-between;
+    /* Элементы по краям контейнера */
+    align-items: center;
+    /* Центрирование по вертикали */
+}
+
+.info-list {
+    
+    list-style-type: none;
+    /* Убираем маркеры списка */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    /* Делаем элементы списка в ряд */
+    align-items: center;
+}
+
+.header-media-container {
+    
+    display: flex;
+    /* Располагаем элементы внутри блока в линию */
+    align-items: center;
+    /* Центрирование по вертикали */
+    margin-left: auto;
+    /* Прижимаем блок к правому краю */
+}
+
+li {
+    margin-right: 25px;
+    /* Добавляем отступ между элементами */
+}
+
+.link-li{
+    margin-right: 35px;
+}
+/*Блок header-title */
+
+.header-title {
+    margin-top: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.header__title{
+    text-align: center;
+    color: #fff;
+    font-family: "Montserrat", serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 77px;
+}
+
+.header-number{
+    font-family: "Bebas Neue", serif;
+    font-size: 24px;
+    color: #fff;
+    opacity: 1;
+}
+.header__phrase{
+    font-family: "Inter", serif;
+    font-weight: 300;
+    color: #fff;
+    font-size: 24px;
+    line-height: 36px;
+    width: 563px;
+    text-align: center;
+}
+.header__btn{
+    margin-top: 30px;
+        width: 285px;
+        height: 70px;
+        border-radius: 60px;
+        background: linear-gradient(90deg, #0D2F68, #D51117);
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-family: "Inter", serif;
+        font-size: 18px;
+        font-weight: 600;
+}
+
+/* Блок header-feedback*/
+.header-feedback{
+    margin-top: 200px   ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.feedback-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.container-blocks {
+    display: flex;
+    align-self: self-end;
+    gap: 20px;
+    /* Расстояние между блоками */
+}
+
+.fblock{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    font-size: 48px;
+    font-weight: 700;
+    align-items: center;
+}
+
+
+.block-1, .block-3{
+    text-align: center;
+}
+
+.block-1, .block-2 {
+    border-right: solid 1px #FFFFFF29;
+    padding-right: 40px;
+    height: 87px;
+}
+
+/* блок header-akcii*/
+.header-akcii{
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #081E36;
+    padding: 16px;
+    max-width: 300px;
+    border-radius: 28px;
+   
+}
+.paraphras-block{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    color: #fff;
+    font-family: "Inter", serif;
+    opacity: 0.5;
+}
+.akcii__title {
+    margin: 0;
+}
+
+.header-akcii__btn {
+    margin-top: 10px;
+}
+
+.akcii__title{
+    font-family: "Inter", serif ;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.red__30{
+    font-family: "Inter", serif;
+    color: #FD554B;
+    font-size: 48px;
+    font-weight: 900;
+}
+
+.header-akcii__btn{
+    width: 293px;
+    height: 44px;
+    border-radius: 60px;
+    background: linear-gradient(90deg, #0D2F68, #D51117);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: "Inter", serif;
+    font-size: 14px;
+    font-weight: 600;
+}

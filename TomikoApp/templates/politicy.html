@@ -1,11 +1,96 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Условия работы</title>
+    <link rel="stylesheet" href="{% static 'tomiko/css/homePage/var.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/general/header_gen.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/general/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/general/navigation.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/politicy.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 <body>
-    dfe
+    <header class="header">
+        <div class="header__nav">
+            <ul class="info-list">
+                <li><a href="header-img"><img class="header-logo__ico header-link link-li" src="{% static 'tomiko/img/logo.svg' %}"
+                            alt=""></a></li>
+                <li><a class="header-link link-li" href="">Авто из Кореи</a></li>
+                <li><a class="header-link link-li" href="">Авто из Китая</a></li>
+                <li><a class="header-link link-li" href="">Авто из Японии</a></li>
+                <li><a class="header-link link-li" href="">Контакты</a></li>
+                <!-- Элементы, которые нужно прижать к правому краю -->
+                <div class="header-media-container">
+                    <li><a class="header-link header-number" href="">8 (800) 500-49-46</a></li>
+                    <li><a class="header-link" href=""><img class="header-media__ico"
+                                src="{% static 'tomiko/img/icons/Telegabutton.svg' %}" alt="Telega"></a></li>
+                    <li><a class="header-link" href=""><img class="header-media__ico"
+                                src="{% static 'tomiko/img/icons/Whatsbutton.svg' %}" alt="Whatsapp"></a></li>
+                </div>
+            </ul>
+        </div>
+    </header>
+    <div class="main">
+        <div class="nav">
+            <a href="/">Главная</a>
+             •
+            <a href="/akcii/">О нас</a>
+        </div>
+        <h1 class="title">О НАС</h1>
+    </div>
+    
+    
+    
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo">
+          <img src="{% static 'tomiko/img/logo.svg' %}" alt="Логотип" />
+        </div>
+        <div class="footer-left">
+          <div class="footer-columns">
+            <div class="footer-column">
+              <h4>КАТАЛОГ</h4>
+              <ul>
+                <li><a href="#">Авто из Кореи</a></li>
+                <li><a href="#">Авто из Китая</a></li>
+                <li><a href="#">Авто из Японии</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>КОМПАНИЯ</h4>
+              <ul>
+                <li><a href="#">О компании</a></li>
+                <li><a href="#">Доставка</a></li>
+                <li><a href="#">Отзывы</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-right">
+          <h4>Звонок по России бесплатный</h4>
+          <p class="phone-number">8 (800) 550 48 32</p>
+          <div class="social-icons">
+            <a href="#"><img src="{% static 'tomiko/img/icons/Telegabutton.svg' %}" alt="Telegram"></a>
+            <a href="#"><img src="{% static 'tomiko/img/icons/Whatsbutton.svg' %}" alt="WhatsApp"></a>
+            <a href="#"><img src="{% static 'tomiko/img/icons/Telegabutton.svg' %}" alt="VK"></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 ООО «Правый руль» Автомобили под заказ из Кореи, Китая и Японии</p>
+        <a href="#" class="privacy-policy">Политика конфиденциальности</a>
+      </div>
+    </footer>
 </body>
 </html>

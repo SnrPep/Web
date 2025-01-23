@@ -1,0 +1,84 @@
+.about-us {
+    margin: 200px auto auto auto;
+    max-width: 1703px;
+    max-height: 700px;
+    display: grid;
+    
+}
+
+.about-block{
+    max-height: 600px;
+    display: flex;
+}
+
+.title{
+    max-width: 748px;
+    
+}
+.title{
+    font-size: 50px;
+        font-family: "Montserrat", serif;
+        font-weight: 700;
+        font-style: normal;
+        text-transform: uppercase;
+}
+
+.about-p{
+    color: #fff;
+        font-family: "Inter", serif;
+        
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 27px;
+        letter-spacing: 1px;
+}
+.about-logo{
+    max-width: 955px;
+    max-height: 308px;
+}
+
+.about-img{
+    margin-left: 250px;
+    border-radius: 30px;
+}
+
+.about-font{
+    letter-spacing: 1px;
+    font-family: "Inter", serif;
+    
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 27px;
+}
+
+.about-btn{
+    position: relative;
+    margin-top: 40px;
+    width: 285px;
+        height: 70px;
+        border-radius: 60px;
+        background: linear-gradient(90deg, #0D2F68, #D51117);
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-family: "Inter", serif;
+        font-size: 18px;
+        font-weight: 600;
+}
+
+.btn-about-block{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.what-about{
+    
+    position: absolute;
+    transform: scale(2);
+}
+
+.width-about{
+    width: 1703px;
+    
+}
