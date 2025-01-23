@@ -1,0 +1,54 @@
+.logo-brands{
+    margin-top: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand{
+    margin-right: 36px;
+    background: transparent;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    
+    
+}
+
+
+.brand:hover img {
+    transform: scale(1.1);
+    transition: 0.5s;
+    /* Увеличение размера на 10% */
+}
+
+.logo-carousel {
+    width: 100%;
+        /* Ширина контейнера */
+        height: 100px;
+        /* Высота контейнера, подбирайте под ваши логотипы */
+        overflow: hidden;
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: marquee 20s linear infinite;
+}
+
+
+@keyframes marquee {
+    100% {
+            transform: translateX(100%);
+        }
+    
+        
+    100%{
+            transform: translateX(-100%);
+        }
+    
+        
+}
