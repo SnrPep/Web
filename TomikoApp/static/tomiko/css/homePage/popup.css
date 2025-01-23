@@ -1,0 +1,122 @@
+.popup{
+    display: none;
+        align-items: center;
+        justify-content: center;
+        /* Центрирование по горизонтали и вертикали */
+        position: fixed;
+        width: 100%;
+        /* Затеняющий фон займет всю ширину */
+        height: 100%;
+        /* Затеняющий фон займет всю высоту */
+        background-color: rgba(0, 0, 0, 0.8);
+        /* Затемнение */
+        left: 0;
+        top: 0;
+        z-index: 3;
+}
+
+
+.popup.open {
+    
+    display: flex;
+    /* Показываем попап при добавлении класса open */
+}
+
+.popup-container{
+    
+    background-color: #081E36; 
+    padding: 30px 24px; 
+    border-radius: 30px; 
+    position: relative; 
+    max-width: 848px; /* Максимальная ширина попапа */
+    width: 100%; /* Ширина адаптивная */
+    margin: auto; /* Центрирование */
+    
+}
+
+.h1-title{
+    font-family: "Inter", serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #FFFFFF;
+    letter-spacing: 1.5px;
+}
+
+.h-title{
+    text-align: center;
+    font-family: "Inter", serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #FFFFFF80;
+}
+
+.price-cont{
+    position: absolute;
+    left: 410px;
+    top: 318px;
+    
+}
+
+.r-price{
+    padding: 8px 16px ;
+    background-color: #D51117;
+    border-radius: 25px;
+    font-family: "Inter", serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #FFFFFF;
+    
+}
+
+.img-price{
+    position: absolute;
+    right: 23px;
+    bottom: 59px;
+            
+}
+.popup__content{
+    background-color: #081E36;
+    
+    border-radius: 30px;
+    position: relative;
+}
+
+.popup__close{
+    position: absolute;
+        right: 30px;
+        top: 7px;
+        cursor: pointer;
+        /* Курсор для интерактивного элемента */
+}
+
+.popup__title{
+
+}
+
+.popup__main{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    position: relative;
+}
+
+.popup-footer{
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    margin-top: 30px;
+}
+
+.popup_btn{
+    width: 285px;
+    height: 70px;
+    border-radius: 60px;
+    background: linear-gradient(90deg, #0D2F68, #D51117);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: "Inter", serif;
+    font-size: 18px;
+    font-weight: 600;
+}
+

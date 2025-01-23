@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="{% static 'tomiko/css/homePage/about.css' %}">
     <link rel="stylesheet" href="{% static 'tomiko/css/homePage/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/homePage/popup.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/homePage/popup-cost.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -34,28 +36,74 @@
     <header class="header">
         <img src="{% static 'tomiko/img/bgImage.png' %}" class="bg-logo" alt="">
         <img src="{% static 'tomiko/img/smoke.png' %}" class="bg-logo2" alt="">
-        <div class="header__nav">
-            <ul class="info-list">
-                <li><a href="header-img"><img class="header-logo__ico header-link link-li" src="{% static 'tomiko/img/logo.svg' %}"
-                            alt=""></a></li>
-                <li><a class="header-link link-li" href="">Авто из Кореи</a></li>
-                <li><a class="header-link link-li" href="">Авто из Китая</a></li>
-                <li><a class="header-link link-li" href="">Авто из Японии</a></li>
-                <li><a class="header-link link-li" href="">Контакты</a></li>
-                <!-- Элементы, которые нужно прижать к правому краю -->
-                <div class="header-media-container">
-                    <li><a class="header-link header-number" href="">8 (800) 500-49-46</a></li>
-                    <li><a class="header-link" href=""><img class="header-media__ico"
-                                src="{% static 'tomiko/img/icons/Telegabutton.svg' %}" alt="Telega"></a></li>
-                    <li><a class="header-link" href=""><img class="header-media__ico"
-                                src="{% static 'tomiko/img/icons/Whatsbutton.svg' %}" alt="Whatsapp"></a></li>
-                </div>
-            </ul>
-        </div>        
+        <div class="header-line">
+            <div class="header__nav">
+                <ul class="info-list">
+                    <li><a href="header-img"><img class="header-logo__ico header-link link-li" src="{% static 'tomiko/img/logo.svg' %}"
+                                alt=""></a></li>
+                    <li><a class="header-link link-li" href="">Авто из Кореи</a></li>
+                    <li><a class="header-link link-li" href="">Авто из Китая</a></li>
+                    <li><a class="header-link link-li" href="">Авто из Японии</a></li>
+                    <li><a class="header-link link-li" href="">Контакты</a></li>
+                    <!-- Элементы, которые нужно прижать к правому краю -->
+                    <div class="header-media-container">
+                        <li><a class="header-link header-number" href="">8 (800) 500-49-46</a></li>
+                        <li><a class="header-link" href=""><img class="header-media__ico"
+                                    src="{% static 'tomiko/img/icons/Telegabutton.svg' %}" alt="Telega"></a></li>
+                        <li><a class="header-link" href=""><img class="header-media__ico"
+                                    src="{% static 'tomiko/img/icons/Whatsbutton.svg' %}" alt="Whatsapp"></a></li>
+                    </div>
+                </ul>
+            </div> 
+        </div>
         <div class="header-title">
             <h1 class="header__title">автомобиль вашей мечты здесь</h1>
             <div class="header__phrase">Прозрачное ценообразование с подробным<br> разъяснением затрат на каждом этапе<br></div>
-            <button class="header__btn">Рассчитать стоимость</button>
+            <button id="check__btn-c" class="header__btn">Рассчитать стоимость</button>
+        </div>
+        <div id="popup-cost-c" class="popup-cost">
+            <div class="popup-container-c">
+                <a href="" class="popup__close-c">
+                    <img src="{% static 'tomiko/img/icons/close.png' %}" alt="">
+                </a>
+                <div class="popup__content-c">
+                    <div class="popup-title-c">
+                        <h1>Оставить заявку</h1>
+                        <p>Оставьте заявку и менеджер отправит Вам актуальные варианты<br> автомобилей под Ваши требования 👨‍💻</p>
+                    </div>
+                    <div class="popup-input-name">
+                        <label>
+                            <p>Имя</p>
+                            <input type="text" name="name" placeholder="Введите имя" pattern="^[A-Za-zА-Яа-яЁё\s]+$"
+                                maxlength="20">
+                        </label>
+                        <label>
+                            <p>Телефон</p>
+                            <input type="text" name="phone" placeholder="+7" pattern="^\+?\d*$" maxlength="15">
+                        </label>
+                    </div>
+                    <div class="popup-input-name">
+                        <label>
+                            <p>Уточните свой вопрос</p>
+                            <input type="text" name="question" placeholder="Введите текст сообщения." maxlength="200">
+                        </label>
+                    </div>
+                    <div class="popup-confidence">
+                        <label>
+                            <span>
+                                <input type="checkbox" required>
+                                <p>Согласен с <a
+                                        href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://tomiko-trade.com/static/files/%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0%20%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20tomiko-trade.pdf"
+                                        target="_blank" rel="noopener noreferrer">политикой конфиденциальности</a>.
+                                </p>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="popup-btn-c">
+                        <button type="submit" name="submit">Отправить</button>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="header-feedback">
             <div class="feedback-container">
@@ -79,14 +127,50 @@
                 </div>
                 <div class="header-akcii">
                     <h1 class="akcii__title">Экономия до <span class="red__30">30%</span><br> от рынка авто в наличии</h1>
-                    <button class="header-akcii__btn">Смотреть пример</button>
+                    <button id="check__btn" class="header-akcii__btn">Смотреть пример</button>
+                </div>
+            </div>
+        </div>
+        <div id="popup" class="popup">
+            <div class="popup-container">
+                <div class="popup__content">
+                    <a href="" class="popup__close">
+                        <img src="{% static 'tomiko/img/icons/close.png' %}" alt="">
+                    </a>
+                    <div class="popup__title">
+                        <h1 class="h1-title">Экономия до <span class="red__30">30%</span> от рынка авто в наличии</h1>
+                    </div>
+                    <div class="popup__main">
+                        <div class="img-block-left">
+                            <img src="{% static 'tomiko/img/popupref.png' %}" alt="">
+                            <h1 class="h-title">Привезли мы</h1>
+                        </div>
+                        <div class="img-block-right">
+                            <img src="{% static 'tomiko/img/popupref2.png' %}" alt="">
+                            <h1 class="h-title">В наличии на Дром Авто</h1>
+                        </div>
+                        <div class="price-cont">
+                            <img class="img-price" src="{% static 'tomiko/img/icons/modal_red_arrow.svg' %}" alt="">
+                            <p class="r-price">2 585 000 руб.</p>
+                        </div>
+                    </div>
+                    <div class="popup-footer">
+                        <button id="check__btn-c" class="popup_btn">Получить консультацию</button>
+                        <a href="">
+                            <img class="ico-s" src="{% static 'tomiko/img/icons/Telegabutton.svg' %}" alt="">
+                        </a>
+                        <a href="">
+                            <img class="ico-s" src="{% static 'tomiko/img/icons/Whatsbutton.svg' %}" alt="">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
     <main>
         <div class="slider-container">
-            <h2 class="slider-title">Популярные авто<br><span>из кореи</span><img src="{% static 'tomiko/img/icons/korea.svg' %}" alt=""></h2>
+            <h2 class="slider-title">Популярные авто<br><span>из кореи</span><img src="{% static 'tomiko/img/icons/korea.svg' %}" alt="">
+            </h2>
             
             <div class="swiper">
                 <div class="swiper-wrapper">
@@ -173,24 +257,22 @@
                             <div class="action-button">Оставить заявку</div>
                         </div>
                     </div>
-                    
-                    
-
                 </div>
+                
             </div>
             <div>
-            <!-- Добавляем стрелки -->
+                <!-- Добавляем стрелки -->
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
             </div>
         </div>
-        
+        <!--
         <div class="slider-container">
             <h2 class="slider-title">Популярные авто<br><span>из Китая</span><img src="{% static 'tomiko/img/icons/china.svg' %}" alt=""></h2>
             
             <div class="swiper">
                 <div class="swiper-wrapper">
-                    <!-- Карточка автомобиля -->
+                    
                     <div class="swiper-slide">
                         <div class="car-card">
                             <div class="car-image">
@@ -279,17 +361,19 @@
                 </div>
             </div>
             <div>
-            <!-- Добавляем стрелки -->
+                
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
             </div>
         </div>
+        -->
+        <!--
         <div class="slider-container">
             <h2 class="slider-title">Популярные авто<br><span>из Японии</span><img src="{% static 'tomiko/img/icons/japan.svg' %}" alt=""></h2>
             
             <div class="swiper">
                 <div class="swiper-wrapper">
-                    <!-- Карточка автомобиля -->
+                    <!- Карточка автомобиля 
                     <div class="swiper-slide">
                         <div class="car-card">
                             <div class="car-image">
@@ -378,12 +462,12 @@
                 </div>
             </div>
             <div>
-            <!-- Добавляем стрелки -->
+            
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
             </div>
         </div>
-        
+        -->
         <!--Карусель брендов-->
         <div class="logo-brands">
             <div class="logo-carousel">
@@ -503,7 +587,7 @@
                 </div>
                 
                 <div class="stage-btn">
-                    <button name="button" class="btn-s">Получить консультацию</button>
+                    <button id="check__btn-c" name="button" class="btn-s">Получить консультацию</button>
                     <div class="r-1"></div><img class="ico-s" src="{% static 'tomiko/img/icons/Whatsbutton.svg' %}" alt="whatsapp">
                 </div>
                 
@@ -616,6 +700,7 @@
             </div>
         </div>
     </main>
+    <!-- Подвал
     <footer>
         <div class="footer">
             <div class="footer-container">
@@ -656,9 +741,12 @@
             </div>
         </div>
     </footer>    
-          
+    -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="{% static 'tomiko/js/slider.js' %}"></script>
+    <script src="{% static 'tomiko/js/checkPopup.js' %}"></script>
+    <script src="{% static 'tomiko/js/checkPopupCost.js' %}"></script>
+    
    
 </body>
 </html>
