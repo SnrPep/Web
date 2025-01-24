@@ -12,7 +12,7 @@ body {
 }
 
 .about-us {
-    margin: 0 4.375rem 0 4.375rem;
+    margin: 0 4.375rem 0 8.75rem;
     display: grid;
     height: fit-content;
 }
@@ -20,6 +20,9 @@ body {
 .about-block{
     max-height: 600px;
     display: flex;
+    flex-direction: row; /* Располагаем элементы в строку */
+    gap: 40px; /* Расстояние между текстом и изображением */
+    align-items: center; /* Выравнивание по центру по вертикали */
 }
 
 .title{
@@ -43,12 +46,12 @@ body {
         letter-spacing: 1px;
 }
 .about-logo{
-    max-width: 955px;
-    max-height: 308px;
+    margin-left: auto;
 }
 
 .about-img{
-    margin-left: 250px;
+    max-width: 100%;
+    height: auto;
     border-radius: 30px;
 }
 
