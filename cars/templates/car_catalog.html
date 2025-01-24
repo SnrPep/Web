@@ -68,6 +68,8 @@
     <ul>
         {% for car in filter.qs %}
             <li>
+                <img src="{{ car.random_image }}" alt="{{ car.random_image }}" width="200">
+                <br>
                 {{ car.brand_country.brand }} {{ car.make }} {{ car.model }} ({{ car.year }}) — {{ car.price }} ₽
                 <br>Страна бренда: {{ car.brand_country.country }}
                 <br>Пробег: {{ car.mileage }} км, Цвет: {{ car.color }}, КПП: {{ car.transmission }}

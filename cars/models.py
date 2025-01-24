@@ -100,6 +100,7 @@ class Cars(models.Model):
     color = models.CharField(max_length=50)
     power_volume = models.CharField(max_length=50)
     brand_country = models.ForeignKey(Brands, on_delete=models.CASCADE, related_name="cars")
+    # image = models.ImageField(upload_to='Tomiko Trade Photos/', blank=True, null=True)
 
     class Meta:
         verbose_name = 'Автомобиль'
