@@ -23,6 +23,11 @@ body {
     font-size: 16px;
 }
 
+.header__items, .td-info, .header-link, .header-media, .header-number {
+    position: relative;
+    z-index: 1001; /* Увеличиваем z-index, чтобы текст был поверх ::before */
+}
+
 .header-media{
     color: white;
     list-style-type: none;
@@ -37,14 +42,15 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    height: 20px; /* Размер верхнего пространства */
+    height: 105px; /* Размер верхнего пространства */
     background: var(--main-bg-color);
     z-index: 999; /* Чтобы быть ниже содержимого хедера */
 }
 
 .header{
-    margin: 20px auto auto auto;
+    margin: 20px 8.75rem 0 8.75rem;
     max-width: 1703px;
+    max-height: 120px;
 }
 
 .header-info {

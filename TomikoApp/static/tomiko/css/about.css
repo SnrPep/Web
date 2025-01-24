@@ -37,7 +37,6 @@ body {
 .about-p{
     color: #fff;
         font-family: "Inter", serif;
-
         font-weight: 400;
         font-size: 18px;
         line-height: 27px;
@@ -84,12 +83,39 @@ body {
 }
 
 .what-about{
-
     position: absolute;
     transform: scale(2);
 }
 
-.width-about{
-    width: 1703px;
+.features {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--main-bg-color); /* Основной фон */
+    color: white;
+    padding: 20px;
+    max-width: 1700px;
+    border-top: solid 1px #FFFFFF29;
+    margin: 20px 4.375rem 0 4.375rem;
+}
 
+.feature {
+    text-align: center;
+    max-width: 200px;
+}
+
+.feature-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #D51117; /* Красный цвет для акцентов */
+}
+
+.feature-icon {
+    font-size: 2rem;
+}
+
+.feature p {
+    margin-top: 10px;
+    font-size: 1rem;
+    line-height: 1.5;
 }

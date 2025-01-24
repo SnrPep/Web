@@ -229,7 +229,7 @@
                     <div class="card">
                         <h3>{{ car.brand_country.brand }} {{ car.model }}</h3>
                         <p>{{ car.year }} - {{ car.mileage }} км - {{ car.engine_volume }}</p>
-                        <img src="{% static 'tomiko/img/sliderImg/car1.png' %}" alt="Car Image">
+                        <img src="{{ car.random_image }}" alt="{{ car.random_image }}" height="234">
                         <div class="actions">
                             <span class="price">{{ car.price }} ₽</span>
                             <button>Оставить заявку</button>
