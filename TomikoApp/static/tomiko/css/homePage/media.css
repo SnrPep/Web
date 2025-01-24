@@ -1,0 +1,26 @@
+.media{
+    margin: 100px auto auto auto;
+        max-width: 1703px;
+        align-items: center;
+        justify-content: center;
+}
+
+.media-title{
+    
+    font-size: 30px;
+        font-family: "Montserrat", serif;
+        font-weight: 700;
+        font-style: normal;
+        text-transform: uppercase;
+        display: flex;
+}
+
+.media-img{
+    
+    transform: scale(2);
+}
+
+.media-img-bg{
+    margin: 50px;
+    width: 1703px;
+}

@@ -1,0 +1,115 @@
+
+
+/* Стили контейнера */
+.slider-container {
+    
+    color: white;
+    margin: 0 auto auto auto;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 1703px;
+}
+
+.slider-title {
+    /*margin-left: 1400px;*/
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.swiper {
+    width: 100%;
+    height: auto;
+}
+
+.swiper-slide {
+    background: #1B2737;
+    overflow: hidden;
+    border-radius: 8px;
+    width: 100%;
+    width: 100%;
+    width: 100%;
+        height: 300px;
+        /* Высота контейнера для всех изображений */
+        object-fit: cover;
+        display: block;
+}
+
+.car-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 300px;
+    /* Высота контейнера для всех изображений */
+    object-fit: cover;
+    display: block;
+}
+
+.car-image img {
+    
+    width: 100%;
+    border-bottom: 2px solid #314253;
+}
+
+.car-info {
+    padding: 15px;
+}
+
+.car-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.car-details {
+    font-size: 14px;
+    color: #8899A6;
+}
+
+.car-price {
+    font-size: 18px;
+    color: #F5A623;
+    margin: 5px 0;
+}
+
+.action-button {
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+    background: #FF4757;
+    color: #ffffff;
+    text-transform: uppercase;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.action-button:hover {
+    background: #FF6B81;
+}
+.swiper-button-next::after, .swiper-button-prev::after {
+    font-size: 20px;           /* Размер стрелки (если используем текст или иконки) */
+    content: '';               /* Очистим стандартные символы */
+}
+.swiper-button-next{
+    content: '→';
+}
+
+.swiper-button-prev{
+    content: '←';
+}
+
+.swiper-slide.big {
+  transform: scale(1.2);
+  height: 500px;
+  z-index: 10;
+  border: 2px solid #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: all  ease-in-out;
+}

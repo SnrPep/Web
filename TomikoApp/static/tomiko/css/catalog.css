@@ -93,6 +93,52 @@ body {
     height: 80px;
 }
 
+/*Фильтры*/
+.filters {
+    background-color: #011224;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.filter .row {
+    display: flex;
+    gap: 15px;
+    margin: 0 100px;
+}
+
+.filters select {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #132640;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+}
+
+.filters button {
+    font-weight: bold;
+    align-self: flex-start;
+    background-color: #1a2939;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filters button:hover {
+    background-color: #296b9b;
+}
+
 /*Тут каталог*/
 /*Верхние кнопочки*/
 .menu {
@@ -248,6 +294,7 @@ body {
 .pagination button:hover {
     background-color: #03395f;
 }
+
 
 /*Контакты*/
 .contacts {

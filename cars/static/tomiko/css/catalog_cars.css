@@ -1,0 +1,322 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Контейнеры с одинаковыми отступами */
+.container, .catalog-routing, .midle, .filters, .menu, .pagination, .contacts, .catalog-title {
+    margin: 0 4.375rem 0 4.375rem; /* одинаковые отступы по бокам */
+}
+
+body {
+    font-family: Bebas Neue, sans-serif;
+    margin-top: 9rem;
+    padding: 0;
+    background-color: var(--main-bg-color);
+}
+
+.media__text{
+    margin-top: 0.3125rem;
+    margin-right: 1.5rem;
+}
+
+.midle {
+    display: grid;
+}
+
+.catalog-routing {
+    padding-top: 1.875rem;
+    font-family: Inter;
+    font-size: 0.875rem;
+    color: #FFFFFF80;
+    font-weight: 400;
+    line-height: 1.0625rem;
+}
+
+.catalog-routing a {
+    font-size: 0.875rem;
+    color: #FFFFFF80;
+    text-decoration: none;
+}
+
+.catalog-title {
+    font-family: Bebas-Neue, Arial, sans-serif;
+    padding-top: 2.5rem;
+    padding-bottom: 1.5rem;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 2.5rem;
+    color: #fff;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+/* Фильтры */
+.filters .row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Три колонки */
+    gap: 10px 20px; /* Расстояние между элементами */
+}
+
+.filters .row select {
+    background-color: #20344a; /* Темный фон */
+    color: #fff; /* Белый текст */
+    border: none; /* Убираем рамки */
+    border-radius: 1.25rem; /* Закругленные углы */
+    padding: 0.625rem 1rem; /* Внутренние отступы */
+    font-size: 0.875rem; /* Размер шрифта */
+    text-align: left; /* Текст слева */
+    cursor: pointer; /* Курсор руки при наведении */
+    height: 50px;
+    width: 100%;
+}
+
+.filters .row select:hover {
+    background-color: #20344a; /* Цвет при наведении */
+}
+
+.filters {
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение */
+    gap: 1.5rem; /* Расстояние между строками */
+    margin-bottom: 20px;
+    background-color: #081e36; /* Фон контейнера фильтров */
+    padding: 1.25rem; /* Внутренние отступы */
+    border-radius: 30px; /* Закругленные углы */
+}
+
+.filters .double-select {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filters .double-select-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Две колонки */
+    gap: 0; /* Расстояние между "от" и "до" */
+}
+
+.filters .double-select-inner select {
+    background-color: #20344a;
+    color: #fff;
+    border: none;
+    border-radius: 1.25rem;
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+.filters .double-select-inner select:first-child {
+    border-radius: 1.25rem 0 0 1.25rem;
+    border-right: solid 1px #FFFFFF29;
+}
+
+.filters .double-select-inner select:last-child {
+    border-radius: 0 1.25rem 1.25rem 0;
+}
+
+.filters .double-select-inner select:hover {
+    background-color: #2a3d56;
+}
+
+.filters .buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.filters button {
+    font-weight: bold;
+    align-self: flex-start;
+    background-color: #20344a;
+    color: white;
+    border: none;
+    padding: 0.625rem 1.25rem;
+    border-radius: 1.875rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filters button:hover {
+    background-color: #bf0000;
+}
+
+.filters a {
+    color: #bf0000;
+}
+
+/* Меню */
+.menu {
+    display: flex;
+    gap: 0.9375rem;
+    margin-top: 40px;
+}
+
+.menu .dropdown select {
+    background-color: #1a2939;
+    color: white;
+    border: none;
+    padding: 0.625rem 1.25rem;
+    border-radius: 1.25rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.menu button {
+    background-color: #1a2939;
+    color: white;
+    border: none;
+    padding: 0.625rem 1.25rem;
+    border-radius: 1.875rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.menu button:hover {
+    background-color: #bf0000;
+}
+
+/* Каталог */
+.container {
+    width: 100%;
+}
+
+.catalog {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    margin-top: 20px;
+    margin-right: 8.75rem;
+}
+
+.card {
+    background: #081E36;
+    padding: 16px;
+    border-radius: 24px;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card img {
+    margin: 1rem auto;
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.card h3 {
+    color: #FFFFFF;
+    margin: auto 0;
+    font-size: 1.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.card p {
+    margin: 0.5rem 0;
+    color: gray;
+    font-size: 0.875rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.card .price {
+    margin: 8px 0;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: 'Bebas Neue', sans-serif;
+}
+.card .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+.card button {
+    padding: 10px 20px;
+    background-color: #20344a;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+    width: auto;
+}
+.card button:hover {
+    background-color: #D51117;
+}
+
+
+/* Пагинация */
+.pagination {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    background-color: #1a2939;
+    width: fit-content;
+    height: 39px;
+    margin: 20px 4.375rem 20px auto;
+    gap: 0.3125rem;
+    border-radius: 30px;
+    padding: 0 5px;
+}
+
+.pagination button {
+    background-color: #1a2939;
+    color: white;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 1.875rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagination button.active {
+    background-color: #e60000;
+    font-weight: bold;
+}
+
+.pagination button:hover {
+    background-color: #03395f;
+}
+
+.subscribe {
+    justify-content: center;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 1024px) {
+    .filters {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .catalog {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .catalog {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .filters {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .catalog {
+        grid-template-columns: 1fr;
+    }
+}

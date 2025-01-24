@@ -6,70 +6,747 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная Станица</title>
-    <link rel="stylesheet" href="{% static 'tomiko/css/home.css' %}">
-    <link rel="stylesheet" href="{% static 'tomiko/css/var.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/homePage/header.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/homePage/slider.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/homePage/var.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/homePage/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/homePage/brands.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/homePage/stage.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/homePage/media.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="{% static 'tomiko/css/homePage/about.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/homePage/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/homePage/popup.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/homePage/popup-cost.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <!-- Подключаем Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 
 <body>
-    <img src="{% static 'tomiko/img/bgImage.svg' %}" class="bg-logo" alt="">
+    
     <header class="header">
-        <div class="header-info">
-            <table class="table-info">
-                <thead>
-                    <tr class="header-info__logo header__text">
-                        <td class="td-info"><a href=""><img class= header-logo__ico src="{% static 'tomiko/img/logo.svg' %}" alt=""></a></td>
-                    </tr>
-                    <tr class="header__items">
-                        <td class="td-info">
-                            <a class="header-link" href="">Авто из Кореи</a>
-                            <a class="header-link" href="">Авто из Кореи</a>
-                            <a class="header-link" href="">Авто из Китая</a>
-                            <a class="header-link" href="">Авто из Японии</a>
-                            <a class="header-link" href="">Контакты</a>
-                        </td>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-        <div class="header-media">
-            <table class="table-media">
-                <thead>
-                    <tr class="media__text">
-                        <td class="td-media"><a class="header-media" href="">8 (800) 500-49-46</a></td>
-                    </tr>
-                    <tr class="header__links">
-                        <td class="td-media">
-                            <a class="header-media " href=""><img class="header-media__ico" src="{% static 'tomiko/img/icons/Telegabutton.svg' %}" alt="Telega"></a>
-                            <a class="header-media" href=""><img class="header-media__ico" src="{% static 'tomiko/img/icons/Whatsbutton.svg' %}" alt="Whatsapp"></a>
-                        </td>
-                    </tr>
-                </thead>
-            </table>
+        <img src="{% static 'tomiko/img/bgImage.png' %}" class="bg-logo" alt="">
+        <img src="{% static 'tomiko/img/smoke.png' %}" class="bg-logo2" alt="">
+        <div class="header-line">
+            <div class="header__nav">
+                <ul class="info-list">
+                    <li><a href="header-img"><img class="header-logo__ico header-link link-li" src="{% static 'tomiko/img/logo.svg' %}"
+                                alt=""></a></li>
+                    <li><a class="header-link link-li" href="">Авто из Кореи</a></li>
+                    <li><a class="header-link link-li" href="">Авто из Китая</a></li>
+                    <li><a class="header-link link-li" href="">Авто из Японии</a></li>
+                    <li><a class="header-link link-li" href="">Контакты</a></li>
+                    <!-- Элементы, которые нужно прижать к правому краю -->
+                    <div class="header-media-container">
+                        <li><a class="header-link header-number" href="">8 (800) 500-49-46</a></li>
+                        <li><a class="header-link" href=""><img class="header-media__ico"
+                                    src="{% static 'tomiko/img/icons/Telegabutton.svg' %}" alt="Telega"></a></li>
+                        <li><a class="header-link" href=""><img class="header-media__ico"
+                                    src="{% static 'tomiko/img/icons/Whatsbutton.svg' %}" alt="Whatsapp"></a></li>
+                    </div>
+                </ul>
+            </div> 
         </div>
         <div class="header-title">
             <h1 class="header__title">автомобиль вашей мечты здесь</h1>
-            <div class="header__phrase">Прозрачное ценообразование с подробным разъяснением затрат на каждом этапе</div>
-            <button class="header__btn">Рассчитать стоимость</button>
+            <div class="header__phrase">Прозрачное ценообразование с подробным<br> разъяснением затрат на каждом этапе<br></div>
+            <button id="check__btn-c" class="header__btn">Рассчитать стоимость</button>
         </div>
-
-        <!--<div class="header-feedback">
-            <span class="header-feedback-item">5+</span>
-            <p class="header-feedback-item">Лет на рынке</p>
-            <span class="header-feedback-item ">4000 +</span>
-            <p class="header-feedback-item ">довольных клиентов</p>
-            <span class="header-feedback-item"><img src="{% static 'tomiko/img/icons/strar.png' %}" alt="grade">4.9</span>
-        </div>
-        <div class="header-discount">
-            <div class="discount-container">
-                <h1 class="discount__title">Экономия до <p class="discount__title-proc">30%</p> от рынка авто в наличии</h1><hr>
-                <button type="button" class="discount__btn" >Смотреть пример</button>
+        <div id="popup-cost-c" class="popup-cost">
+            <div class="popup-container-c">
+                <a href="" class="popup__close-c">
+                    <img src="{% static 'tomiko/img/icons/close.png' %}" alt="">
+                </a>
+                <div class="popup__content-c">
+                    <div class="popup-title-c">
+                        <h1>Оставить заявку</h1>
+                        <p>Оставьте заявку и менеджер отправит Вам актуальные варианты<br> автомобилей под Ваши требования 👨‍💻</p>
+                    </div>
+                    <div class="popup-input-name">
+                        <label>
+                            <p>Имя</p>
+                            <input type="text" name="name" placeholder="Введите имя" pattern="^[A-Za-zА-Яа-яЁё\s]+$"
+                                maxlength="20">
+                        </label>
+                        <label>
+                            <p>Телефон</p>
+                            <input type="text" name="phone" placeholder="+7" pattern="^\+?\d*$" maxlength="15">
+                        </label>
+                    </div>
+                    <div class="popup-input-name">
+                        <label>
+                            <p>Уточните свой вопрос</p>
+                            <input type="text" name="question" placeholder="Введите текст сообщения." maxlength="200">
+                        </label>
+                    </div>
+                    <div class="popup-confidence">
+                        <label>
+                            <span>
+                                <input type="checkbox" required>
+                                <p>Согласен с <a
+                                        href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://tomiko-trade.com/static/files/%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0%20%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20tomiko-trade.pdf"
+                                        target="_blank" rel="noopener noreferrer">политикой конфиденциальности</a>.
+                                </p>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="popup-btn-c">
+                        <button type="submit" name="submit">Отправить</button>
+                    </div>
+                </div>
             </div>
-        </div>-->
+        </div>
+        <div class="header-feedback">
+            <div class="feedback-container">
+                <div class="container-blocks">
+                    <div class="block-1 fblock">
+                        5+
+                        <p class="paraphras-block">
+                            Лет на рынке
+                        </p>
+                    </div>
+                    <div class="block-2 fblock">
+                        4 000 +
+                        <p class="paraphras-block">
+                            довольных клиентов
+                        </p>
+                    </div>
+                    <div class="block-3 fblock">
+                        <img src="{% static 'tomiko/img/icons/strar.png' %}" alt="">
+                        <span class="fblock">4.9</span>
+                    </div>
+                </div>
+                <div class="header-akcii">
+                    <h1 class="akcii__title">Экономия до <span class="red__30">30%</span><br> от рынка авто в наличии</h1>
+                    <button id="check__btn" class="header-akcii__btn">Смотреть пример</button>
+                </div>
+            </div>
+        </div>
+        <div id="popup" class="popup">
+            <div class="popup-container">
+                <div class="popup__content">
+                    <a href="" class="popup__close">
+                        <img src="{% static 'tomiko/img/icons/close.png' %}" alt="">
+                    </a>
+                    <div class="popup__title">
+                        <h1 class="h1-title">Экономия до <span class="red__30">30%</span> от рынка авто в наличии</h1>
+                    </div>
+                    <div class="popup__main">
+                        <div class="img-block-left">
+                            <img src="{% static 'tomiko/img/popupref.png' %}" alt="">
+                            <h1 class="h-title">Привезли мы</h1>
+                        </div>
+                        <div class="img-block-right">
+                            <img src="{% static 'tomiko/img/popupref2.png' %}" alt="">
+                            <h1 class="h-title">В наличии на Дром Авто</h1>
+                        </div>
+                        <div class="price-cont">
+                            <img class="img-price" src="{% static 'tomiko/img/icons/modal_red_arrow.svg' %}" alt="">
+                            <p class="r-price">2 585 000 руб.</p>
+                        </div>
+                    </div>
+                    <div class="popup-footer">
+                        <button id="check__btn-c" class="popup_btn">Получить консультацию</button>
+                        <a href="">
+                            <img class="ico-s" src="{% static 'tomiko/img/icons/Telegabutton.svg' %}" alt="">
+                        </a>
+                        <a href="">
+                            <img class="ico-s" src="{% static 'tomiko/img/icons/Whatsbutton.svg' %}" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
-</body>
+    <main>
+        <div class="slider-container">
+            <h2 class="slider-title">Популярные авто<br><span>из кореи</span><img src="{% static 'tomiko/img/icons/korea.svg' %}" alt="">
+            </h2>
+            
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <!-- Карточка автомобиля -->
+                    <div class="swiper-slide">
+                        <div class="car-card">
+                            <div class="car-image">
+                                <img src="{% static 'tomiko/img/sliderImg/car1.png' %}" alt="Ssangyong All New Rexton">
+                            </div>
+                            <div class="car-info">
+                                <p class="car-title">Ssangyong All New Rexton</p>
+                                <p class="car-details">2020 - 100 000 км - 2.2 л</p>
+                                <p class="car-price">3 360 000 ₽</p>
+                                <div class="action-button">Оставить заявку</div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="swiper-slide">
+                        <div class="car-card">
+                            <div class="car-image">
+                                <img src="{% static 'tomiko/img/sliderImg/car2.png' %}" alt="Hyundai Santa Fe">
+                            </div>
+                            <div class="car-info">
+                                <p class="car-title">Hyundai Santa Fe</p>
+                                <p class="car-details">2020 - 54 101 км - 2.2 л</p>
+                                <p class="car-price">2 970 000 ₽</p>
+                                <div class="action-button">Оставить заявку</div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="swiper-slide">
+                        <div class="car-card">
+                            <div class="car-image">
+                                <img src="{% static 'tomiko/img/sliderImg/car3.png' %}" alt="Geely Monjaro">
+                            </div>
+                            <div class="car-info">
+                                <p class="car-title">Geely Monjaro</p>
+                                <p class="car-details">2021 - 12 000 км - 2.0 л</p>
+                                <p class="car-price">2 846 000 ₽</p>
+                                <div class="action-button">Оставить заявку</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="car-card">
+                            <div class="car-image">
+                                <img src="{% static 'tomiko/img/sliderImg/car3.png' %}" alt="Geely Monjaro">
+                            </div>
+                            <div class="car-info">
+                                <p class="car-title">Geely Monjaro</p>
+                                <p class="car-details">2021 - 12 000 км - 2.0 л</p>
+                                <p class="car-price">2 846 000 ₽</p>
+                                <div class="action-button">Оставить заявку</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="car-card">
+                            <div class="car-image">
+                                <img src="{% static 'tomiko/img/sliderImg/car1.png' %}" alt="Ssangyong All New Rexton">
+                            </div>
+                            <div class="car-info">
+                                <p class="car-title">Ssangyong All New Rexton</p>
+                                <p class="car-details">2020 - 100 000 км - 2.2 л</p>
+                                <p class="car-price">3 360 000 ₽</p>
+                                <div class="action-button">Оставить заявку</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="car-card">
+                            <div class="car-image">
+                                <img src="{% static 'tomiko/img/sliderImg/car4.png' %}" alt="Kia Sportage">
+                            </div>
+                        <div class="car-info">
+                                <p class="car-title">Kia Sportage</p>
+                                <p class="car-details">2022 - 43 064 км - 1.6 л</p>
+                                <p class="car-price">2 820 000 ₽</p>
+                            <div class="action-button">Оставить заявку</div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div>
+                <!-- Добавляем стрелки -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+        <!--
+        <div class="slider-container">
+            <h2 class="slider-title">Популярные авто<br><span>из Китая</span><img src="{% static 'tomiko/img/icons/china.svg' %}" alt=""></h2>
+            
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    
+                    <div class="swiper-slide">
+                        <div class="car-card">
+                            <div class="car-image">
+                                <img src="{% static 'tomiko/img/sliderImg/car1.png' %}" alt="Ssangyong All New Rexton">
+                            </div>
+                            <div class="car-info">
+                                <p class="car-title">Ssangyong All New Rexton</p>
+                                <p class="car-details">2020 - 100 000 км - 2.2 л</p>
+                                <p class="car-price">3 360 000 ₽</p>
+                                <div class="action-button">Оставить заявку</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="car-card">
+                            <div class="car-image">
+                                <img src="{% static 'tomiko/img/sliderImg/car2.png' %}" alt="Hyundai Santa Fe">
+                            </div>
+                            <div class="car-info">
+                                <p class="car-title">Hyundai Santa Fe</p>
+                                <p class="car-details">2020 - 54 101 км - 2.2 л</p>
+                                <p class="car-price">2 970 000 ₽</p>
+                                <div class="action-button">Оставить заявку</div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="swiper-slide">
+                        <div class="car-card">
+                            <div class="car-image">
+                                <img src="{% static 'tomiko/img/sliderImg/car3.png' %}" alt="Geely Monjaro">
+                            </div>
+                            <div class="car-info">
+                                <p class="car-title">Geely Monjaro</p>
+                                <p class="car-details">2021 - 12 000 км - 2.0 л</p>
+                                <p class="car-price">2 846 000 ₽</p>
+                                <div class="action-button">Оставить заявку</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="car-card">
+                            <div class="car-image">
+                                <img src="{% static 'tomiko/img/sliderImg/car3.png' %}" alt="Geely Monjaro">
+                            </div>
+                            <div class="car-info">
+                                <p class="car-title">Geely Monjaro</p>
+                                <p class="car-details">2021 - 12 000 км - 2.0 л</p>
+                                <p class="car-price">2 846 000 ₽</p>
+                                <div class="action-button">Оставить заявку</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="car-card">
+                            <div class="car-image">
+                                <img src="{% static 'tomiko/img/sliderImg/car1.png' %}" alt="Ssangyong All New Rexton">
+                            </div>
+                            <div class="car-info">
+                                <p class="car-title">Ssangyong All New Rexton</p>
+                                <p class="car-details">2020 - 100 000 км - 2.2 л</p>
+                                <p class="car-price">3 360 000 ₽</p>
+                                <div class="action-button">Оставить заявку</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="car-card">
+                            <div class="car-image">
+                                <img src="{% static 'tomiko/img/sliderImg/car4.png' %}" alt="Kia Sportage">
+                            </div>
+                        <div class="car-info">
+                                <p class="car-title">Kia Sportage</p>
+                                <p class="car-details">2022 - 43 064 км - 1.6 л</p>
+                                <p class="car-price">2 820 000 ₽</p>
+                            <div class="action-button">Оставить заявку</div>
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+            </div>
+            <div>
+                
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+        -->
+        <!--
+        <div class="slider-container">
+            <h2 class="slider-title">Популярные авто<br><span>из Японии</span><img src="{% static 'tomiko/img/icons/japan.svg' %}" alt=""></h2>
+            
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <!- Карточка автомобиля 
+                    <div class="swiper-slide">
+                        <div class="car-card">
+                            <div class="car-image">
+                                <img src="{% static 'tomiko/img/sliderImg/car1.png' %}" alt="Ssangyong All New Rexton">
+                            </div>
+                            <div class="car-info">
+                                <p class="car-title">Ssangyong All New Rexton</p>
+                                <p class="car-details">2020 - 100 000 км - 2.2 л</p>
+                                <p class="car-price">3 360 000 ₽</p>
+                                <div class="action-button">Оставить заявку</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="car-card">
+                            <div class="car-image">
+                                <img src="{% static 'tomiko/img/sliderImg/car2.png' %}" alt="Hyundai Santa Fe">
+                            </div>
+                            <div class="car-info">
+                                <p class="car-title">Hyundai Santa Fe</p>
+                                <p class="car-details">2020 - 54 101 км - 2.2 л</p>
+                                <p class="car-price">2 970 000 ₽</p>
+                                <div class="action-button">Оставить заявку</div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="swiper-slide">
+                        <div class="car-card">
+                            <div class="car-image">
+                                <img src="{% static 'tomiko/img/sliderImg/car3.png' %}" alt="Geely Monjaro">
+                            </div>
+                            <div class="car-info">
+                                <p class="car-title">Geely Monjaro</p>
+                                <p class="car-details">2021 - 12 000 км - 2.0 л</p>
+                                <p class="car-price">2 846 000 ₽</p>
+                                <div class="action-button">Оставить заявку</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="car-card">
+                            <div class="car-image">
+                                <img src="{% static 'tomiko/img/sliderImg/car3.png' %}" alt="Geely Monjaro">
+                            </div>
+                            <div class="car-info">
+                                <p class="car-title">Geely Monjaro</p>
+                                <p class="car-details">2021 - 12 000 км - 2.0 л</p>
+                                <p class="car-price">2 846 000 ₽</p>
+                                <div class="action-button">Оставить заявку</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="car-card">
+                            <div class="car-image">
+                                <img src="{% static 'tomiko/img/sliderImg/car1.png' %}" alt="Ssangyong All New Rexton">
+                            </div>
+                            <div class="car-info">
+                                <p class="car-title">Ssangyong All New Rexton</p>
+                                <p class="car-details">2020 - 100 000 км - 2.2 л</p>
+                                <p class="car-price">3 360 000 ₽</p>
+                                <div class="action-button">Оставить заявку</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="car-card">
+                            <div class="car-image">
+                                <img src="{% static 'tomiko/img/sliderImg/car4.png' %}" alt="Kia Sportage">
+                            </div>
+                        <div class="car-info">
+                                <p class="car-title">Kia Sportage</p>
+                                <p class="car-details">2022 - 43 064 км - 1.6 л</p>
+                                <p class="car-price">2 820 000 ₽</p>
+                            <div class="action-button">Оставить заявку</div>
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+            </div>
+            <div>
+            
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+        -->
+        <!--Карусель брендов-->
+        <div class="logo-brands">
+            <div class="logo-carousel">
+                <div class="marquee">
+                    <button class="brand">
+                        <img src="{% static 'tomiko/img/logoBrands/logoBMV.svg' %}" alt="">
+                    </button>
+                    <button class="brand">
+                        <img src="{% static 'tomiko/img/logoBrands/logoToyota.svg' %}" alt="">
+                    </button>
+                    <button class="brand">
+                        <img src="{% static 'tomiko/img/logoBrands/logoAudi.svg' %}" alt="">
+                    </button>
+                    <button class="brand">
+                        <img src="{% static 'tomiko/img/logoBrands/logoKi.svg' %}" alt="">
+                    </button>
+                    <button class="brand">
+                        <img src="{% static 'tomiko/img/logoBrands/logoMerc.svg' %}" alt="">
+                    </button>
+                    <button class="brand">
+                        <img src="{% static 'tomiko/img/logoBrands/logoHyndai.svg' %}" alt="">
+                    </button>
+                    <button class="brand">
+                        <img src="{% static 'tomiko/img/logoBrands/logoChery.svg' %}" alt="">
+                    </button>
+                    <button class="brand">
+                        <img src="{% static 'tomiko/img/logoBrands/logoChevrolet.svg' %}" alt="">
+                    </button>
+                    <button class="brand">
+                        <img src="{% static 'tomiko/img/logoBrands/logoCircl.svg' %}" alt="">
+                    </button>
+                    <button class="brand">
+                        <img src="{% static 'tomiko/img/logoBrands/logoHaval.svg' %}" alt="">
+                    </button>
+                    <button class="brand">
+                        <img src="{% static 'tomiko/img/logoBrands/logoJac.svg' %}" alt="">
+                    </button>
+                    <button class="brand">
+                        <img src="{% static 'tomiko/img/logoBrands/logoDaewoo.svg' %}" alt="">
+                    </button>
+                    <button class="brand">
+                        <img src="{% static 'tomiko/img/logoBrands/logo1.svg' %}" alt="">
+                    </button>
+                </div>
+                
+            </div>
+        </div>
+        <div class="stage-container">
+            <img src="{% static 'tomiko/img/bg-img-stage.png' %}" alt="" class="stage-img">
+            <div class="stage_block">
+                <div class="stage-title">
+                    <h1 class="h-info"><span class="red">Этапы</span><span class="white">работы</span> </h1>
+                    <p class="p-info">Прозрачное ценообразование с подробным<br> разъяснением затрат на каждом этапе</p>
+                </div>
+                <div class="stage-info">
+                    <div class="info-block">
+                        <div class="img-block">
+                            <img src="{% static 'tomiko/img/icons/stage-ico-1.png' %}" alt="">
+                            <img class="line-red" src="{% static 'tomiko/img/red-line.svg' %}" alt="">
+                        </div>
+                        <div>
+                            <h1>
+                                <span class="white f-size">Заявка</span>
+                            </h1>
+                            <p>
+                                <span class="p-size">Оставьте заявку,чтобы получить индивидуальную консультацию</span>
+                            </p>
+                        </div>
+                        
+                    </div>
+                    <div class="info-block">
+                        <div class="img-block">
+                            <img src="{% static 'tomiko/img/icons/stage-ico-2.png' %}" alt="">
+                            <img class="line-red" src="{% static 'tomiko/img/red-line.svg' %}" alt="">
+                        </div>
+                        <div>
+                            <h1>
+                                <span class="white f-size">Подбор авто</span>
+                            </h1>
+                            <p>
+                                <span class="p-size">Подберем автомобиль под ваши критерии</span>
+                            </p>
+                        </div>
+                        
+                    </div>
+                    <div class="info-block">
+                        <div class="img-block">
+                            <img src="{% static 'tomiko/img/icons/stage-ico-3.png' %}" alt="">
+                            <img class="line-red" src="{% static 'tomiko/img/red-line.svg' %}" alt="">
+                        </div>
+                        <div>
+                            <h1>
+                                <span class="white f-size">Оформление</span>
+                            </h1>
+                            <p>
+                                <span class="p-size">Согласуем бюджет и заключим договор на авто</span>
+                            </p>
+                        </div>
+                        
+                    </div>
+                    <div class="info-block">
+                        <div class="img-block ">
+                            <img src="{% static 'tomiko/img/icons/stage-ico-4.png' %}" alt="">
+                            <img class="line-red" src="{% static 'tomiko/img/red-line.svg' %}" alt="">
+                        </div>
+                        <div>
+                            <h1>
+                                <span class="white f-size">Доставка по РФ</span>
+                            </h1>
+                            <p>
+                                <span class="p-size">После доставки в г. Владивосток, мы отправим автомобиль в ваш город</span>
+                            </p>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                
+                <div class="stage-btn">
+                    <button id="check__btn-c" name="button" class="btn-s">Получить консультацию</button>
+                    <div class="r-1"></div><img class="ico-s" src="{% static 'tomiko/img/icons/Whatsbutton.svg' %}" alt="whatsapp">
+                </div>
+                
+            </div>
+        </div>
+        <div class="discount">
+            <div class="reg">
+                <div class="discount-text">
+                    <p class="p-dis">Экономия до
+                        <span class="dis-s">30%</span>
+                        <a href=""><button class="dis-btn"><img class="arrow-d" src="{% static 'tomiko/img/icons/arrow.png' %}" alt=""></button></a>
+                        
+                    </p>
+                    <p>от рынка авто в наличии</p>
+                </div>
+            </div>
+            
+        </div>
+        
+        
+
+        <div class="about-us">
+            <div class="about-block">
+                <div class="titles">
+                    <h1 class="title">
+                        О нас
+                    </h1>
+                    <p claas="about-p"><span  class="about-font">Компания «Правый руль» предлагает широкий выбор автомобилей от ведущих<br> мировых производителей. Мы специализируемся на
+                    продаже новых и<br> подержанных авто. Наша команда профессионалов поможет вам выбрать<br> идеальный автомобиль, учитывая ваши
+                    потребности и бюджет.</span></p>
+                    <div class="btn-about-block">
+                        <button class="about-btn">Получить консультацию</button>
+                        <a href="" target="_blank"><img class="what-about" src="{% static 'tomiko/img/icons/Whatsbutton.svg' %}" alt="whatsapp"></a>
+                    </div>
+                </div>
+                <div class="about-logo">
+                    <img class="about-img" src="{% static 'tomiko/img/about-page.png' %}" alt="">
+                </div>
+            </div>
+            <div class="width-about">
+
+            </div>
+            <div class="about-bg">
+                
+            
+            </div>
+        </div>
+
+        <div class="media">
+            <div class="media-title">
+                <h1>Отзывы <img class="media-img" src="{% static 'tomiko/img/icons/strar.png' %}" alt=""> 4.9</h1>
+            </div>
+            <div class="media-target">
+                <img class="media-img-bg" src="{% static 'tomiko/img/bg-media.png' %}" alt="">
+            </div>
+        
+        <img class="media-img-bg" src="{% static 'tomiko/img/clips-img.png' %}" alt="">
+        <img class="media-img-bg" src="{% static 'tomiko/img/grop.png' %}" alt="">
+        </div>
+        <div class="contact-info">
+            <div class="contact-con">
+                <div class="title-block">
+                    <h1 class="title-info">
+                        Контактная <br>информация <img src="{% static 'tomiko/img/icons/hi.png' %}" alt="">
+                    </h1>
+                    <p>Оставьте свою заявку и наш менеджер<br>
+                         свяжется с Вами для уточнения деталей</p>
+                    <div class="contacts-block">
+                        <p>Звонок по России бесплатный</p>
+                        <h1>8 800 550 48 32</h1>
+
+                        <p>WhatsApp</p>
+                        <h1>+7 (924) 420-24-32</h1>
+
+                        <p>Звонок по России бесплатный</p>
+                        <h1>8 800 550 48 32</h1>
+                        
+                        <p>Офис</p>
+                        <h1>г. Владивосток, ул. Тополевая 6</h1>
+                    </div>     
+                </div>
+                <div class="form-container">
+                    
+                    <div class="form-group">
+                        <div>
+                            Имя
+                        </div>
+                        
+                        <div class="form-column">
+                            
+                            <input type="text" placeholder="Введите имя" />
+                            <input type="tel" value="+7" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            Уточните свой вопрос
+                        </div>
+                        <textarea placeholder="Введите текст сообщения, укажите страну, марку и год машины."></textarea>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="privacy-policy" />
+                        <label for="privacy-policy">С <span>правилами политики конфиденциальности</span> ознакомлен</label>
+                    </div>
+                    <div class="submit-btn">
+                        <button>Отправить</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <!-- Подвал
+    <footer>
+        <div class="footer">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Tomiko Logo">
+                </div>
+                <div class="footer-section">
+                    <div class="footer-title">КАТАЛОГ</div>
+                    <ul class="footer-list">
+                        <li><a href="#">Авто из Кореи</a></li>
+                        <li><a href="#">Авто из Китая</a></li>
+                        <li><a href="#">Авто из Японии</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <div class="footer-title">КОМПАНИЯ</div>
+                    <ul class="footer-list">
+                        <li><a href="#">О компании</a></li>
+                        <li><a href="#">Условия работы</a></li>
+                        <li><a href="#">Акции</a></li>
+                        <li><a href="#">Отзывы</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <div class="footer-title">Звонок по России бесплатный</div>
+                    <div class="footer-phone">8 (800) 775-67-29</div>
+                    <div class="footer-social">
+                        <a href="#">Vk</a>
+                        <a href="#">WhatsApp</a>
+                        <a href="#">Telegram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>© 2023 ООО «автоимпорт-ru.рф». Автомобили под заказ из Кореи, Китая и Японии.</div>
+                <a href="#">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>    
+    -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="{% static 'tomiko/js/slider.js' %}"></script>
+    <script src="{% static 'tomiko/js/checkPopup.js' %}"></script>
+    <script src="{% static 'tomiko/js/checkPopupCost.js' %}"></script>
+    
+   
+</body>
 </html>

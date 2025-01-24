@@ -1,0 +1,64 @@
+.popup-cost {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 4;
+    left: 0;
+    top: 0;
+}
+
+.popup-cost.open {
+    display: flex;
+}
+
+.popup__close-c {
+    position: absolute;
+    right: 30px;
+    top: 7px;
+    cursor: pointer;
+}
+
+.popup-container-c {
+    background-color: #081E36; 
+    padding: 40px;
+    border-radius: 30px; 
+    position: relative; 
+    max-width: 640px; /* Максимальная ширина попапа */
+    max-height: 900px;
+    width: 100%; /* Ширина адаптивная */
+    margin: auto; /* Центрирование */
+    top: 25%; /* Сдвиг вниз на 50% */
+    transform: translateY(-50%); /* Сдвиг вверх на 50% для центрирования */
+}
+.popup-title-c{
+    border-bottom: 1px solid #FFFFFF29;
+}
+
+.popup-input-name{
+    color:#FFFFFF;
+    display: flex;
+    align-items: center;
+    font-family: "Inter", serif;
+        font-size: 16px;
+        font-weight: 400;
+        text-align: start;
+        display: flex;
+        
+        
+}
+
+.popup-input-name, input{
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    width: 100%;
+}
+
+.popup-confidence{
+    display: flex;
+}
+

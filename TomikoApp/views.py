@@ -54,3 +54,6 @@ def politicy(request):
 
 def akcii(request):
     return render(request, 'akcii.html')
+
+def about(request):
+    return render(request, 'about.html')
