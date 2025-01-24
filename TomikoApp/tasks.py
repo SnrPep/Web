@@ -1,43 +1,23 @@
 from celery import shared_task
 from celery import Celery
-from TomikoTradeProject.celery import crawl_spider_BBR, crawl_spider_Yandex, crawl_spider_2Gis, crawl_spider_VK, crawl_spider_VL
+from decimal import Decimal
+from TomikoTradeProject.celery import *
 from cars.models import Cars
 from TomikoTradeProject.celery import app
 import redis
 import json
-import scrapy
-from scrapy.crawler import CrawlerProcess
-from ScrapyParsers.ScrapyParsers.spiders.BBR_Currensy import BbrCurrensySpider
-
 
 redis_client = redis.StrictRedis(host="localhost", port=6379, db=0)
 
 app = Celery('tasks')
 @app.task
-def run_scrapy_BBR():
-    crawl_spider_BBR()
-
-@app.task
-def run_scrapy_Yandex():
-    crawl_spider_Yandex()
-
-@app.task
-def run_scrapy_2Gis():
-    crawl_spider_2Gis()
-
-@app.task
-def run_scrapy_VL():
-    crawl_spider_VL()
-
-@app.task
-def run_scrapy_VK():
-    crawl_spider_VK()
-
+def run_scrapy_all():
+    crawl_spiders()
 
 @shared_task
 def recalculate_prices():
     """
-    Перерасчитывает цены автомобилей: сначала в рубли, затем из рублей в остальные валюты.
+    Перерасчитывает цены автомобилей и добавляет расчёт пошлины.
     """
     # Получаем курсы валют из Redis
     currency_rates = redis_client.get("exchange_rates")
@@ -55,42 +35,99 @@ def recalculate_prices():
     cars = Cars.objects.select_related("brand_country").all()
 
     for car in cars:
-        prices = {}
-        local_price = car.price
+        car_price_rub = car.price
         # Определяем страну бренда и локальную валюту
-        country = car.brand_country.country.lower()
-        if country in ["Китай"]:
-            prices["RUB"] = local_price * currency_rates.get("CNY", 1)  # Юань
-        elif country in ["Япония"]:
-            prices["RUB"] = local_price * currency_rates.get("JPY", 1) # Йена
-        elif country in ["США"]:
-            prices["RUB"] = local_price * currency_rates.get("USD", 1)  # Доллар
-        elif country in ["Европа"]:  # Можно расширить список стран
-            prices["RUB"] = local_price * currency_rates.get("EUR", 1)  # Евро
-        elif country in ["Корея"]:  # Можно расширить список стран
-            prices["RUB"] = local_price * currency_rates.get("CHF", 1) # Вона
+
+        # Расчёт таможенного оформления
+        if car_price_rub <= 200_000:
+            customs_clearance = 775
+        elif car_price_rub <= 450_000:
+            customs_clearance = 1550
+        elif car_price_rub <= 1_200_000:
+            customs_clearance = 3100
+        elif car_price_rub <= 2_700_000:
+            customs_clearance = 8530
+        elif car_price_rub <= 4_200_000:
+            customs_clearance = 12000
+        elif car_price_rub <= 5_500_000:
+            customs_clearance = 15500
+        elif car_price_rub <= 7_000_000:
+            customs_clearance = 20000
+        elif car_price_rub <= 8_000_000:
+            customs_clearance = 23000
+        elif car_price_rub <= 9_000_000:
+            customs_clearance = 25000
+        elif car_price_rub <= 10_000_000:
+            customs_clearance = 27000
         else:
-            prices["RUB"] = local_price
+            customs_clearance = 30000
 
+        # Расчёт единой ставки
+        engine_volume = float(car.engine_volume)
+        age = 2025 - car.year  # Предполагаем текущий год 2025
+        eur_curr = currency_rates["EUR"]
+        if age < 3:
+            if car_price_rub / eur_curr <= 8500:
+                duty_rate = min(0.54 * car_price_rub, 2.5 * engine_volume * eur_curr)
+            elif car_price_rub / eur_curr <= 16700:
+                duty_rate = min(0.48 * car_price_rub, 3.5 * engine_volume * eur_curr)
+            elif car_price_rub / eur_curr <= 42300:
+                duty_rate = min(0.48 * car_price_rub, 5.5 * engine_volume * eur_curr)
+            elif car_price_rub / eur_curr <= 84500:
+                duty_rate = min(0.48 * car_price_rub, 7.5 * engine_volume * eur_curr)
+            elif car_price_rub / eur_curr <= 169000:
+                duty_rate = min(0.48 * car_price_rub, 15 * engine_volume * eur_curr)
+            else:
+                duty_rate = min(0.48 * car_price_rub, 20 * engine_volume * eur_curr)
+        elif 3 <= age <= 5:
+            if engine_volume <= 1000:
+                duty_rate = 1.5 * engine_volume * eur_curr
+            elif engine_volume <= 1500:
+                duty_rate = 1.7 * engine_volume * eur_curr
+            elif engine_volume <= 1800:
+                duty_rate = 2.5 * engine_volume * eur_curr
+            elif engine_volume <= 2300:
+                duty_rate = 2.7 * engine_volume * eur_curr
+            elif engine_volume <= 3000:
+                duty_rate = 3.0 * engine_volume * eur_curr
+            else:
+                duty_rate = 3.6 * engine_volume * eur_curr
+        else:
+            if engine_volume <= 1000:
+                duty_rate = 3.0 * engine_volume * eur_curr
+            elif engine_volume <= 1500:
+                duty_rate = 3.2 * engine_volume * eur_curr
+            elif engine_volume <= 1800:
+                duty_rate = 3.5 * engine_volume * eur_curr
+            elif engine_volume <= 2300:
+                duty_rate = 4.8 * engine_volume * eur_curr
+            elif engine_volume <= 3000:
+                duty_rate = 5.0 * engine_volume * eur_curr
+            else:
+                duty_rate = 5.7 * engine_volume * eur_curr
+        # Расчёт утилизационного сбора
+        if age < 3:
+            utilization_fee = 0.17 * 20000
+        else:
+            utilization_fee = 0.26 * 20000
+        # Итоговая пошлина и итоговая стоимость автомобиля
+        total_duty = customs_clearance + duty_rate + utilization_fee
+        total_price = car_price_rub + total_duty
+        # Запись данных в словарь
         prices = {
-            "RUB": prices["RUB"],
-            "USD": round(prices["RUB"] / currency_rates.get("USD", 1), 2),
-            "EUR": round(prices["RUB"] / currency_rates.get("EUR", 1), 2),
-            "CNY": round(prices["RUB"] / currency_rates.get("CNY", 1), 2),
-            "JPY": round(prices["RUB"] * 100.0 / currency_rates.get("JPY", 1), 2),
-            "CHF": round(prices["RUB"] * 1000.0 / currency_rates.get("CHF", 1), 2),
+            "RUB": total_price,
+            "USD": round(total_price / currency_rates.get("USD", 1), 2),
+            "EUR": round(total_price / currency_rates.get("EUR", 1), 2),
+            "CNY": round(total_price / currency_rates.get("CNY", 1), 2),
+            "JPY": round(total_price * 100.0 / currency_rates.get("JPY", 1), 2),
+            "CHF": round(total_price * 1000.0 / currency_rates.get("CHF", 1), 2),
         }
-        
-        redis_client.ping()
-
         # Сохраняем данные в Redis
         try:
             redis_client.set(
                 f"car_prices:{car.id}",
                 json.dumps(prices)
             )
-            print(f"Успешно сохранены данные для машины {car.id}: {prices}")
+            print(f"Данные для машины {car.id} успешно рассчитаны и сохранены: {prices}")
         except redis.RedisError as e:
-            print(f"Ошибка записи в Redis для машины {car.id}: {e}")
-
-
+            print(f"Ошибка записи данных в Redis для машины {car.id}: {e}")
