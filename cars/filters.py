@@ -40,6 +40,23 @@ class CarFilter(django_filters.FilterSet):
         empty_label="до"
     )
 
+    capacity_from = django_filters.ChoiceFilter(
+        field_name="power_volume",
+        lookup_expr="gte",  # Больше или равно
+        choices=lambda: [(power_volume, power_volume) for power_volume in
+                         Cars.objects.values_list('power_volume', flat=True).distinct().order_by('power_volume')],
+        label="",
+        empty_label="Объем от"
+    )
+    capacity_to = django_filters.ChoiceFilter(
+        field_name="power_volume",
+        lookup_expr="lte",  # Меньше или равно
+        choices=lambda: [(power_volume, power_volume) for power_volume in
+                         Cars.objects.values_list('power_volume', flat=True).distinct().order_by('power_volume')],
+        label="",
+        empty_label="до"
+    )
+
     mileage_from = django_filters.ChoiceFilter(
         field_name="mileage",
         lookup_expr="gte",
@@ -99,7 +116,7 @@ class CarFilter(django_filters.FilterSet):
 
     class Meta:
         model = Cars
-        fields = ['brand', 'model', 'year_from','year_to', 'mileage_from', 'mileage_to', 'color', 'transmission', 'drive']
+        fields = ['brand', 'model', 'year_from','year_to', 'mileage_from', 'mileage_to', 'color', 'transmission', 'drive', 'capacity_from', 'capacity_to']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

@@ -52,37 +52,10 @@ body {
 }
 
 /* Фильтры */
-/*.filters {*/
-/*    background-color: #081e36;*/
-/*    border-radius: 30px;*/
-/*    padding: 1.25rem;*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    gap: 0.75rem;*/
-/*    margin: 0 4.375rem 1.25rem 4.375rem;*/
-/*}*/
-
-/*.filters .row {*/
-/*    display: flex;*/
-/*    gap: 0.75rem;*/
-/*}*/
-
-/*.filters .row select {*/
-/*    flex: 1;*/
-/*    padding: 0.625rem;*/
-/*    font-size: 0.875rem;*/
-/*    background-color: #20344a;*/
-/*    color: white;*/
-/*    border: none;*/
-/*    border-radius: 0.5rem;*/
-/*    outline: none;*/
-/*    cursor: pointer;*/
-/*}*/
-
 .filters .row {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Три колонки */
-    gap: 10px; /* Расстояние между элементами */
+    gap: 10px 20px; /* Расстояние между элементами */
 }
 
 .filters .row select {
@@ -94,6 +67,7 @@ body {
     font-size: 0.875rem; /* Размер шрифта */
     text-align: left; /* Текст слева */
     cursor: pointer; /* Курсор руки при наведении */
+    height: 50px;
     width: 100%;
 }
 
@@ -109,6 +83,47 @@ body {
     background-color: #081e36; /* Фон контейнера фильтров */
     padding: 1.25rem; /* Внутренние отступы */
     border-radius: 30px; /* Закругленные углы */
+}
+
+.filters .double-select {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filters .double-select-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Две колонки */
+    gap: 0; /* Расстояние между "от" и "до" */
+}
+
+.filters .double-select-inner select {
+    background-color: #20344a;
+    color: #fff;
+    border: none;
+    border-radius: 1.25rem;
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+.filters .double-select-inner select:first-child {
+    border-radius: 1.25rem 0 0 1.25rem;
+    border-right: solid 1px #FFFFFF29;
+}
+
+.filters .double-select-inner select:last-child {
+    border-radius: 0 1.25rem 1.25rem 0;
+}
+
+.filters .double-select-inner select:hover {
+    background-color: #2a3d56;
+}
+
+.filters .buttons {
+    display: flex;
+    gap: 20px;
 }
 
 .filters button {
@@ -128,10 +143,15 @@ body {
     background-color: #bf0000;
 }
 
+.filters a {
+    color: #bf0000;
+}
+
 /* Меню */
 .menu {
     display: flex;
     gap: 0.9375rem;
+    margin-top: 40px;
 }
 
 .menu .dropdown select {
@@ -174,8 +194,8 @@ body {
 
 .card {
     background: #081E36;
-    padding: 1rem;
-    border-radius: 0.5rem;
+    padding: 16px;
+    border-radius: 24px;
     box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
@@ -238,8 +258,13 @@ body {
     display: flex;
     justify-content: right;
     align-items: center;
-    margin: 1.25rem 0;
+    background-color: #1a2939;
+    width: fit-content;
+    height: 39px;
+    margin: 20px 4.375rem 20px auto;
     gap: 0.3125rem;
+    border-radius: 30px;
+    padding: 0 5px;
 }
 
 .pagination button {
@@ -264,16 +289,10 @@ body {
 .subscribe {
     justify-content: center;
     text-align: center;
-    margin-top: 50px;
-    width: auto;
-}
-
-footer {
-    text-align: center;
-    background-color: #081E36;
-    color: white;
-    padding: 1rem;
-    font-family: "Inter", sans-serif;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    max-width: 100%;
+    height: auto;
 }
 
 @media (max-width: 1024px) {

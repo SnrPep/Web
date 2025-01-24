@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{% static 'tomiko/css/general/header_gen.css' %}">
     <link rel="stylesheet" href="{% static 'tomiko/css/general/continfo.css' %}">
     <link rel="stylesheet" href="{% static 'tomiko/css/general/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/homePage/slider.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -52,15 +54,161 @@
 
         <form method="get" class="filters">
             <div class="row">
-                {{ filter.form.as_p }}
+                {{ filter.form.brand }}
+                <div class="double-select">
+                    <div class="double-select-inner">
+                        {{ filter.form.year_from }}
+                        {{ filter.form.year_to }}
+                    </div>
+                </div>
+                <div class="double-select">
+                    <div class="double-select-inner">
+                        {{ filter.form.capacity_from }}
+                        {{ filter.form.capacity_to }}
+                    </div>
+                </div>
+                {{ filter.form.drive }}
+                {{ filter.form.model }}
+                <div class="double-select">
+                    <div class="double-select-inner">
+                        {{ filter.form.mileage_from }}
+                        {{ filter.form.mileage_to }}
+                    </div>
+                </div>
+                {{ filter.form.transmission }}
+                {{ filter.form.color }}
             </div>
-{#            {% for key, value in request.GET.items %}#}
-{#                {% if key != "page" %}#}
-{#                    <input type="hidden" name="{{ key }}" value="{{ value }}">#}
-{#                {% endif %}#}
-{#            {% endfor %}#}
-            <button type="submit">Показать</button>
+            <div class="buttons">
+                <button type="submit">Показать</button>
+                {% if request.GET %}
+                    <a href="{% url 'car_list' %}" class="btn-reset">Сбросить фильтры</a>
+                {% endif %}
+            </div>
         </form>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const brandSelect = document.getElementById("id_brand");
+                const modelSelect = document.getElementById("id_model");
+
+                brandSelect.addEventListener("change", function () {
+                    const brandId = brandSelect.value;
+
+                    // Отправляем запрос на сервер, чтобы получить модели
+                    fetch(`/cars/get-models/?brand_id=${brandId}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            // Очищаем предыдущие опции модели
+                            modelSelect.innerHTML = '<option value="">Модель авто</option>';
+
+                            // Добавляем новые модели в выпадающий список
+                            data.models.forEach(function (model) {
+                                const option = document.createElement("option");
+                                option.value = model;
+                                option.textContent = model;
+                                modelSelect.appendChild(option);
+                            });
+                        })
+                        .catch(error => console.error("Ошибка при загрузке моделей:", error));
+                });
+            });
+        </script>
+
+{#         <div class="slider-container">#}
+{#            <h2 class="slider-title">Популярные авто<br><span>из кореи</span><img src="{% static 'tomiko/img/icons/korea.svg' %}" alt=""></h2>#}
+{##}
+{#            <div class="swiper">#}
+{#                <div class="swiper-wrapper">#}
+{#                    <!-- Карточка автомобиля -->#}
+{#                    <div class="swiper-slide">#}
+{#                        <div class="car-card">#}
+{#                            <div class="car-image">#}
+{#                                <img src="{% static 'tomiko/img/sliderImg/car1.png' %}" alt="Ssangyong All New Rexton">#}
+{#                            </div>#}
+{#                            <div class="car-info">#}
+{#                                <p class="car-title">Ssangyong All New Rexton</p>#}
+{#                                <p class="car-details">2020 - 100 000 км - 2.2 л</p>#}
+{#                                <p class="car-price">3 360 000 ₽</p>#}
+{#                                <div class="action-button">Оставить заявку</div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{##}
+{#                    <div class="swiper-slide">#}
+{#                        <div class="car-card">#}
+{#                            <div class="car-image">#}
+{#                                <img src="{% static 'tomiko/img/sliderImg/car2.png' %}" alt="Hyundai Santa Fe">#}
+{#                            </div>#}
+{#                            <div class="car-info">#}
+{#                                <p class="car-title">Hyundai Santa Fe</p>#}
+{#                                <p class="car-details">2020 - 54 101 км - 2.2 л</p>#}
+{#                                <p class="car-price">2 970 000 ₽</p>#}
+{#                                <div class="action-button">Оставить заявку</div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{##}
+{#                    <div class="swiper-slide">#}
+{#                        <div class="car-card">#}
+{#                            <div class="car-image">#}
+{#                                <img src="{% static 'tomiko/img/sliderImg/car3.png' %}" alt="Geely Monjaro">#}
+{#                            </div>#}
+{#                            <div class="car-info">#}
+{#                                <p class="car-title">Geely Monjaro</p>#}
+{#                                <p class="car-details">2021 - 12 000 км - 2.0 л</p>#}
+{#                                <p class="car-price">2 846 000 ₽</p>#}
+{#                                <div class="action-button">Оставить заявку</div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{##}
+{#                    <div class="swiper-slide">#}
+{#                        <div class="car-card">#}
+{#                            <div class="car-image">#}
+{#                                <img src="{% static 'tomiko/img/sliderImg/car3.png' %}" alt="Geely Monjaro">#}
+{#                            </div>#}
+{#                            <div class="car-info">#}
+{#                                <p class="car-title">Geely Monjaro</p>#}
+{#                                <p class="car-details">2021 - 12 000 км - 2.0 л</p>#}
+{#                                <p class="car-price">2 846 000 ₽</p>#}
+{#                                <div class="action-button">Оставить заявку</div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{##}
+{#                    <div class="swiper-slide">#}
+{#                        <div class="car-card">#}
+{#                            <div class="car-image">#}
+{#                                <img src="{% static 'tomiko/img/sliderImg/car1.png' %}" alt="Ssangyong All New Rexton">#}
+{#                            </div>#}
+{#                            <div class="car-info">#}
+{#                                <p class="car-title">Ssangyong All New Rexton</p>#}
+{#                                <p class="car-details">2020 - 100 000 км - 2.2 л</p>#}
+{#                                <p class="car-price">3 360 000 ₽</p>#}
+{#                                <div class="action-button">Оставить заявку</div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{##}
+{#                    <div class="swiper-slide">#}
+{#                        <div class="car-card">#}
+{#                            <div class="car-image">#}
+{#                                <img src="{% static 'tomiko/img/sliderImg/car4.png' %}" alt="Kia Sportage">#}
+{#                            </div>#}
+{#                        <div class="car-info">#}
+{#                                <p class="car-title">Kia Sportage</p>#}
+{#                                <p class="car-details">2022 - 43 064 км - 1.6 л</p>#}
+{#                                <p class="car-price">2 820 000 ₽</p>#}
+{#                            <div class="action-button">Оставить заявку</div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div>#}
+{#            <!-- Добавляем стрелки -->#}
+{#                <div class="swiper-button-prev"></div>#}
+{#                <div class="swiper-button-next"></div>#}
+{#            </div>#}
+{#        </div>#}
 
         <div class="menu">
             <div class="dropdown">
@@ -81,7 +229,7 @@
                     <div class="card">
                         <h3>{{ car.brand_country.brand }} {{ car.model }}</h3>
                         <p>{{ car.year }} - {{ car.mileage }} км - {{ car.engine_volume }}</p>
-                        <img src="https://via.placeholder.com/300x200" alt="Car Image">
+                        <img src="{% static 'tomiko/img/sliderImg/car1.png' %}" alt="Car Image">
                         <div class="actions">
                             <span class="price">{{ car.price }} ₽</span>
                             <button>Оставить заявку</button>
@@ -117,23 +265,20 @@
         <div class="contact-info">
             <div class="contact-con">
                 <div class="title-block">
-                    <h1 class="title-info">
+                    <h1 class="title">
                         Контактная <br>информация <img src="{% static 'tomiko/img/icons/hi.png' %}" alt="">
                     </h1>
                     <p>Оставьте свою заявку и наш менеджер<br>
                          свяжется с Вами для уточнения деталей</p>
-                    <div class="contacts-block">
-                        <p>Звонок по России бесплатный</p>
-                        <h1>8 800 550 48 32</h1>
+                    <div class="info-block">
+                        <p class="name">Звонок по России бесплатный</p>
+                        <h1 class="info">8 800 550 48 32</h1>
 
-                        <p>WhatsApp</p>
-                        <h1>+7 (924) 420-24-32</h1>
+                        <p class="name">WhatsApp</p>
+                        <h1 class="info">+7 (924) 420-24-32</h1>
 
-                        <p>Звонок по России бесплатный</p>
-                        <h1>8 800 550 48 32</h1>
-
-                        <p>Офис</p>
-                        <h1>г. Владивосток, ул. Тополевая 6</h1>
+                        <p class="name">Офис</p>
+                        <h1 class="info">г. Владивосток, ул. Тополевая 6</h1>
                     </div>
                 </div>
                 <div class="form-container">
@@ -168,7 +313,7 @@
 
 
         <div class="subscribe">
-            <img class="header-media__ico" src="{% static 'tomiko/img/hz.svg' %}" alt="Telega">
+            <img class="header-media__ico" src="{% static 'tomiko/img/podpiska.png' %}" alt="Telega">
         </div>
     </div>
 

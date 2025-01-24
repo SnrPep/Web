@@ -4,7 +4,7 @@
     font-family: "Inter", serif;
         font-weight: 300;
         color: #fff;
-    margin: 0 4.375rem 0 4.375rem;
+    margin: 80px 4.375rem 0 4.375rem;
 }
 
 .form-container {
@@ -116,4 +116,31 @@
 .submit-btn button:hover {
     background-color: #568fff;
     /* Цвет кнопки при наведении */
+}
+
+.title-block{
+    font-size: 18px;
+    color: #808891;
+}
+
+.title-block .title{
+    font-size: 70px;
+    color: white;
+}
+
+.info-block{
+    margin-top: 40px;
+    gap: 16px;
+}
+
+.info-block .name{
+    margin-top: 16px;
+    font-size: 16px;
+    color: #808891;
+}
+
+.info-block .info{
+    margin-top: 16px;
+    font-size: 18px;
+    color: white;
 }
