@@ -10,25 +10,15 @@ from .models import Feedback
 def feedback_view(request):
     if request.method == 'POST':
         form = FeedbackForm(request.POST)
-        if form.is_valid():  # Обработка данных только при валидной форме
-            # Достаём данные формы
+        if form.is_valid():
+            # Здесь можно обработать данные формы, например, сохранить их в базу или отправить на почту
             name = form.cleaned_data['name']
             phone = form.cleaned_data['phone']
             message = form.cleaned_data['message']
-
-            # Сохраняем данные в базу
-            Feedback.objects.create(name=name, phone=phone, message=message)
-
-            # Очищаем форму после успешной отправки
-            form = FeedbackForm()
-
-            # Возвращаем сообщение об успешной отправке
-            return render(request, 'feedback.html', {'form': form, 'success': True})
-        else:
-            # Если форма невалидна, отображаем её с ошибками
-            return render(request, 'feedback.html', {'form': form})
+            # Пример сохранения данных:
+            # Feedback.objects.create(name=name, phone=phone, message=message)
+            return HttpResponse("Спасибо за ваш отзыв!")
     else:
-        # Отображаем пустую форму для GET-запроса
         form = FeedbackForm()
 
     return render(request, 'feedback.html', {'form': form})
