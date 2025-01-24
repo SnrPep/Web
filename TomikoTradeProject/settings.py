@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'celery',
     'django_celery_beat',
     'ScrapyParsers',
+    "phonenumber_field",
     'TomikoApp',
     'cars',
 ]
@@ -59,12 +60,15 @@ CELERY_RESULT_BACKEND = "redis://127.0.0.1:6379/0"
 
 
 # Настройки времени
-CELERY_TIMEZONE = 'UTC'
+CELERY_TIMEZONE = 'Asia/Vladivostok'
 CELERY_ENABLE_UTC = True
 
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
+CELERY_BEAT_MAX_LOOP_INTERVAL = 60
+CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -132,7 +136,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Vladivostok'
 
 USE_I18N = True
 

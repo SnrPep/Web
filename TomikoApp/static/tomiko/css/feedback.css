@@ -1,0 +1,95 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Светло-серый фон */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #ffffff; /* Белый фон формы */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+}
+
+/* Заголовок */
+h1 {
+    text-align: center;
+    color: #343a40; /* Тёмно-серый */
+    margin-bottom: 20px;
+}
+
+/* Кнопка отправки */
+.btn-primary {
+    background-color: #007bff; /* Синий */
+    border-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Тёмно-синий при наведении */
+}
+
+/* Поля ввода */
+.form-control {
+    border: 1px solid #ced4da; /* Светло-серая рамка */
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.form-control:focus {
+    border-color: #80bdff; /* Синий фокус */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Лёгкая синяя тень */
+}
+
+/* Поля с ошибками */
+.is-invalid {
+    border-color: #dc3545; /* Красная рамка */
+    box-shadow: 0 0 5px rgba(220, 53, 69, 0.5); /* Красная тень */
+}
+
+.invalid-feedback {
+    color: #dc3545; /* Красный цвет текста ошибок */
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* Чекбокс */
+.form-check-input {
+    margin-right: 10px;
+}
+
+.form-check-label {
+    font-size: 14px;
+    color: #495057; /* Тёмно-серый */
+}
+
+.form-check-input.is-invalid + .form-check-label {
+    color: #dc3545; /* Красный цвет для метки, если чекбокс не отмечен */
+}
+
+.invalid-feedback.d-block {
+    display: block;
+    margin-top: 5px;
+}
+
+/* Сообщение об успехе */
+.alert-success {
+    background-color: #d4edda; /* Светло-зелёный фон */
+    color: #155724; /* Тёмно-зелёный текст */
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}

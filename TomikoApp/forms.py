@@ -1,28 +1,22 @@
 from django import forms
+from phonenumber_field.formfields import PhoneNumberField
 
 class FeedbackForm(forms.Form):
     name = forms.CharField(
         label="Имя",
         max_length=100,
+        min_length=1,
         widget=forms.TextInput(attrs={
             'class': 'form-control',
             'placeholder': 'Ваше имя',
             'required': True  # Поле обязательно
         })
     )
-    phone = forms.CharField(
-        label="Телефон",
-        widget=forms.TextInput(attrs={
-            'class': 'form-control',
-            'placeholder': '+7 XXX XX XX XX',
-            'pattern': r'\+7 \d{3} \d{2} \d{2} \d{2}',
-            'title': 'Формат телефона: +7 XXX XX XX XX',
-            'required': True  # Поле обязательно
-        })
-    )
+    phone = PhoneNumberField()
     message = forms.CharField(
         label="Текст сообщения",
         max_length=200,
+        min_length=10,
         widget=forms.Textarea(attrs={
             'class': 'form-control',
             'rows': 4,
