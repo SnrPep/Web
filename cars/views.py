@@ -8,7 +8,7 @@ import random
 from django.conf import settings
 
 
-def car_list(request):
+def car_list(request, country=None):
     # Путь к папке с изображениями
     image_folder = os.path.join(settings.MEDIA_ROOT, 'Tomiko Trade Photos')
 
@@ -16,14 +16,21 @@ def car_list(request):
     image_files = [
         f for f in os.listdir(image_folder) if os.path.isfile(os.path.join(image_folder, f))
     ]
-    cars = Cars.objects.all()
+
+    if country:
+        cars = Cars.objects.filter(brand_country__country__iexact=country)
+    else:
+        cars = Cars.objects.all()  # Если страна не указана, показываем все автомобили
+    # cars = Cars.objects.all()
 
     # Получаем параметр сортировки из GET-запроса
     sort_param = request.GET.get('sort', None)
     if sort_param:
         cars = cars.order_by(sort_param)
+    else:
+        cars = cars.order_by('id')  # Сортировка по умолчанию
 
-    car_filter = CarFilter(request.GET, queryset=cars)
+    car_filter = CarFilter(request.GET, queryset=cars, country=country)
 
     # car_filter = CarFilter(request.GET, queryset=Cars.objects.all())
 
@@ -49,7 +56,7 @@ def get_models_by_brand(request):
         return JsonResponse({'models': list(models)})  # Возвращаем список моделей
     return JsonResponse({'models': []})  # Если марка не выбрана
 
-def car_catalog(request):
+def car_catalog(request, country=None):
     # Путь к папке с изображениями
     image_folder = os.path.join(settings.MEDIA_ROOT, 'Tomiko Trade Photos')
 
@@ -57,7 +64,12 @@ def car_catalog(request):
     image_files = [
         f for f in os.listdir(image_folder) if os.path.isfile(os.path.join(image_folder, f))
     ]
-    cars = Cars.objects.all()
+
+    if country:
+        cars = Cars.objects.filter(brand_country__country__iexact=country)
+    else:
+        cars = Cars.objects.all()  # Если страна не указана, показываем все автомобили
+    # cars = Cars.objects.all()
 
     # Получаем параметр сортировки из GET-запроса
     sort_param = request.GET.get('sort', None)

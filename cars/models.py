@@ -77,7 +77,6 @@ class AuthUserUserPermissions(models.Model):
 class Brands(models.Model):
     country = models.CharField(max_length=255)
     brand = models.CharField(max_length=255)
-    # cars = models.ForeignKey("Cars", on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = 'Бренд'
@@ -100,7 +99,6 @@ class Cars(models.Model):
     color = models.CharField(max_length=50)
     power_volume = models.CharField(max_length=50)
     brand_country = models.ForeignKey(Brands, on_delete=models.CASCADE, related_name="cars")
-    # image = models.ImageField(upload_to='Tomiko Trade Photos/', blank=True, null=True)
 
     class Meta:
         verbose_name = 'Автомобиль'

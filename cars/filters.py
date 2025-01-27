@@ -3,7 +3,8 @@ from .models import Cars,Brands
 
 class CarFilter(django_filters.FilterSet):
     brand = django_filters.ModelChoiceFilter(
-        queryset=Brands.objects.all().order_by('brand'),
+        queryset=Brands.objects.none(),  # По умолчанию пусто, переопределим в __init__
+        # queryset=Brands.objects.all().order_by('brand'),
         field_name="brand_country__brand",
         label="",
         empty_label="Марка авто"
@@ -119,9 +120,15 @@ class CarFilter(django_filters.FilterSet):
         fields = ['brand', 'model', 'year_from','year_to', 'mileage_from', 'mileage_to', 'color', 'transmission', 'drive', 'capacity_from', 'capacity_to']
 
     def __init__(self, *args, **kwargs):
+        country = kwargs.pop('country', None)  # Получаем параметр country
         super().__init__(*args, **kwargs)
         brand = self.data.get("brand")  # Получаем выбранную марку из запроса
         if brand:
             # Если марка выбрана, фильтруем модели для этой марки
             models = Cars.objects.filter(brand_country_id=brand).values_list('model', flat=True).distinct()
             self.filters['model'].extra['choices'] = [(model, model) for model in models]
+        # Ограничиваем доступные бренды на основе выбранной страны
+        if country:
+            self.filters['brand'].queryset = Brands.objects.filter(country__iexact=country).order_by('brand')
+        else:
+            self.filters['brand'].queryset = Brands.objects.all().order_by('brand')

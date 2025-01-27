@@ -241,26 +241,51 @@
             </div>
         </div>
 
-        <div class="pagination">
-            {% if cars.has_previous %}
-                <button onclick="location.href='?page={{ cars.previous_page_number }}&{{ request.GET.urlencode|safe }}';">Предыдущая</button>
-            {% endif %}
-            {% for num in cars.paginator.page_range %}
-                {% if num == cars.number %}
-                    <button class="active">{{ num }}</button>
-                {% elif num > cars.number|add:"-3" and num < cars.number|add:"3" %}
-                    <button onclick="location.href='?page={{ num }}&{{ request.GET.urlencode|safe }}';" class="page-link">{{ num }}</button>
-                {% elif num == 1 or num == cars.paginator.num_pages %}
-                    <button onclick="location.href='?page={{ num }}&{{ request.GET.urlencode|safe }}';" class="page-link">{{ num }}</button>
-                {% elif num == cars.number|add:"-3" or num == cars.number|add:"3" %}
-                    <button>...</button>
-                {% endif %}
-            {% endfor %}
+{#        <div class="pagination">#}
+{#            {% if cars.has_previous %}#}
+{#                <button onclick="location.href='?page={{ cars.previous_page_number }}&{{ request.GET.urlencode|safe }}';">Предыдущая</button>#}
+{#            {% endif %}#}
+{#            {% for num in cars.paginator.page_range %}#}
+{#                {% if num == cars.number %}#}
+{#                    <button class="active">{{ num }}</button>#}
+{#                {% elif num > cars.number|add:"-3" and num < cars.number|add:"3" %}#}
+{#                    <button onclick="location.href='?page={{ num }}&{{ request.GET.urlencode|safe }}';" class="page-link">{{ num }}</button>#}
+{#                {% elif num == 1 or num == cars.paginator.num_pages %}#}
+{#                    <button onclick="location.href='?page={{ num }}&{{ request.GET.urlencode|safe }}';" class="page-link">{{ num }}</button>#}
+{#                {% elif num == cars.number|add:"-3" or num == cars.number|add:"3" %}#}
+{#                    <button>...</button>#}
+{#                {% endif %}#}
+{#            {% endfor %}#}
+{##}
+{#            {% if cars.has_next %}#}
+{#                <button onclick="location.href='?page={{ cars.next_page_number }}';">Следующая</button>#}
+{#            {% endif %}#}
+{#        </div>#}
+    <div class="pagination">
+        {% if cars.has_previous %}
+            <button onclick="location.href='?page={{ cars.previous_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}';">
+                Предыдущая
+            </button>
+        {% endif %}
 
-            {% if cars.has_next %}
-                <button onclick="location.href='?page={{ cars.next_page_number }}';">Следующая</button>
+        {% for num in cars.paginator.page_range %}
+            {% if num == cars.number %}
+                <button class="active">{{ num }}</button>
+            {% elif num > cars.number|add:"-3" and num < cars.number|add:"3" %}
+                <button onclick="location.href='?page={{ num }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}';" class="page-link">{{ num }}</button>
+            {% elif num == 1 or num == cars.paginator.num_pages %}
+                <button onclick="location.href='?page={{ num }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}';" class="page-link">{{ num }}</button>
+            {% elif num == cars.number|add:"-3" or num == cars.number|add:"3" %}
+                <button>...</button>
             {% endif %}
-        </div>
+        {% endfor %}
+
+        {% if cars.has_next %}
+            <button onclick="location.href='?page={{ cars.next_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}';">
+                Следующая
+            </button>
+        {% endif %}
+    </div>
 
         <div class="contact-info">
             <div class="contact-con">
