@@ -60,7 +60,7 @@ CELERY_RESULT_BACKEND = "redis://127.0.0.1:6379/0"
 
 
 # Настройки времени
-CELERY_TIMEZONE = 'Asia/Vladivostok'
+CELERY_TIMEZONE = 'UTC'
 CELERY_ENABLE_UTC = True
 
 CELERY_ACCEPT_CONTENT = ['application/json']
@@ -136,7 +136,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru'
 
-TIME_ZONE = 'Asia/Vladivostok'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
