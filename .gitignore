@@ -166,3 +166,11 @@ celerybeat-schedule.dat
 TomikoTradeProject/celery.py
 .idea/misc.xml
 .idea/Web.iml
+WebProg
+TomikoTradeProject/__pycache__
+TomikoApp/__pycache__
+get-pip.py
+dump.rdb
+celerybeat-schedule.dir
+celerybeat-schedule.dat
+celerybeat-schedule.bak
