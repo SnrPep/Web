@@ -11,8 +11,6 @@ from django.conf import settings
 def car_list(request, country=None):
     # Путь к папке с изображениями
     image_folder = os.path.join(settings.MEDIA_ROOT, 'Tomiko Trade Photos')
-
-    # Получаем список всех изображений в папке
     image_files = [
         f for f in os.listdir(image_folder) if os.path.isfile(os.path.join(image_folder, f))
     ]
@@ -23,7 +21,7 @@ def car_list(request, country=None):
         cars = Cars.objects.all()  # Если страна не указана, показываем все автомобили
     # cars = Cars.objects.all()
 
-    # Получаем параметр сортировки из GET-запроса
+    cars = Cars.objects.all()
     sort_param = request.GET.get('sort', None)
     if sort_param:
         cars = cars.order_by(sort_param)
@@ -32,19 +30,19 @@ def car_list(request, country=None):
 
     car_filter = CarFilter(request.GET, queryset=cars, country=country)
 
-    # car_filter = CarFilter(request.GET, queryset=Cars.objects.all())
-
     for car in car_filter.qs:
         if image_files:
-            # Назначаем случайное изображение для записи
             car.random_image = f"/media/Tomiko Trade Photos/{random.choice(image_files)}"
-            # print(f"Изображение для {car.model}: {car.random_image}")  # Отладочный вывод
         else:
-            car.random_image = None  # Если изображений нет
+            car.random_image = None
+
+        # Добавляем базовую цену и цену с пошлинами
+        car.price_with_duty = car.get_price_with_duty()  # Цена с пошлинами из Redis
 
     paginator = Paginator(car_filter.qs, 20)
     page_number = request.GET.get('page')
     cars = paginator.get_page(page_number)
+
     return render(request, 'car_list.html', {'filter': car_filter, 'cars': cars, 'request': request})
 
 

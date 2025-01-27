@@ -6,7 +6,10 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
+import redis
+import json
 
+redis_client = redis.StrictRedis(host="localhost", port=6379, db=0)
 
 class AuthGroup(models.Model):
     name = models.CharField(unique=True, max_length=150)
@@ -89,10 +92,11 @@ class Brands(models.Model):
 
 
 class Cars(models.Model):
+    # Все поля остаются без изменений
     model = models.CharField(max_length=100)
     year = models.IntegerField()
     mileage = models.IntegerField()
-    price = models.IntegerField()
+    price = models.IntegerField()  # Цена из базы данных (без пошлин)
     transmission = models.CharField(max_length=50)
     engine_volume = models.CharField(max_length=50)
     drive = models.CharField(max_length=50)
@@ -105,6 +109,19 @@ class Cars(models.Model):
         verbose_name_plural = 'Автомобили'
         managed = False
         db_table = 'cars'
+
+    def get_price_with_duty(self):
+        """
+        Получить цену автомобиля с пошлинами (RUB) из Redis.
+        """
+        try:
+            car_prices = redis_client.get(f"car_prices:{self.id}")
+            if car_prices:
+                car_prices = json.loads(car_prices)
+                return int(car_prices.get("RUB"))  # Возвращаем рассчитанную цену с пошлинами
+        except redis.RedisError:
+            return None  # Вернуть None, если Redis недоступен
+
 
 
 class DjangoAdminLog(models.Model):

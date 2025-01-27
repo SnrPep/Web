@@ -37,14 +37,14 @@ def crawl_spiders():
 app.conf.beat_schedule = {
     "parse-every-day": {
         "task": "TomikoApp.tasks.run_scrapy_all",
-        'schedule': crontab(hour=0, minute=0),  # Выполнение каждый день в 00:00
+        'schedule': crontab(hour=11, minute=24),  # Выполнение каждый день в 00:00
         'options': {
             'replace_existing': True  # Заменяет существующую задачу при запуске
         }
     },
     "recalculate-every-day": {
         "task": "TomikoApp.tasks.recalculate_prices",
-        'schedule': crontab(hour=0, minute=2),  # Выполнение каждый день в 00:02 - 2 минуты достаточно для того, чтобы отпарсить всё необходимое
+        'schedule': crontab(hour=11, minute=25),  # Выполнение каждый день в 00:02 - 2 минуты достаточно для того, чтобы отпарсить всё необходимое
         'options': {
             'replace_existing': True  # Заменяет существующую задачу при запуске
         }
