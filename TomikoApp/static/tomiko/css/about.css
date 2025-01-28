@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+}
+
 body {
     font-family: Bebas Neue, sans-serif;
     margin-top: 9rem;
@@ -25,16 +31,18 @@ body {
     align-items: center; /* Выравнивание по центру по вертикали */
 }
 
-.title{
+.title-ab{
+    width: 100%;
     max-width: 748px;
 }
 
-.title{
-    font-size: 50px;
+.title-ab{
+    font-size: 4vw;
         font-family: "Montserrat", serif;
         font-weight: 700;
         font-style: normal;
         text-transform: uppercase;
+    color: #fff;
 }
 
 .about-p{
@@ -67,16 +75,17 @@ body {
 .about-btn{
     position: relative;
     margin-top: 40px;
-    width: 285px;
-        height: 70px;
-        border-radius: 60px;
-        background: linear-gradient(90deg, #0D2F68, #D51117);
-        color: white;
-        border: none;
-        cursor: pointer;
-        font-family: "Inter", serif;
-        font-size: 18px;
-        font-weight: 600;
+    width: 100%;
+    max-width: 285px;
+    height: 70px;
+    border-radius: 60px;
+    background: linear-gradient(90deg, #0D2F68, #D51117);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: "Inter", serif;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .btn-about-block{

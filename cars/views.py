@@ -43,7 +43,7 @@ def car_list(request, country=None):
     page_number = request.GET.get('page')
     cars = paginator.get_page(page_number)
 
-    return render(request, 'car_list.html', {'filter': car_filter, 'cars': cars, 'request': request})
+    return render(request, 'car_list.html', {'filter': car_filter, 'cars': cars, 'request': request, 'country': country})
 
 
 def get_models_by_brand(request):

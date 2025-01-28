@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    max-width: 100%;
 }
 
 /* Контейнеры с одинаковыми отступами */
@@ -9,7 +10,7 @@
 }
 
 body {
-    font-family: Bebas Neue, sans-serif;
+    font-family: "Bebas Neue", sans-serif;
     margin-top: 9rem;
     padding: 0;
     background-color: var(--main-bg-color);
@@ -26,7 +27,7 @@ body {
 
 .catalog-routing {
     padding-top: 1.875rem;
-    font-family: Inter;
+    font-family: "Inter", serif;
     font-size: 0.875rem;
     color: #FFFFFF80;
     font-weight: 400;
@@ -40,7 +41,7 @@ body {
 }
 
 .catalog-title {
-    font-family: Bebas-Neue, Arial, sans-serif;
+    font-family: "Bebas-Neue", sans-serif;
     padding-top: 2.5rem;
     padding-bottom: 1.5rem;
     font-size: 40px;
@@ -60,9 +61,9 @@ body {
 
 .filters .row select {
     background-color: #20344a; /* Темный фон */
-    color: #fff; /* Белый текст */
+    color: rgba(255, 255, 255, 0.23);
     border: none; /* Убираем рамки */
-    border-radius: 1.25rem; /* Закругленные углы */
+    border-radius: 30px; /* Закругленные углы */
     padding: 0.625rem 1rem; /* Внутренние отступы */
     font-size: 0.875rem; /* Размер шрифта */
     text-align: left; /* Текст слева */
@@ -92,30 +93,53 @@ body {
 }
 
 .filters .double-select-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Две колонки */
-    gap: 0; /* Расстояние между "от" и "до" */
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
+.filters .double-select-inner::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1px; /* Толщина линии */
+    height: 40%; /* Высота линии, можно подогнать */
+    background-color: rgba(255, 255, 255, 0.3); /* Цвет линии */
+}
+
+/*.filters .double-select-inner::after {*/
+/*    content: "▼"; !* Либо использовать \25BC *!*/
+/*    font-size: 12px;*/
+/*    color: rgba(255, 255, 255, 0.5);*/
+/*    position: absolute;*/
+/*    right: 10px;*/
+/*    top: 50%;*/
+/*    transform: translateY(-50%);*/
+/*    pointer-events: none; !* Чтобы клики проходили сквозь *!*/
+/*}*/
+
 .filters .double-select-inner select {
+    flex: 1; /* Равномерное распределение */
     background-color: #20344a;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.23);
     border: none;
-    border-radius: 1.25rem;
-    padding: 0.625rem 1rem;
+    padding: 1rem 1rem;
     font-size: 0.875rem;
     cursor: pointer;
-    width: 100%;
+    text-align: left;
+    /*appearance: none;*/
 }
 
 .filters .double-select-inner select:first-child {
-    border-radius: 1.25rem 0 0 1.25rem;
-    border-right: solid 1px #FFFFFF29;
+    border-radius: 30px 0 0 30px;
 }
 
 .filters .double-select-inner select:last-child {
-    border-radius: 0 1.25rem 1.25rem 0;
+    border-radius: 0 30px 30px 0;
 }
+
 
 .filters .double-select-inner select:hover {
     background-color: #2a3d56;
@@ -124,6 +148,7 @@ body {
 .filters .buttons {
     display: flex;
     gap: 20px;
+    align-items: center;
 }
 
 .filters button {
@@ -133,10 +158,13 @@ body {
     color: white;
     border: none;
     padding: 0.625rem 1.25rem;
-    border-radius: 1.875rem;
+    border-radius: 30px;
     font-size: 0.875rem;
     cursor: pointer;
+    width: 190px;
+    height: 44px;
     transition: background-color 0.3s;
+    margin-top: 10px;
 }
 
 .filters button:hover {
@@ -162,6 +190,8 @@ body {
     border-radius: 1.25rem;
     font-size: 0.875rem;
     cursor: pointer;
+    width: 12rem;
+    height: 44px;
 }
 
 .menu button {
@@ -194,7 +224,8 @@ body {
 
 .card {
     background: #081E36;
-    padding: 16px;
+    padding: 8px 16px;
+    gap: 16px;
     border-radius: 24px;
     box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
     display: flex;
@@ -203,39 +234,35 @@ body {
 }
 
 .card img {
-    margin: 1rem auto;
     width: 100%;
-    height: 15rem;
+    height: 50%;
     object-fit: cover;
     border-radius: 0.5rem;
 }
 
-.card h3 {
-    color: #FFFFFF;
-    margin: auto 0;
-    font-size: 1.5rem;
-    font-family: 'Bebas Neue', sans-serif;
-}
-
 .card p {
-    margin: 0.5rem 0;
     color: gray;
+    gap: 8px;
     font-size: 0.875rem;
     font-family: 'Inter', sans-serif;
 }
 
 .card .price {
-    margin: 8px 0;
+    margin: 0;
     color: #FFFFFF;
-    font-weight: bold;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-family: 'Bebas Neue', sans-serif;
 }
+
+.card .head {
+    display: grid;
+    gap: 8px;
+}
+
 .card .actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: auto;
 }
 .card button {
     padding: 10px 20px;

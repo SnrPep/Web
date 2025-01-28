@@ -1,8 +1,13 @@
+* {
+    max-width: 100%;
+}
+
 body {
     font-family: Bebas Neue, sans-serif;
     margin-top: 100px;
     padding: 0;
     background-color: var(--main-bg-color);
+    max-width: 100%;
 }
 
 .title {

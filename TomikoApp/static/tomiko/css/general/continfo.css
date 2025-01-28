@@ -119,18 +119,24 @@
 }
 
 .title-block{
+    padding-top: 20px;
     font-size: 18px;
     color: #808891;
 }
 
+.title-block p{
+    padding-top: 20px;
+}
+
 .title-block .title{
-    font-size: 70px;
+    font-size: 4vw;
     color: white;
+    line-height: 5px;
+    font-family: 'Bebas Neue', sans-serif;
 }
 
 .info-block{
-    margin-top: 40px;
-    gap: 16px;
+    margin-top: 60px;
 }
 
 .info-block .name{
@@ -140,7 +146,7 @@
 }
 
 .info-block .info{
-    margin-top: 16px;
+    margin-top: 8px;
     font-size: 18px;
     color: white;
 }

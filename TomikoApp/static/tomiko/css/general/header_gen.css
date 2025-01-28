@@ -11,7 +11,6 @@ body {
     background: var(--main-bg-color);
     z-index: 1000; /* Устанавливаем высокий z-index, чтобы шапка всегда была поверх других элементов */
     border-bottom: solid 1px #FFFFFF29;
-    /*padding: 1rem;  При необходимости можно добавить отступы */
 }
 
 .header__items, .td-info, .header-link {

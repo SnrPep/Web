@@ -8,7 +8,7 @@ footer {
 }
 
 .footer-container {
-  margin: 0 8.75rem 1.25rem 8.75rem;
+  margin: 40px 8.75rem 1.25rem 8.75rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -34,12 +34,13 @@ footer {
 
 .footer-columns {
   display: flex;
-  gap: 20px;
+  gap: 60px;
 }
 
 .footer-column h4 {
   font-size: 16px;
   margin-bottom: 10px;
+  font-family: 'Bebas Neue', sans-serif;
 }
 
 .footer-column ul {
@@ -73,6 +74,7 @@ footer {
   font-size: 48px;
   font-weight: bold;
   margin: 0;
+  font-family: 'Bebas Neue', sans-serif;
 }
 
 .social-icons {
@@ -91,10 +93,11 @@ footer {
   margin-top: 20px;
   padding: 10px 8.75rem 0 8.75rem;
   border-top: solid 1px #FFFFFF29;
-  font-size: 12px;
+  font-size: 14px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 50px;
 }
 
 .privacy-policy {
