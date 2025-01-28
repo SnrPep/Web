@@ -61,7 +61,6 @@ const swiper = new Swiper('.swiper', {
 
 
 
-
 /*Слайдер 
 
 let currentIndex = 0;
