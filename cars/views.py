@@ -16,12 +16,12 @@ def car_list(request, country=None):
     ]
 
     if country:
-        cars = Cars.objects.filter(brand_country__country__iexact=country)
+        cars = Cars.objects.filter(brand_country__country__iexact=country.capitalize())
     else:
         cars = Cars.objects.all()  # Если страна не указана, показываем все автомобили
     # cars = Cars.objects.all()
 
-    cars = Cars.objects.all()
+    # cars = Cars.objects.all()
     sort_param = request.GET.get('sort', None)
     if sort_param:
         cars = cars.order_by(sort_param)
