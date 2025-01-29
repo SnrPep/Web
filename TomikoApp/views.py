@@ -5,7 +5,6 @@ from .forms import FeedbackForm
 from .models import Feedback
 
 
-
 # Create your views here.
 def feedback_view(request):
     if request.method == 'POST':

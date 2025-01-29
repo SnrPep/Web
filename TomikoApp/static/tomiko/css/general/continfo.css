@@ -4,7 +4,7 @@
     font-family: "Inter", serif;
         font-weight: 300;
         color: #fff;
-    margin: 80px 10px 0 10px;
+    margin: 50px 10px 0 10px;
     max-width: 100%;
 }
 
@@ -67,7 +67,6 @@
 }
 
 .form-column input {
-
     width: 100%;
 }
 

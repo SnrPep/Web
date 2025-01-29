@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{% static 'tomiko/css/general/navigation.css' %}">
     <link rel="stylesheet" href="{% static 'tomiko/css/about.css' %}">
     <link rel="stylesheet" href="{% static 'tomiko/css/var.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/homePage/stage.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -25,12 +26,14 @@
     <header class="header">
         <div class="header__nav">
             <ul class="info-list">
-                <li><a href="header-img"><img class="header-logo__ico header-link link-li" src="{% static 'tomiko/img/logo.svg' %}"
+                <li><a href="/"><img class="header-logo__ico header-link link-li" src="{% static 'tomiko/img/logo.svg' %}"
                             alt=""></a></li>
-                <li><a class="header-link link-li" href="">Авто из Кореи</a></li>
-                <li><a class="header-link link-li" href="">Авто из Китая</a></li>
-                <li><a class="header-link link-li" href="">Авто из Японии</a></li>
-                <li><a class="header-link link-li" href="">Контакты</a></li>
+                <li><a class="header-link link-li" href="/cars/Корея/">Авто из Кореи</a></li>
+                <li><a class="header-link link-li" href="/cars/Китай/">Авто из Китая</a></li>
+                <li><a class="header-link link-li" href="/cars/Япония/">Авто из Японии</a></li>
+                <li><a class="header-link link-li" href="/about/">Условия работы</a></li>
+                <li><a class="header-link link-li" href="/akcii/">Акции</a></li>
+                <li><a class="header-link link-li" href="/contacts/">Контакты</a></li>
                 <!-- Элементы, которые нужно прижать к правому краю -->
                 <div class="header-media-container">
                     <li><a class="header-link header-number" href="">8 (800) 500-49-46</a></li>
@@ -47,107 +50,180 @@
         <div class="nav">
             <a href="/">Главная</a>
              •
-            <a href="/akcii/">Акции</a>
+            <a href="/about/">Акции</a>
         </div>
-    </div>
     
-    <div class="about-us">
-        <div class="about-block">
-            <div class="titles">
-                <h1 class="title">
-                    О нас
-                </h1>
-                <p claas="about-p"><span  class="about-font">Компания «Правый руль» предлагает широкий выбор автомобилей от ведущих<br> мировых производителей. Мы специализируемся на
-                продаже новых и<br> подержанных авто. Наша команда профессионалов поможет вам выбрать<br> идеальный автомобиль, учитывая ваши
-                потребности и бюджет.</span></p>
-                <div class="btn-about-block">
-                    <button class="about-btn">Получить консультацию</button>
-                    <a href="" target="_blank"><img class="what-about" src="{% static 'tomiko/img/icons/Whatsbutton.svg' %}" alt="whatsapp"></a>
-                </div>
-            </div>
-            <div class="about-logo">
-                <img class="about-img" src="{% static 'tomiko/img/about-page.png' %}" alt="">
-            </div>
-        </div>
-        <div class="width-about">
-
-        </div>
-        <div class="about-bg">
-            
-        </div>
-    </div>
-        
-    <div class="midle">
-        <div class="contact-info">
-            <div class="contact-con">
-                <div class="title-block">
+        <div class="about-us">
+            <div class="about-block">
+                <div class="titles">
                     <h1 class="title">
-                        Контактная <br>информация <img src="{% static 'tomiko/img/icons/hi.png' %}" alt="">
+                        О нас
                     </h1>
-                    <p>Оставьте свою заявку и наш менеджер<br>
-                         свяжется с Вами для уточнения деталей</p>
-                    <div class="info-block">
-                        <p class="name">Звонок по России бесплатный</p>
-                        <h1 class="info">8 800 550 48 32</h1>
-    
-                        <p class="name">WhatsApp</p>
-                        <h1 class="info">+7 (924) 420-24-32</h1>
-    
-                        <p class="name">Офис</p>
-                        <h1 class="info">г. Владивосток, ул. Тополевая 6</h1>
+                    <p claas="about-p"><span  class="about-font">Компания «Правый руль» предлагает широкий выбор автомобилей от ведущих<br> мировых производителей. Мы специализируемся на
+                    продаже новых и<br> подержанных авто. Наша команда профессионалов поможет вам выбрать<br> идеальный автомобиль, учитывая ваши
+                    потребности и бюджет.</span></p>
+                    <div class="btn-about-block">
+                        <button class="about-btn">Получить консультацию</button>
+                        <a href="" target="_blank"><img class="what-about" src="{% static 'tomiko/img/icons/Whatsbutton.svg' %}" alt="whatsapp"></a>
                     </div>
                 </div>
-                <div class="form-container">
-    
-                    <div class="form-group">
-                        <div>
-                            Имя
-                        </div>
-    
-                        <div class="form-column">
-    
-                            <input type="text" placeholder="Введите имя" />
-                            <input type="tel" value="+7" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div>
-                            Уточните свой вопрос
-                        </div>
-                        <textarea placeholder="Введите текст сообщения, укажите страну, марку и год машины."></textarea>
-                    </div>
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="privacy-policy" />
-                        <label for="privacy-policy">С <span>правилами политики конфиденциальности</span> ознакомлен</label>
-                    </div>
-                    <div class="submit-btn">
-                        <button>Отправить</button>
-                    </div>
+                <div class="about-logo">
+                    <img class="about-img" src="{% static 'tomiko/img/about-page.png' %}" alt="">
                 </div>
             </div>
+            <div class="width-about">
+
+            </div>
+            <div class="about-bg">
+
+            </div>
         </div>
-        
+
         <div class="features">
-            <div class="feature">
-                <span class="feature-number">5+</span>
+            <div class="feature-wn">
+                <span class="feature-number">5 +</span>
                 <p>Лет на рынке</p>
             </div>
-            <div class="feature">
-                <span class="feature-number">4 000+</span>
+            <div class="feature-wn">
+                <span class="feature-number">4 000 +</span>
                 <p>Довольных клиентов</p>
             </div>
-            <div class="feature">
+            <div class="feature-wi">
                 <span class="feature-icon">👍</span>
                 <p>Прозрачное ценообразование с подробным разъяснением затрат на каждом этапе</p>
             </div>
-            <div class="feature">
+            <div class="feature-wi">
                 <span class="feature-icon">💻</span>
                 <p>Полное сопровождение и предоставление фото/видео отчета на протяжении всей сделки</p>
             </div>
-            <div class="feature">
+            <div class="feature-wi">
                 <span class="feature-icon">🤝</span>
                 <p>Проверенные поставщики</p>
             </div>
+        </div>
+
+        <div class="stage-container">
+            <img src="{% static 'tomiko/img/bg-img-stage.png' %}" alt="" class="stage-img">
+            <div class="stage_block">
+                <div class="stage-title">
+                    <h1 class="h-info"><span class="red">Этапы</span><span class="white">работы</span> </h1>
+                    <p class="p-info">Прозрачное ценообразование с подробным<br> разъяснением затрат на каждом этапе</p>
+                </div>
+
+                <div class="stage-info">
+                    <div class="info-block">
+                        <div class="img-block">
+                            <img src="{% static 'tomiko/img/icons/stage-ico-1.png' %}" alt="">
+                            <img class="line-red" src="{% static 'tomiko/img/red-line.svg' %}" alt="">
+                        </div>
+                        <div>
+                            <h1>
+                                <span class="white f-size">Заявка</span>
+                            </h1>
+                            <p>
+                                <span class="p-size">Оставьте заявку,чтобы получить индивидуальную консультацию</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="info-block">
+                        <div class="img-block">
+                            <img src="{% static 'tomiko/img/icons/stage-ico-2.png' %}" alt="">
+                            <img class="line-red" src="{% static 'tomiko/img/red-line.svg' %}" alt="">
+                        </div>
+                        <div>
+                            <h1>
+                                <span class="white f-size">Подбор авто</span>
+                            </h1>
+                            <p>
+                                <span class="p-size">Подберем автомобиль под ваши критерии</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="info-block">
+                        <div class="img-block">
+                            <img src="{% static 'tomiko/img/icons/stage-ico-3.png' %}" alt="">
+                            <img class="line-red" src="{% static 'tomiko/img/red-line.svg' %}" alt="">
+                        </div>
+                        <div>
+                            <h1>
+                                <span class="white f-size">Оформление</span>
+                            </h1>
+                            <p>
+                                <span class="p-size">Согласуем бюджет и заключим договор на авто</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="info-block">
+                        <div class="img-block ">
+                            <img src="{% static 'tomiko/img/icons/stage-ico-4.png' %}" alt="">
+                            <img class="line-red" src="{% static 'tomiko/img/red-line.svg' %}" alt="">
+                        </div>
+                        <div>
+                            <h1>
+                                <span class="white f-size">Доставка по РФ</span>
+                            </h1>
+                            <p>
+                                <span class="p-size">После доставки в г. Владивосток, мы отправим автомобиль в ваш город</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stage-btn">
+                    <button id="check__btn-c" name="button" class="btn-s">Получить консультацию</button>
+                    <div class="r-1"></div><img class="ico-s" src="{% static 'tomiko/img/icons/Whatsbutton.svg' %}" alt="whatsapp">
+                </div>
+            </div>
+        </div>
+<!--            <div class="discount">-->
+<!--                <div class="reg">-->
+<!--                    <div class="discount-text">-->
+<!--                        <p class="p-dis">Экономия до-->
+<!--                            <span class="dis-s">30%</span>-->
+<!--                            <a href=""><button class="dis-btn"><img class="arrow-d" src="{% static 'tomiko/img/icons/arrow.png' %}" alt=""></button></a>-->
+
+<!--                        </p>-->
+<!--                        <p>от рынка авто в наличии</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+    </div>
+
+    <div class="commission">
+        <div class="commission-section">
+            <h2 class="commission-title">КОМИССИИ</h2>
+            <div class="commission-cards">
+                <div class="commission-card">
+                    <div class="head-block">
+                        <img src="{% static 'tomiko/img/icons/japan.svg' %}" alt="Япония" class="flag-icon">
+                        <p class="country-name">Япония</p>
+                        <p class="price">60 000 ₽</p>
+                    </div>
+                    <a href="#" class="contract-link">Договор ↗</a>
+                </div>
+                <div class="commission-card">
+                    <div class="head-block">
+                        <img src="{% static 'tomiko/img/icons/korea.svg' %}" alt="Корея" class="flag-icon">
+                        <p class="country-name">Корея</p>
+                        <p class="price">100 000 ₽</p>
+                    </div>
+                    <a href="#" class="contract-link">Договор ↗</a>
+                </div>
+                <div class="commission-card">
+                    <div class="head-block">
+                        <img src="{% static 'tomiko/img/icons/china.svg' %}" alt="Китай" class="flag-icon">
+                        <p class="country-name">Китай</p>
+                        <p class="price">150 000 ₽</p>
+                    </div>
+                    <a href="#" class="contract-link">Договор ↗</a>
+                </div>
+            </div>
+            <p class="commission-info">У нас доступна оплата депозита частями</p>
+            <button class="commission-button">Подробнее тут ↗</button>
         </div>
     </div>
 

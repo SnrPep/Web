@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+}
+
+body {
+    font-family: Bebas Neue, sans-serif;
+    margin-top: 9rem;
+    padding: 0;
+    color: #FFFFFF;
+    background-color: var(--main-bg-color);
+}
+
+.midle {
+    display: grid;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1700px;
+    margin-bottom: 20px;
+}

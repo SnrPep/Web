@@ -26,12 +26,14 @@
         <header class="header">
             <div class="header__nav">
                 <ul class="info-list">
-                    <li><a href="header-img"><img class="header-logo__ico header-link link-li" src="{% static 'tomiko/img/logo.svg' %}"
+                    <li><a href="/"><img class="header-logo__ico header-link link-li" src="{% static 'tomiko/img/logo.svg' %}"
                                 alt=""></a></li>
-                    <li><a class="header-link link-li" href="">Авто из Кореи</a></li>
-                    <li><a class="header-link link-li" href="">Авто из Китая</a></li>
-                    <li><a class="header-link link-li" href="">Авто из Японии</a></li>
-                    <li><a class="header-link link-li" href="">Контакты</a></li>
+                    <li><a class="header-link link-li" href="/cars/Корея/">Авто из Кореи</a></li>
+                    <li><a class="header-link link-li" href="/cars/Китай/">Авто из Китая</a></li>
+                    <li><a class="header-link link-li" href="/cars/Япония/">Авто из Японии</a></li>
+                    <li><a class="header-link link-li" href="/about/">Условия работы</a></li>
+                    <li><a class="header-link link-li" href="/akcii/">Акции</a></li>
+                    <li><a class="header-link link-li" href="/contacts/">Контакты</a></li>
                     <!-- Элементы, которые нужно прижать к правому краю -->
                     <div class="header-media-container">
                         <li><a class="header-link header-number" href="">8 (800) 500-49-46</a></li>
@@ -48,7 +50,7 @@
             <div class="catalog-routing">
                 <a href="/">Главная</a>
                  •
-                <a href="/china/">Автомобили из {{ country }}</a>
+                <a href="/cars/{{ country }}">Автомобили из {{ country }}</a>
             </div>
             <h1 class="catalog-title">Автомобили из {{ country }} </h1>
 
@@ -238,19 +240,19 @@
             <div class="container">
                 <div class="catalog">
                     {% for car in cars %}
-                        <div class="card">
-                            <a href="{% url 'car_detail' country=car.brand_country.country car_id=car.id %}">
-                                <div class="head">
-                                    <span class="price">{{ car.brand_country.brand }} {{ car.model }}</span>
-                                    <p>{{ car.year }} • {{ car.transmission }} • {{ car.mileage }} км</p>
-                                </div>
-                                <img src="{{ car.random_image }}" alt="{{ car.random_image }}">
-                                <div class="actions">
-                                    <span class="price">{{ car.price_with_duty }} ₽</span>
-                                    <button>Оставить заявку</button>
-                                </div>
+                    <div class="card">
+                        <div class="head">
+                            <a href="{% url 'car_detail' country=car.brand_country.country car_id=car.id %}" style="text-decoration: none; color: inherit;">
+                                <span class="price">{{ car.brand_country.brand }} {{ car.model }}</span>
+                                <p>{{ car.year }} • {{ car.transmission }} • {{ car.mileage }} км</p>
                             </a>
                         </div>
+                        <img src="{{ car.random_image }}" alt="{{ car.random_image }}">
+                        <div class="actions">
+                            <span class="price">{{ car.price_with_duty }} ₽</span>
+                            <button>Оставить заявку</button>
+                        </div>
+                    </div>
                     {% empty %}
                         <p>Нет доступных машин.</p>
                     {% endfor %}
