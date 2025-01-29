@@ -11,6 +11,26 @@
     top: 0;
 }
 
+.popup-h{
+    text-transform: uppercase;
+    font-size: 40px;
+        font-family: "Inter";
+        font-weight: 700;
+        line-height: 40px;
+        color: #fff;
+        margin: 0;
+}
+
+.popup-p{
+font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    text-align: left;
+    color: #fff;
+   
+}
+
 .popup-cost.open {
     display: flex;
 }
@@ -41,24 +61,99 @@
 .popup-input-name{
     color:#FFFFFF;
     display: flex;
-    align-items: center;
     font-family: "Inter", serif;
-        font-size: 16px;
-        font-weight: 400;
-        text-align: start;
-        display: flex;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: start;
+    display: flex;
+    gap: 15px;
+        /* расстояние между input */
         
         
 }
 
-.popup-input-name, input{
+.input-cost{
     padding: 16px;
     font-size: 16px;
     font-weight: 400;
-    width: 100%;
+    width: 280px;
+}
+
+.input-cost-label{
+padding: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    width: 608px;
+    height: 101px;
+    text-align: left; /* выравнивание текста влевой части */
+    padding: 10px; /* отступы для удобства */
+}
+
+
+
+
+
+input{
+    border-radius: 32px;
+    background: #20344a;
+    
+        border: 0;
+        outline: 0;
+        color: #FFF;
+        font-family: Inter;
+        line-height: normal;
+}
+
+.popup-input-name, label {
+    
+    
 }
 
 .popup-confidence{
     display: flex;
+        /* делает элементы внутри блока в строчку */
+        align-items: center;
+        /* выравнивает элементы по центру по вертикали */
+    width: 100%;
+    display: flex;
+        gap: 16px;
+        margin: 0 0 24px 0;
 }
 
+.confidence-input{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.confidence-input input {
+    width: 20px;
+    height: 20px;
+}
+
+.confidence-input label {
+    color: #fff;
+    font-size: 14px;
+}
+
+.confidence-input label span {
+    color: #D51117;
+    /* Красный цвет ссылки */
+    text-decoration: underline;
+}
+
+
+.popup-btn-c-b{
+    width: 100%;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 60px;
+        width: 100%;
+        border: none;
+        background: #20344a;
+        color: #fff;
+        height: 80px;
+        font-family: Inter;
+        cursor: pointer;
+}

@@ -1,4 +1,7 @@
-
+.contact-info{
+    margin: 0 auto;
+    max-width: 1703px;
+}
 
 .contact-con{
     justify-content: space-between;
