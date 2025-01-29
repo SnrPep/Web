@@ -97,3 +97,8 @@ footer{
         font-weight: 300;
         color: #FFF;
 }
+
+.footer-bottom{
+    width: 100%;
+    border-top: solid 1px gray;
+}
