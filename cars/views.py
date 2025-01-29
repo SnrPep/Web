@@ -6,6 +6,7 @@ from .models import Cars
 import os
 import random
 from django.conf import settings
+from django.shortcuts import render, get_object_or_404
 
 
 def car_list(request, country=None):
@@ -86,24 +87,22 @@ def car_catalog(request, country=None):
 
     return render(request, 'car_catalog.html', {'filter': car_filter, 'cars': car_filter.qs})
 
-
-def check_images(request):
-    # Укажите путь к папке с изображениями
+def car_detail(request, country, car_id):
+    car = get_object_or_404(Cars, id=car_id)
+    # Путь к папке с изображениями
     image_folder = os.path.join(settings.MEDIA_ROOT, 'Tomiko Trade Photos')
 
-
-    # Проверяем, существует ли папка
-    if not os.path.exists(image_folder):
-        return JsonResponse({'error': 'Папка с изображениями не найдена'}, status=404)
-
-    # Получаем список файлов в папке
+    # Получаем список всех изображений в папке
     image_files = [
         f for f in os.listdir(image_folder) if os.path.isfile(os.path.join(image_folder, f))
     ]
 
-    # Если изображений нет, сообщаем об этом
-    if not image_files:
-        return JsonResponse({'message': 'В папке нет изображений'}, status=200)
+    if country:
+        cars = Cars.objects.filter(brand_country__country__iexact=country)
+    else:
+        cars = Cars.objects.all()  # Если страна не указана, показываем все автомобили
+    # cars = Cars.objects.all()
 
-    # Если изображения найдены, возвращаем их список
-    return JsonResponse({'images': os.path.join(settings.MEDIA_URL, 'Tomiko Trade Photos', random.choice(image_files))}, status=200)
+    car.random_image = f"/media/Tomiko Trade Photos/{random.choice(image_files)}"
+
+    return render(request, 'car_detail.html', {'car': car})
