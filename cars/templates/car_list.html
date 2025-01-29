@@ -239,15 +239,17 @@
                 <div class="catalog">
                     {% for car in cars %}
                         <div class="card">
-                            <div class="head">
-                                <span class="price">{{ car.brand_country.brand }} {{ car.model }}</span>
-                                <p>{{ car.year }} • {{ car.transmission }} • {{ car.mileage }} км</p>
-                            </div>
-                            <img src="{{ car.random_image }}" alt="{{ car.random_image }}">
-                            <div class="actions">
-                                <span class="price">{{ car.price_with_duty }} ₽</span>
-                                <button>Оставить заявку</button>
-                            </div>
+                            <a href="{% url 'car_detail' country=car.brand_country.country car_id=car.id %}">
+                                <div class="head">
+                                    <span class="price">{{ car.brand_country.brand }} {{ car.model }}</span>
+                                    <p>{{ car.year }} • {{ car.transmission }} • {{ car.mileage }} км</p>
+                                </div>
+                                <img src="{{ car.random_image }}" alt="{{ car.random_image }}">
+                                <div class="actions">
+                                    <span class="price">{{ car.price_with_duty }} ₽</span>
+                                    <button>Оставить заявку</button>
+                                </div>
+                            </a>
                         </div>
                     {% empty %}
                         <p>Нет доступных машин.</p>
