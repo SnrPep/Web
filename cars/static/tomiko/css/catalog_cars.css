@@ -1,12 +1,18 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     max-width: 100%;
 }
 
-/* Контейнеры с одинаковыми отступами */
-.container, .catalog-routing, .midle, .filters, .menu, .pagination, .contacts, .catalog-title {
-    margin: 0 4.375rem 0 4.375rem; /* одинаковые отступы по бокам */
+/* Основной контейнер с центрированием и ограничением ширины */
+.midle, .contacts {
+    margin: 0 auto; /* Центрирование по горизонтали */
+    max-width: 1700px; /* Ограничение максимальной ширины */
+}
+
+.catalog-title, .catalog-routing, .filters, .menu, .catalog{
+    margin: 0 10px 0 10px;
 }
 
 body {
@@ -16,13 +22,16 @@ body {
     background-color: var(--main-bg-color);
 }
 
-.media__text{
+.media__text {
     margin-top: 0.3125rem;
     margin-right: 1.5rem;
 }
 
 .midle {
     display: grid;
+    width: 100%; /* Ширина на весь экран */
+    max-width: 1700px; /* Ограничение максимальной ширины */
+    margin: 0 auto; /* Центрирование по горизонтали */
 }
 
 .catalog-routing {
@@ -55,7 +64,7 @@ body {
 /* Фильтры */
 .filters .row {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Три колонки */
+    grid-template-columns: repeat(4, 1fr); /* Четыре колонки */
     gap: 10px 20px; /* Расстояние между элементами */
 }
 
@@ -109,17 +118,6 @@ body {
     background-color: rgba(255, 255, 255, 0.3); /* Цвет линии */
 }
 
-/*.filters .double-select-inner::after {*/
-/*    content: "▼"; !* Либо использовать \25BC *!*/
-/*    font-size: 12px;*/
-/*    color: rgba(255, 255, 255, 0.5);*/
-/*    position: absolute;*/
-/*    right: 10px;*/
-/*    top: 50%;*/
-/*    transform: translateY(-50%);*/
-/*    pointer-events: none; !* Чтобы клики проходили сквозь *!*/
-/*}*/
-
 .filters .double-select-inner select {
     flex: 1; /* Равномерное распределение */
     background-color: #20344a;
@@ -129,7 +127,6 @@ body {
     font-size: 0.875rem;
     cursor: pointer;
     text-align: left;
-    /*appearance: none;*/
 }
 
 .filters .double-select-inner select:first-child {
@@ -139,7 +136,6 @@ body {
 .filters .double-select-inner select:last-child {
     border-radius: 0 30px 30px 0;
 }
-
 
 .filters .double-select-inner select:hover {
     background-color: #2a3d56;
@@ -210,16 +206,11 @@ body {
 }
 
 /* Каталог */
-.container {
-    width: 100%;
-}
-
 .catalog {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 0.75rem;
     margin-top: 20px;
-    margin-right: 8.75rem;
 }
 
 .card {
@@ -264,6 +255,7 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+
 .card button {
     padding: 10px 20px;
     background-color: #20344a;
@@ -277,10 +269,10 @@ body {
     white-space: nowrap;
     width: auto;
 }
+
 .card button:hover {
     background-color: #D51117;
 }
-
 
 /* Пагинация */
 .pagination {
@@ -290,7 +282,8 @@ body {
     background-color: #1a2939;
     width: fit-content;
     height: 39px;
-    margin: 20px 4.375rem 20px auto;
+    margin: 20px 0 0 auto; /* Центрирование по горизонтали */
+    margin-right: 10px;
     gap: 0.3125rem;
     border-radius: 30px;
     padding: 0 5px;
@@ -324,8 +317,9 @@ body {
     height: auto;
 }
 
+/* Адаптация под экран */
 @media (max-width: 1024px) {
-    .filters {
+    .filters .row {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -339,7 +333,7 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .filters {
+    .filters .row {
         grid-template-columns: 1fr;
     }
 }

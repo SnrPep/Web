@@ -1,13 +1,8 @@
-* {
-    max-width: 100%;
-}
-
 body {
     font-family: Bebas Neue, sans-serif;
     margin-top: 100px;
     padding: 0;
     background-color: var(--main-bg-color);
-    max-width: 100%;
 }
 
 .title {
@@ -19,19 +14,19 @@ body {
     color: #fff;
     text-align: left;
     text-transform: uppercase;
-    margin: 20px 4.375rem;
+    margin: 20px 10px;
     font-family: "Inter", serif;
 }
 
 .main {
-    padding: 1em;
     display: grid;
-    margin: 0 4.375rem;
-    text-align: left;
+    width: 100%;
+    max-width: 1700px;
+    margin: 0 auto;
 }
 
 .block {
-    margin: 0 4.375rem 1.25rem 4.375rem;
+    margin-bottom: 1.25rem;
     background: #081e36;
     padding: 40px;
     color: #FFFFFF;

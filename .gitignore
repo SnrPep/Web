@@ -163,7 +163,6 @@ cython_debug/
 celerybeat-schedule.dir
 celerybeat-schedule.bak
 celerybeat-schedule.dat
-TomikoTradeProject/celery.py
 .idea/misc.xml
 .idea/Web.iml
 WebProg

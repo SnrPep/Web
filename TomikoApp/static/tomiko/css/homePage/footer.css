@@ -3,11 +3,9 @@ footer{
     border-top: 4px solid #d51117;
     border-bottom: 1px solid rgba(255, 255, 255, );
     background: #081e36;
-    
 }
 
 .footer-container{
-    
     padding: 40px 0 24px 0;
     max-width: 1703px;
     margin: 0 auto;

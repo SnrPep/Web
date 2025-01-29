@@ -20,6 +20,7 @@ body {
     font-family: "Inter", serif;
     font-weight: 600;
     font-size: 16px;
+    margin-left: 10px;
 }
 
 .header__items, .td-info, .header-link, .header-media, .header-number {
@@ -47,8 +48,9 @@ body {
 }
 
 .header{
-    margin: 20px 8.75rem 0 8.75rem;
     max-height: 120px;
+    max-width: 1700px;
+    margin: 10px auto;
 }
 
 .header-info {
