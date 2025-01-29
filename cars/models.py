@@ -93,6 +93,7 @@ class Brands(models.Model):
 
 class Cars(models.Model):
     # Все поля остаются без изменений
+    # id = models.IntegerField()
     model = models.CharField(max_length=100)
     year = models.IntegerField()
     mileage = models.IntegerField()

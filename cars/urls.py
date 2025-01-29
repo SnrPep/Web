@@ -8,9 +8,9 @@ urlpatterns = [
     path('', views.car_list, name='car_list'),
     path('catalog/', views.car_catalog, name='car_catalog'),
     path('get-models/', views.get_models_by_brand, name='get_models'),  # Новый маршрут для AJAX-запроса
-    path('check-images/', views.check_images, name='check_images'),
     path('catalog/<str:country>/', views.car_catalog, name='car_catalog_by_country'),
     path('<str:country>/', views.car_list, name='car_catalog_by_country'),
+    path('<str:country>/<int:car_id>/', views.car_detail, name='car_detail'),
 ]
 
 # if settings.DEBUG:  # Только для разработки
