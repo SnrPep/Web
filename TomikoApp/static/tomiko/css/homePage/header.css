@@ -5,11 +5,12 @@ body {
     
 }
 
-header{
+/*header{
     
     border-bottom: solid 1px #FFFFFF29;
     padding-bottom: 50px;
 }
+    */
 .header-line{
     padding: 12px 0;
         position: fixed;
@@ -42,9 +43,8 @@ header{
     font-family: "Bebas Neue", serif;
     font-size: 24px;
 }
-/*распределение по гридам*/
+
 .header{
-    
     margin-top: 24px;
     margin: 0px auto auto auto;
     max-width: 1703px;
