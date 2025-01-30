@@ -30,6 +30,19 @@ def car_list(request, country=None):
         cars = cars.order_by('id')  # Сортировка по умолчанию
 
     car_filter = CarFilter(request.GET, queryset=cars, country=country)
+    if country == "Корея":
+        country_name = "Кореи"
+        # country_name_eng = "korea"
+        country_name_eng = "/static/tomiko/img/icons/korea.svg"
+    elif country == "Япония":
+        country_name = "Японии"
+        country_name_eng = "/static/tomiko/img/icons/japan.svg"
+    elif country == "Китай":
+        country_name = "Китая"
+        country_name_eng = "/static/tomiko/img/icons/china.svg"
+    else:
+        country_name = ""
+        country_name_eng = ""
 
     for car in car_filter.qs:
         if image_files:
@@ -44,7 +57,7 @@ def car_list(request, country=None):
     page_number = request.GET.get('page')
     cars = paginator.get_page(page_number)
 
-    return render(request, 'car_list.html', {'filter': car_filter, 'cars': cars, 'request': request, 'country': country})
+    return render(request, 'car_list.html', {'filter': car_filter, 'cars': cars, 'request': request, 'country': country, 'country_name': country_name, 'country_name_eng': country_name_eng})
 
 
 def get_models_by_brand(request):
