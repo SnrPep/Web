@@ -32,70 +32,70 @@ button {
 button:hover {
     background-color: #2ea043;
 }
-.container {
-    width: 90%;
-    margin-left: 100px;
-    overflow: hidden;
-}
-.catalog {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(338px, 1fr));
-    gap: 12px;
-    margin: 20px auto;
-    width: 1400px;
-}
-.card {
-    background: #081E36;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.card img {
-    margin: 16px auto;
-    width: 100%;
-    border-radius: 8px;
-}
-.card h3 {
-    color: #FFFFFF;
-    margin: auto 0;
-    font-size: 24px;
-    font-family: 'Bebas Neue', sans-serif;
-}
-.card p {
-    margin: 8px 0;
-    color: gray;
-    font-size: 14px;
-    font-family: 'Inter', sans-serif;
-}
-.card .price {
-    margin: 8px 0;
-    color: #FFFFFF;
-    font-weight: bold;
-    font-size: 24px;
-    font-family: 'Bebas Neue', sans-serif;
-}
-.card .actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: auto;
-}
-.card button {
-    padding: 10px 20px;
-    background-color: #20344a;
-    color: white;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    white-space: nowrap;
-    width: auto;
-}
-.card button:hover {
-    background-color: #D51117;
-}
+/*.container {*/
+/*    width: 90%;*/
+/*    margin-left: 100px;*/
+/*    overflow: hidden;*/
+/*}*/
+/*.catalog {*/
+/*    display: grid;*/
+/*    grid-template-columns: repeat(auto-fit, minmax(338px, 1fr));*/
+/*    gap: 12px;*/
+/*    margin: 20px auto;*/
+/*    width: 1400px;*/
+/*}*/
+/*.card {*/
+/*    background: #081E36;*/
+/*    padding: 15px;*/
+/*    border-radius: 8px;*/
+/*    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: space-between;*/
+/*}*/
+/*.card img {*/
+/*    margin: 16px auto;*/
+/*    width: 100%;*/
+/*    border-radius: 8px;*/
+/*}*/
+/*.card h3 {*/
+/*    color: #FFFFFF;*/
+/*    margin: auto 0;*/
+/*    font-size: 24px;*/
+/*    font-family: 'Bebas Neue', sans-serif;*/
+/*}*/
+/*.card p {*/
+/*    margin: 8px 0;*/
+/*    color: gray;*/
+/*    font-size: 14px;*/
+/*    font-family: 'Inter', sans-serif;*/
+/*}*/
+/*.card .price {*/
+/*    margin: 8px 0;*/
+/*    color: #FFFFFF;*/
+/*    font-weight: bold;*/
+/*    font-size: 24px;*/
+/*    font-family: 'Bebas Neue', sans-serif;*/
+/*}*/
+/*.card .actions {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    margin-top: auto;*/
+/*}*/
+/*.card button {*/
+/*    padding: 10px 20px;*/
+/*    background-color: #20344a;*/
+/*    color: white;*/
+/*    font-family: 'Inter', sans-serif;*/
+/*    font-size: 14px;*/
+/*    border: none;*/
+/*    border-radius: 30px;*/
+/*    cursor: pointer;*/
+/*    transition: background-color 0.3s;*/
+/*    white-space: nowrap;*/
+/*    width: auto;*/
+/*}*/
+/*.card button:hover {*/
+/*    background-color: #D51117;*/
+/*}*/
