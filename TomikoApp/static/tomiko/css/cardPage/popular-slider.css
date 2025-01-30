@@ -1,0 +1,157 @@
+/* Основные стили для контейнера слайдера */
+.slider-container {
+    color: white;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Заголовок слайдера */
+.slider-title {
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Контейнер Swiper для популярных авто */
+.swiper {
+    width: 100%;
+    max-width: 1703px;
+    margin: 0 auto;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Стили для слайдов популярных авто */
+.swiper-slide {
+    background: #081E36;
+    padding: 12px 16px;
+    border-radius: 24px;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 347px;
+    max-width: 338px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Увеличенный активный слайд (только для popularSwiper) */
+.slider-container .swiper-slide.big {
+    transform: scale(1.2);
+    z-index: 10;
+    border: 2px solid #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Исправление позиции, чтобы остальные слайды оставались справа */
+.swiper-wrapper {
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Изображения внутри слайдов */
+.swiper-slide img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 28px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Название автомобиля */
+.swiper-slide .car-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+/* Детали автомобиля */
+.swiper-slide .car-details {
+    font-size: 0.875rem;
+    color: gray;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Цена автомобиля */
+.swiper-slide .car-price {
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+/* Кнопка действия */
+.swiper-slide .action-button {
+    padding: 10px 20px;
+    background-color: #20344a;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.swiper-slide .action-button:hover {
+    background-color: #D51117;
+}
+
+.swiper-slide .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Исправленные стили для стрелок навигации популярных авто */
+.popular-next,
+.popular-prev {
+    color: #FFFFFF;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.popular-next { right: -10px; }
+.popular-prev { left: -10px; }
+
+.popular-next:hover,
+.popular-prev:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Адаптация под мобильные устройства */
+@media (max-width: 768px) {
+    .slider-title { font-size: 20px; }
+    .swiper-slide { height: 250px; }
+    .car-title { font-size: 16px; }
+    .car-details { font-size: 12px; }
+    .car-price { font-size: 16px; }
+    .action-button { font-size: 12px; padding: 8px 16px; }
+}
+
+@media (max-width: 480px) {
+    .slider-title { font-size: 18px; }
+    .swiper-slide { height: 200px; }
+    .car-title { font-size: 14px; }
+    .car-details { font-size: 10px; }
+    .car-price { font-size: 14px; }
+    .action-button { font-size: 10px; padding: 6px 12px; }
+}

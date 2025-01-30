@@ -1,9 +1,19 @@
-var swiper = new Swiper('.swiper', {
+var gallerySwiper = new Swiper('.gallery-top', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    loop: true,
+    navigation: {
+        nextEl: '.gallery-next',
+        prevEl: '.gallery-prev',
+    }
+});
+
+var popularSwiper = new Swiper('.swiper', {
     slidesPerView: "auto",
     spaceBetween: 16,
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.popular-next',
+        prevEl: '.popular-prev',
     },
     loop: false,
 
@@ -13,7 +23,7 @@ var swiper = new Swiper('.swiper', {
                 slide.classList.remove('big');
             });
 
-            const visibleSlides = Array.from(swiper.slides).slice(swiper.activeIndex, swiper.activeIndex + swiper.params.slidesPerView);
+            const visibleSlides = Array.from(popularSwiper.slides).slice(popularSwiper.activeIndex, popularSwiper.activeIndex + popularSwiper.params.slidesPerView);
             if (visibleSlides[0]) {
                 visibleSlides[0].classList.add('big');
             }

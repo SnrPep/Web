@@ -1,16 +1,11 @@
 .main-container {
-    
     max-width: 1703px;
-    margin: 200px auto auto auto;
-}
-
-.card-routing{
-    display: flex;
-    color: #FFFFFF80;
-    gap: 5px;
+    width: 100%;
+    margin: 9rem auto auto auto;
 }
 
 .card-content{
+    margin: 30px 20px 0 20px;
     display: flex;
 }
 
@@ -21,7 +16,6 @@
 }
 
 .title{
-    
     font-size: 40px;
         font-weight: 700;
         line-height: 40px;
@@ -51,17 +45,16 @@
 }
 
 .btn-quest-card{
-    
-        width: 285px;
-        height: 70px;
-        border-radius: 60px;
-        background: linear-gradient(90deg, #0D2F68, #D51117);
-        color: white;
-        border: none;
-        cursor: pointer;
-        font-family: "Inter", serif;
-        font-size: 18px;
-        font-weight: 600;
+    width: 285px;
+    height: 70px;
+    border-radius: 60px;
+    background: linear-gradient(90deg, #0D2F68, #D51117);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: "Inter", serif;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .header-media__ico{
@@ -69,7 +62,7 @@
 }
 
 .economy-quest{
-    
+    margin-top: 20px;
     font-family: Inter;
         font-size: 14px;
         font-weight: 400;
@@ -82,7 +75,9 @@
     width: 500px;
     border-collapse: collapse;
     margin-top: 24px;
+    gap: 16px;
 }
+
 .text-gray,
 span {
     color: #fff;
@@ -114,4 +109,23 @@ span {
     align-items: center;
     height: 100vh;
     margin: 0;
+}
+
+.rbutton {
+    margin-top: 20px;
+    padding: 14px 20px;
+    background-color: #20344a;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+    width: auto;
+}
+
+.rbutton:hover {
+    background-color: #D51117;
 }
