@@ -1,0 +1,118 @@
+.media{
+    margin: 100px auto auto auto;
+        max-width: 1424px;
+        align-items: center;
+        justify-content: center;
+}
+
+.media-title{
+    
+    width: 100%;
+    font-size: 30px;
+        font-family: "Montserrat", serif;
+        font-weight: 700;
+        font-style: normal;
+        text-transform: uppercase;
+        display: flex;
+}
+
+.media-img{
+    
+    transform: scale(2);
+}
+
+.media-img-bg{
+    margin: 50px;
+    width: 1703px;
+}
+
+.arrow-media {
+    transform: rotate(-45deg);
+    margin-left: 10px;
+
+}
+.a-links{
+    display: flex;
+    margin-left: 25px;
+    text-align: end;
+}
+.comment_links{
+    display: flex;
+        justify-content: flex-end;
+        /* Выравнивание по правому краю */
+        width: 100%;
+        /* Занимает всю ширину контейнера */
+}
+
+.media-container{
+    display: flex;
+    align-items: end;
+}
+
+.media-swiper {
+    font-family: Arial, sans-serif;
+    background-color: #001122;
+    color: white;
+    padding: 20px;
+    width: 100%;
+    padding: 20px 0;
+}
+
+  .swiper-slide-media {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: 29px;
+      padding: 16px 24px;
+      border-radius: 16px;
+      background: #081e36;
+      max-width: 308px;
+  }
+
+  .logo-avatar {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #A84CA8;
+      ;
+  }
+  .user-low{
+    position: absolute;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 70px;
+        color: #fff;
+        right: 12px;
+        bottom: -25px;
+  }
+
+  
+
+  .rating-stars {
+      display: flex;
+  }
+
+  .comment_date {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-family: Inter, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      text-align: left;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+      color: #FFFFFF80;
+
+  }
+
+.swiper-slide-media {
+    margin-bottom: 10px;
+    margin-right: 16px;
+}
+
+.swiper-wrapper-media{
+    display: flex;
+    
+}

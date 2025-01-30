@@ -1,0 +1,119 @@
+header{
+    border-bottom: solid 1px #FFFFFF29;
+    padding-bottom: 50px;
+}
+
+/* Все элементы контейнера имеют одинаковые отступы */
+.header__item,
+.header__items, .td-info, .header-link {
+    margin: 0 1.25rem; /* Устанавливаем одинаковые отступы по бокам */
+}
+
+/*Стили, шрифты, цвета для шапки сайта*/
+.header__items, .td-info, .header-link{
+    color: #FFFFFFB2;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: "Inter", serif;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.header-media{
+    color: white;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: "Bebas Neue", serif;
+    font-size: 24px;
+}
+
+/*распределение по гридам*/
+.header{
+    margin: auto 6.25rem;
+    max-width: 1703px;
+}
+
+/*Блок header-info*/
+.header-info {
+    display: flex;
+    justify-content: space-between;
+    /* Элементы по краям контейнера */
+    align-items: center;
+    /* Центрирование по вертикали */
+}
+
+.info-list {
+    list-style-type: none;
+    /* Убираем маркеры списка */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    /* Делаем элементы списка в ряд */
+    align-items: center;
+}
+
+.header-media-container {
+    display: flex;
+    /* Располагаем элементы внутри блока в линию */
+    align-items: center;
+    /* Центрирование по вертикали */
+    margin-left: auto;
+    /* Прижимаем блок к правому краю */
+}
+
+li {
+    margin-right: 25px;
+    /* Добавляем отступ между элементами */
+}
+
+.link-li{
+    margin-right: 35px;
+}
+/*Блок header-title */
+
+.header-title {
+    margin-top: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.header__title{
+    text-align: center;
+    color: #fff;
+    font-family: "Montserrat", serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 77px;
+}
+
+.header-number{
+    font-family: "Bebas Neue", serif;
+    font-size: 24px;
+    color: #fff;
+    opacity: 1;
+}
+.header__phrase{
+    font-family: "Inter", serif;
+    font-weight: 300;
+    color: #fff;
+    font-size: 24px;
+    line-height: 36px;
+    width: 563px;
+    text-align: center;
+}
+.header__btn{
+    margin-top: 30px;
+        width: 285px;
+        height: 70px;
+        border-radius: 60px;
+        background: linear-gradient(90deg, #0D2F68, #D51117);
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-family: "Inter", serif;
+        font-size: 18px;
+        font-weight: 600;
+}

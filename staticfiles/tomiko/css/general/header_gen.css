@@ -1,0 +1,95 @@
+body {
+    background: var(--main-bg-color);
+    padding: 0;
+}
+
+.header {
+    position: fixed; /* Фиксируем шапку */
+    top: 0; /* Ставим её в верхнюю часть экрана */
+    left: 0; /* Привязываем к левой части */
+    right: 0; /* Привязываем к правой части */
+    background: var(--main-bg-color);
+    z-index: 1000; /* Устанавливаем высокий z-index, чтобы шапка всегда была поверх других элементов */
+    border-bottom: solid 1px #FFFFFF29;
+}
+
+.header__items, .td-info, .header-link {
+    color: #FFFFFFB2;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: "Inter", serif;
+    font-weight: 600;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.header__items, .td-info, .header-link, .header-media, .header-number {
+    position: relative;
+    z-index: 1001; /* Увеличиваем z-index, чтобы текст был поверх ::before */
+}
+
+.header-media{
+    color: white;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: "Bebas Neue", serif;
+    font-size: 1.5rem;
+}
+
+.header::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 105px; /* Размер верхнего пространства */
+    background: var(--main-bg-color);
+    z-index: 999; /* Чтобы быть ниже содержимого хедера */
+}
+
+.header{
+    max-height: 120px;
+    max-width: 1700px;
+    margin: 10px auto;
+}
+
+.header-info {
+    display: flex;
+    justify-content: space-between;
+    /* Элементы по краям контейнера */
+    align-items: center;
+    /* Центрирование по вертикали */
+}
+
+.info-list {
+    list-style-type: none;
+    /* Убираем маркеры списка */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    /* Делаем элементы списка в ряд */
+    align-items: center;
+}
+
+.header-media-container {
+    display: flex;
+    /* Располагаем элементы внутри блока в линию */
+    align-items: center;
+    margin-left: auto;
+}
+
+li {
+    margin-right: 25px;
+    /* Добавляем отступ между элементами */
+}
+
+.link-li{
+    margin-right: 20px;
+}
+
+.header-number{
+    font-family: "Bebas Neue", serif;
+    font-size: 24px;
+    color: #fff;
+    opacity: 1;
+}

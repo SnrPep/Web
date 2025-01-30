@@ -1,0 +1,60 @@
+.clips{
+    margin: 0 auto;
+    max-width: 1703px;
+}
+
+.clips-title{
+    width: 100%;
+    display: flex;
+    color: #fff;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 50px;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 300px;
+}
+
+.swiper-slide-clip {
+    display: flex;
+    justify-content: space-between;
+    
+    align-items: center;
+    height: 100%;
+    
+}
+
+.clips-img{
+    margin-right: 7px;
+    width: 150px;
+    height: 264px;
+    border-radius: 20px;
+}
+.clips-btn{
+    
+    display: flex;
+    
+    padding: 10px;
+    background-color: #FFFFFF1A;
+    border-radius: 25px;
+    height: 30px;
+    width: 140px;
+}
+
+.stat{
+    display: flex;
+    align-items: center;
+}
+
+.clips-p{
+    font-family: Inter;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 19.6px;
+        text-align: center;
+        text-decoration: none;
+        color:#fff;
+        margin-left: 10px;
+}

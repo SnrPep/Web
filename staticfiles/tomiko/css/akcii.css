@@ -1,0 +1,106 @@
+body {
+    font-family: Bebas Neue, sans-serif;
+    margin-top: 100px;
+    padding: 0;
+    background-color: var(--main-bg-color);
+}
+
+.title {
+    padding-top: 40px;
+    padding-bottom: 1.5rem;
+    font-size: 70px;
+    font-weight: 700;
+    line-height: 2.5rem;
+    color: #fff;
+    text-align: left;
+    text-transform: uppercase;
+    margin: 20px 10px;
+    font-family: "Inter", serif;
+}
+
+.main {
+    display: grid;
+    width: 100%;
+    max-width: 1700px;
+    margin: 0 auto 40px auto;
+}
+
+.block {
+    margin-bottom: 1.25rem;
+    background: #081e36;
+    padding: 40px;
+    color: #FFFFFF;
+    border-radius: 28px;
+    border: #FFFFFF29 solid 1px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.block-content {
+    max-width: 50%; /* Ограничение ширины текста */
+    color: #fff; /* Цвет текста */
+}
+
+.block-content h2 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.block-content p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.block-content .btn {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: 8px;
+    background: linear-gradient(90deg, #0D2F68, #D51117);
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.numbered-list {
+    list-style: none; /* Убираем стандартные маркеры */
+    counter-reset: list-counter; /* Сброс счётчика */
+}
+
+.numbered-list li {
+    position: relative;
+    padding-left: 10px; /* Увеличиваем отступ для цифр */
+    margin-bottom: 10px;
+    line-height: 30px; /* Высота строки, чтобы цифры были по центру */
+}
+
+.numbered-list li::before {
+    content: counter(list-counter);
+    counter-increment: list-counter; /* Увеличение счётчика */
+    position: absolute;
+    left: -35px;
+    top: 50%; /* Центрируем по вертикали */
+    transform: translateY(-55%); /* Смещаем вверх на половину высоты */
+    width: 25px;
+    height: 25px;
+    background: #2d3b50; /* Тёмный фон */
+    color: white; /* Белый текст */
+    border-radius: 50%; /* Делаем круг */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.block-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+

@@ -1,0 +1,151 @@
+.contact-con{
+    justify-content: space-between;
+    display: flex;
+    font-family: "Inter", serif;
+        font-weight: 300;
+        color: #fff;
+    margin: 50px 10px 0 10px;
+    max-width: 100%;
+}
+
+.form-container {
+    background-color: #081E36;
+    /* Темный блок формы */
+    padding: 20px;
+    border-radius: 30px;
+    width: 640px;
+    height: 428px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.form-container h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    font-family: "Inter", serif;
+        font-weight: 400;
+
+    background-color: #20344A;
+    /* Цвет полей ввода */
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 10px;
+    font-size: 16px;
+    height: 50px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border: 1px solid #568fff;
+    /* Ховер поле */
+
+}
+
+.form-group textarea {
+    resize: none;
+    height: 80px;
+}
+
+.form-column {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.form-column input {
+    width: 100%;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.checkbox-group input {
+    width: 20px;
+    height: 20px;
+}
+
+.checkbox-group label {
+    color: #fff;
+    font-size: 14px;
+}
+
+.checkbox-group label span {
+    color: #D51117;
+    /* Красный цвет ссылки */
+    text-decoration: underline;
+}
+
+.submit-btn {
+
+    text-align: center;
+    margin-top: 20px;
+}
+
+.submit-btn button {
+    height: 70px;
+    width: 640px;
+    background-color: #20344A;
+    /* Цвет кнопки */
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn button:hover {
+    background-color: #568fff;
+    /* Цвет кнопки при наведении */
+}
+
+.title-block{
+    font-size: 18px;
+    color: #808891;
+}
+
+.title-block p{
+    padding-top: 20px;
+}
+
+.title-block .title{
+    font-size: 70px;
+    color: white;
+    line-height: 25px;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.info-block{
+    margin-top: 40px;
+}
+
+.info-block .name{
+    margin-top: 12px;
+    font-size: 16px;
+    color: #808891;
+}
+
+.info-block .info{
+    margin-top: 8px;
+    font-size: 18px;
+    color: white;
+}
