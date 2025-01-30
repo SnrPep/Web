@@ -1,39 +1,42 @@
-.swiper-container {
-    width: 60%;
-    max-width: 600px;
+.card-box {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
 }
 
-.swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
+.second-swiper {
+    width: 100%;
+    height: 400px;
+}
+
+.second-swiper .swiper-slide {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
-    overflow: hidden;
+    height: 100%;
 }
 
-.swiper-slide img {
+.second-swiper .swiper-slide img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
 }
 
-.swiper-container.gallery-thumbs {
-    height: 100px;
-    box-sizing: border-box;
-    padding: 10px 0;
+.second-swiper-button-next,
+.second-swiper-button-prev {
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-.swiper-container.gallery-thumbs .swiper-slide {
-    width: 25%;
-    height: 100%;
-    opacity: 0.4;
-    cursor: pointer;
+.second-swiper-button-next {
+    right: 10px;
 }
 
-.swiper-container.gallery-thumbs .swiper-slide-thumb-active {
-    opacity: 1;
+.second-swiper-button-prev {
+    left: 10px;
 }
-

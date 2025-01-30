@@ -1,7 +1,9 @@
-.logo-brands{
-    margin-top: 40px;
-    align-items: center;
-    justify-content: center;
+.marquee {
+    margin: 100px auto auto auto;
+    max-width: 100%;
+    display: flex;
+    gap: 20px;
+    position: absolute;
 }
 
 .brand{
@@ -10,11 +12,13 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    display: inline-flex;
-    
-    
 }
 
+.marquee button{
+    gap: 70px;
+    display: flex;
+    width: 100%;
+}
 
 .brand:hover img {
     transform: scale(1.1);
@@ -22,33 +26,31 @@
     /* Увеличение размера на 10% */
 }
 
-.logo-carousel {
-    width: 100%;
-        /* Ширина контейнера */
-        height: 100px;
-        /* Высота контейнера, подбирайте под ваши логотипы */
-        overflow: hidden;
-    overflow: hidden;
-    position: relative;
-}
 
-.marquee {
+
+.marquee div {
     display: flex;
-    overflow: hidden;
-    white-space: nowrap;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
     animation: marquee 20s linear infinite;
+
 }
 
+.marquee h1 {
+    width: 100%;
+    white-space: nowrap;
+    display: flex;
+    gap: 10px;
+
+}
 
 @keyframes marquee {
+    200% {
+        transform: translateX(100%);
+    }
+
     100% {
-            transform: translateX(100%);
-        }
-    
-        
-    100%{
-            transform: translateX(-100%);
-        }
-    
-        
+        transform: translateX(-100%);
+    }
 }
