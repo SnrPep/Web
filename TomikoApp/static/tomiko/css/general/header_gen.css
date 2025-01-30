@@ -20,7 +20,7 @@ body {
     font-family: "Inter", serif;
     font-weight: 600;
     font-size: 16px;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 .header__items, .td-info, .header-link, .header-media, .header-number {
@@ -79,12 +79,12 @@ body {
 }
 
 li {
-    margin-right: 25px;
+    margin-right: 10px;
     /* Добавляем отступ между элементами */
 }
 
 .link-li{
-    margin-right: 20px;
+    margin-right: 16px;
 }
 
 .header-number{

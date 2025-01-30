@@ -52,7 +52,10 @@
                  •
                 <a href="/cars/{{ country }}">Автомобили из {{ country_name }}</a>
             </div>
-            <h1 class="catalog-title">Автомобили из {{ country_name }} </h1>
+            <div class="catalog-title-block">
+                <h1 class="catalog-title">Автомобили из {{ country_name }} </h1>
+                <img src="{{ country_name_eng }}" alt="{{ country_name_eng }}">
+            </div>
 
             <form method="get" class="filters">
                 <div class="row">
@@ -116,7 +119,7 @@
             </script>
 
             <div class="slider-container">
-                <h2 class="slider-title">Популярные авто<br><span>из {{country_name}}</span><img src="{{ country_name_eng }}" alt="{{ country_name_eng }}">
+                <h2 class="slider-title">Популярные авто<br><img src="{{ country_name_eng }}" alt="{{ country_name_eng }}">
 {#                    <img src="{% static 'tomiko/img/icons/korea.svg' %}" alt="">#}
                 </h2>
 

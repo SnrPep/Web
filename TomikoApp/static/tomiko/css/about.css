@@ -27,19 +27,15 @@ body {
 
 .about-block{
     max-height: 600px;
+    margin-top: 40px;
     display: flex;
     flex-direction: row; /* Располагаем элементы в строку */
     gap: 40px; /* Расстояние между текстом и изображением */
-    align-items: center; /* Выравнивание по центру по вертикали */
 }
 
 .title-ab{
-    width: 100%;
-    max-width: 748px;
-}
-
-.title-ab{
-    font-size: 4vw;
+    margin: 0 auto;
+    font-size: 70px;
         font-family: "Montserrat", serif;
         font-weight: 700;
         font-style: normal;
@@ -60,9 +56,8 @@ body {
 }
 
 .about-img{
-    max-width: 100%;
-    height: auto;
-    border-radius: 30px;
+    width: 500px;
+    height: 100;
 }
 
 .about-font{
