@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="{% static 'tomiko/css/general/header_gen.css' %}">
         <link rel="stylesheet" href="{% static 'tomiko/css/general/continfo.css' %}">
         <link rel="stylesheet" href="{% static 'tomiko/css/general/footer.css' %}">
-        <link rel="stylesheet" href="{% static 'tomiko/css/homePage/slider.css' %}">
+        <link rel="stylesheet" href="{% static 'tomiko/css/catalog_slider.css' %}">
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -212,6 +212,7 @@
                     <div class="swiper-button-next"></div>
                 </div>
             </div>
+            </div>
 
             <div class="menu">
                 <div class="dropdown">
@@ -335,8 +336,9 @@
             <div class="subscribe">
                 <img class="header-media__ico" src="{% static 'tomiko/img/podpiska.png' %}" alt="Telega">
             </div>
-            </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="{% static 'tomiko/js/slider.js' %}"></script>
     </body>
     <footer>
       <div class="footer-container">

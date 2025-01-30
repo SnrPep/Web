@@ -1,0 +1,196 @@
+/* Основные стили для контейнера слайдера */
+.slider-container {
+    color: white;
+    margin: 0 auto; /* Центрирование по горизонтали */
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 100%; /* Ограничение ширины контейнера */
+    overflow: hidden; /* Скрываем всё, что выходит за пределы контейнера */
+    box-sizing: border-box; /* Учитываем padding в общей ширине */
+}
+
+/* Заголовок слайдера */
+.slider-title {
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-align: left; /* Центрируем заголовок */
+}
+
+/* Контейнер Swiper */
+.swiper {
+    width: 100%; /* Ширина слайдера на 100% от контейнера */
+    max-width: 1703px; /* Максимальная ширина слайдера */
+    margin: 0 auto; /* Центрирование слайдера */
+    height: auto; /* Автоматическая высота */
+    position: relative; /* Для позиционирования стрелок */
+}
+
+/* Стили для слайдов */
+.swiper-slide {
+    background: #1B2737;
+    overflow: hidden;
+    border-radius: 8px;
+    width: 100%; /* Ширина слайда на 100% от контейнера */
+    height: 300px; /* Высота слайда */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавные переходы */
+}
+
+/* Стили для изображений внутри слайдов */
+.swiper-slide img {
+    width: 100%;
+    height: 300px; /* Высота изображения на 100% от слайда */
+    object-fit: cover; /* Сохраняем пропорции изображения */
+    display: block;
+}
+
+/* Карточка автомобиля */
+.car-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    background: #081E36; /* Фон карточки */
+    border-radius: 8px; /* Закруглённые углы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень */
+}
+
+/* Изображение автомобиля */
+.car-image img {
+    width: 100%;
+    border-bottom: 2px solid #314253; /* Разделительная линия */
+}
+
+/* Информация о автомобиле */
+.car-info {
+    padding: 15px;
+    text-align: center; /* Центрируем текст */
+}
+
+/* Название автомобиля */
+.car-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 0;
+    color: #FFFFFF; /* Белый цвет текста */
+}
+
+/* Детали автомобиля */
+.car-details {
+    font-size: 14px;
+    color: #8899A6; /* Серый цвет текста */
+    margin: 5px 0;
+}
+
+/* Цена автомобиля */
+.car-price {
+    font-size: 18px;
+    color: #F5A623; /* Оранжевый цвет текста */
+    margin: 5px 0;
+}
+
+/* Кнопка действия */
+.action-button {
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+    background: #FF4757; /* Красный фон */
+    color: #ffffff; /* Белый цвет текста */
+    text-transform: uppercase;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease; /* Плавный переход */
+}
+
+/* Эффект при наведении на кнопку */
+.action-button:hover {
+    background: #FF6B81; /* Светло-красный фон */
+}
+
+/* Стили для стрелок навигации */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #FFFFFF; /* Белый цвет стрелок */
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    border-radius: 50%; /* Круглые стрелки */
+    width: 40px; /* Ширина стрелок */
+    height: 40px; /* Высота стрелок */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease; /* Плавный переход */
+}
+
+/* Эффект при наведении на стрелки */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: rgba(0, 0, 0, 0.8); /* Более тёмный фон */
+}
+
+/* Стили для активного слайда */
+.swiper-slide.big {
+    transform: scale(1.1); /* Увеличение активного слайда */
+    z-index: 10; /* Поднимаем активный слайд выше */
+    border: 2px solid #333; /* Рамка */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Тень */
+    transition: all 0.3s ease-in-out; /* Плавный переход */
+}
+
+/* Адаптация под мобильные устройства */
+@media (max-width: 768px) {
+    .slider-title {
+        font-size: 20px; /* Уменьшаем размер заголовка */
+    }
+
+    .swiper-slide {
+        height: 250px; /* Уменьшаем высоту слайда */
+    }
+
+    .car-title {
+        font-size: 16px; /* Уменьшаем размер текста */
+    }
+
+    .car-details {
+        font-size: 12px; /* Уменьшаем размер текста */
+    }
+
+    .car-price {
+        font-size: 16px; /* Уменьшаем размер текста */
+    }
+
+    .action-button {
+        padding: 8px 16px; /* Уменьшаем размер кнопки */
+        font-size: 12px; /* Уменьшаем размер текста */
+    }
+}
+
+/* Адаптация под очень маленькие экраны */
+@media (max-width: 480px) {
+    .slider-title {
+        font-size: 18px; /* Уменьшаем размер заголовка */
+    }
+
+    .swiper-slide {
+        height: 200px; /* Уменьшаем высоту слайда */
+    }
+
+    .car-title {
+        font-size: 14px; /* Уменьшаем размер текста */
+    }
+
+    .car-details {
+        font-size: 10px; /* Уменьшаем размер текста */
+    }
+
+    .car-price {
+        font-size: 14px; /* Уменьшаем размер текста */
+    }
+
+    .action-button {
+        padding: 6px 12px; /* Уменьшаем размер кнопки */
+        font-size: 10px; /* Уменьшаем размер текста */
+    }
+}

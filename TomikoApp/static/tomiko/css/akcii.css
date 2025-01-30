@@ -22,7 +22,7 @@ body {
     display: grid;
     width: 100%;
     max-width: 1700px;
-    margin: 0 auto 0 auto;
+    margin: 0 auto 40px auto;
 }
 
 .block {
@@ -54,8 +54,11 @@ body {
 }
 
 .block-content .btn {
-    display: inline-block;
-    background: linear-gradient(90deg, #2D3FA0, #D83333);
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: 8px;
+    background: linear-gradient(90deg, #0D2F68, #D51117);
     color: #fff;
     padding: 15px 30px;
     font-size: 18px;
@@ -64,7 +67,35 @@ body {
     margin-top: 20px;
 }
 
-.block-content .btn-img {
+.numbered-list {
+    list-style: none; /* Убираем стандартные маркеры */
+    counter-reset: list-counter; /* Сброс счётчика */
+}
+
+.numbered-list li {
+    position: relative;
+    padding-left: 10px; /* Увеличиваем отступ для цифр */
+    margin-bottom: 10px;
+    line-height: 30px; /* Высота строки, чтобы цифры были по центру */
+}
+
+.numbered-list li::before {
+    content: counter(list-counter);
+    counter-increment: list-counter; /* Увеличение счётчика */
+    position: absolute;
+    left: -35px;
+    top: 50%; /* Центрируем по вертикали */
+    transform: translateY(-55%); /* Смещаем вверх на половину высоты */
+    width: 25px;
+    height: 25px;
+    background: #2d3b50; /* Тёмный фон */
+    color: white; /* Белый текст */
+    border-radius: 50%; /* Делаем круг */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
 }
 
 .block-image img {

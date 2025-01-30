@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="{% static 'tomiko/css/general/footer.css' %}">
         <link rel="stylesheet" href="{% static 'tomiko/css/general/navigation.css' %}">
         <link rel="stylesheet" href="{% static 'tomiko/css/akcii.css' %}">
+        <link rel="stylesheet" href="{% static 'tomiko/css/homePage/popup-cost.css' %}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -59,7 +60,7 @@
                         Каждый третий клиент обращается к нам по рекомендации знакомых, друзей, родственников.
                         Этот факт нас безумно радует, и в знак благодарности мы запустили акцию "Приведи друга".
                     </p>
-                    <ul>
+                    <ul class="numbered-list">
                         <li>Вы рекомендуете нашу компанию;</li>
                         <li>По вашей рекомендации человек заключает с нами договор на приобретение автомобиля;</li>
                         <li>Вы получаете денежное вознаграждение или скидку на следующий заказ.</li>
@@ -81,7 +82,7 @@
                         Если вы планируете заказать сразу более 1 автомобиля, то для вас действует система лояльности - 10% скидка
                         на комиссию компании на каждый последующий автомобиль в заказе.
                     </p>
-                    <a href="#" class="btn">Оставить заявку</a>
+                    <button id="check__btn-c" class="btn">Оставить заявку</button>
                 </div>
                 <div class="block-image">
                     <img src="{% static 'tomiko/img/akciiImg/zak2.png' %}" alt="Оптовые заказы">
@@ -103,10 +104,58 @@
                         Важно уточнить, что конечная цена от этого не изменится.
                         Делаем все для вашего удобства и доверия.
                     </p>
-                    <a href="#" class="btn">Оставить заявку</a>
+                    <button id="check__btn-c" class="btn">Оставить заявку</button>
                 </div>
                 <div class="block-image">
                     <img src="{% static 'tomiko/img/akciiImg/depozit.svg' %}" alt="Депозит">
+                </div>
+            </div>
+            <div id="popup-cost-c" class="popup-cost">
+                <div class="popup-container-c">
+                    <a href="" class="popup__close-c">
+                        <img src="{% static 'tomiko/img/icons/close.png' %}" alt="">
+                    </a>
+                    <div class="popup__content-c">
+                        <div class="popup-title-c">
+                            <h1 class="popup-h">Оставить заявку</h1>
+                            <p class="popup-p">Оставьте заявку и менеджер отправит Вам актуальные варианты<br> автомобилей под Ваши требования 👨‍💻</p>
+                        </div>
+                        <div class="popup-input-name">
+                            <label class="label-name" >
+                                <p>Имя</p>
+                                <input class="input-cost" type="text" name="name" placeholder="Введите имя" pattern="^[A-Za-zА-Яа-яЁё\s]+$"
+                                    maxlength="20">
+                            </label>
+                            <label class="label-name">
+                                <p>Телефон</p>
+                                <input class="input-cost" type="number" name="phone" placeholder="+7" pattern="[0-9]*" maxlength="15"
+                                title="Допускаются только числа">
+                            </label>
+                        </div>
+                        <div class="popup-input-name">
+                            <label class="label-quest">
+                                <p class="rev-quest">Уточните свой вопрос</p>
+                                <input class="input-cost-label" type="text" name="question" placeholder="Введите текст сообщения, укажите страну, марку и год машины." maxlength="200">
+                            </label>
+                        </div>
+                        <div class="popup-confidence">
+                            <label>
+                                <span>
+                                    <input class="confidence-input" type="checkbox" required>
+                                    <p>
+                                        С
+                                        <a
+                                            href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://tomiko-trade.com/static/files/%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0%20%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20tomiko-trade.pdf"
+                                            target="_blank" rel="noopener noreferrer">политикой конфиденциальности</a>
+                                         ознакомлен
+                                    </p>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="popup-btn-c">
+                            <button class="popup-btn-c-b" type="submit" name="submit">Отправить</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -150,5 +199,6 @@
             <a href="#" class="privacy-policy">Политика конфиденциальности</a>
           </div>
         </footer>
+        <script src="{% static 'tomiko/js/checkPopupCost.js' %}"></script>
     </body>
 </html>

@@ -9,6 +9,7 @@
 .midle, .contacts {
     margin: 0 auto; /* Центрирование по горизонтали */
     max-width: 1700px; /* Ограничение максимальной ширины */
+    width: 100%;
 }
 
 .catalog-title, .catalog-routing, .filters, .menu, .catalog{

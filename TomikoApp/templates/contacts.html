@@ -22,6 +22,28 @@
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 <body>
+    <header class="header">
+        <div class="header__nav">
+            <ul class="info-list">
+                <li><a href="/"><img class="header-logo__ico header-link link-li" src="{% static 'tomiko/img/logo.svg' %}"
+                            alt=""></a></li>
+                <li><a class="header-link link-li" href="/cars/Корея/">Авто из Кореи</a></li>
+                <li><a class="header-link link-li" href="/cars/Китай/">Авто из Китая</a></li>
+                <li><a class="header-link link-li" href="/cars/Япония/">Авто из Японии</a></li>
+                <li><a class="header-link link-li" href="/about/">Условия работы</a></li>
+                <li><a class="header-link link-li" href="/akcii/">Акции</a></li>
+                <li><a class="header-link link-li" href="/contacts/">Контакты</a></li>
+                <!-- Элементы, которые нужно прижать к правому краю -->
+                <div class="header-media-container">
+                    <li><a class="header-link header-number" href="">8 (800) 500-49-46</a></li>
+                    <li><a class="header-link" href=""><img class="header-media__ico"
+                                src="{% static 'tomiko/img/icons/Telegabutton.svg' %}" alt="Telega"></a></li>
+                    <li><a class="header-link" href=""><img class="header-media__ico"
+                                src="{% static 'tomiko/img/icons/Whatsbutton.svg' %}" alt="Whatsapp"></a></li>
+                </div>
+            </ul>
+        </div>
+    </header>
 
     <div class="midle">
         <div class="nav">

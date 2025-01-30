@@ -416,6 +416,11 @@ body {
     transition: 0.3s;
 }
 
+.commission-button a {
+    text-decoration: none;
+    color: white;
+}
+
 .commission-button:hover {
     opacity: 0.8;
 }
