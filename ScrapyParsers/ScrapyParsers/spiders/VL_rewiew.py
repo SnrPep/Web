@@ -70,8 +70,15 @@ class VlRewiewSpider(scrapy.Spider):
                     grade = int(float(review.css(".active::attr(data-value)").get()) * 5.0)
                 except:
                     grade = 0
+                try:
+                    nane = review.css("span.user-name::text").get()
+                except:
+                    name = None
 
-                new_rewiew["name"] = review.css("span.user-name::text").get()
+                if name is None:
+                    name = "Anonimus"
+
+                new_rewiew["name"] = name
                 new_rewiew["date"] = review.css("span.time::text").get().replace('отредактировано ', '')
                 new_rewiew["avatar"] = review.css("img::attr(src)").get()
                 new_rewiew["grade"] = grade

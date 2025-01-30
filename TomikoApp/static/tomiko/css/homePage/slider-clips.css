@@ -7,7 +7,11 @@
 }
 
 .clips-title{
+<<<<<<< HEAD
     z-index: 10;
+=======
+
+>>>>>>> 972de62e93b15d3f2a0fd376b5386b636bccf64e
     max-width: 1424px;
     margin: 120px auto auto auto;
     display: flex;

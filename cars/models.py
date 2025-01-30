@@ -119,7 +119,7 @@ class Cars(models.Model):
             car_prices = redis_client.get(f"car_prices:{self.id}")
             if car_prices:
                 car_prices = json.loads(car_prices)
-                return int(car_prices.get("RUB"))  # Возвращаем рассчитанную цену с пошлинами
+                return car_prices.get("RUB")  # Возвращаем рассчитанную цену с пошлинами
         except redis.RedisError:
             return None  # Вернуть None, если Redis недоступен
 

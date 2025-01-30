@@ -47,7 +47,7 @@
 .social-link {
     display: inline-block;
     margin-right: 10px;
-    padding: 10px 10px 8px 10px;
+    padding: 10px;
     border-radius: 15px;
     background-color: #FFFFFF33;
     color: #0a0e27;
@@ -61,13 +61,10 @@
 }
 
 .instagram:hover {
-
-    background-color: #4a76a8;
+    color: white;
 }
 
 .link{
-    display: flex;
-    align-items: center;
     margin-top: 10px;
 }
 
@@ -77,4 +74,5 @@
         font-weight: 300;
         color: #FFF;
     display: flex;
+
 }

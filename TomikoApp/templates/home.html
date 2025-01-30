@@ -131,7 +131,7 @@
                     </div>
                     <div class="block-3 fblock">
                         <img src="{% static 'tomiko/img/icons/strar.png' %}" alt="">
-                        <span class="fblock">4.9</span>
+                        <span class="fblock">{{ middle }}</span>
                     </div>
                 </div>
                 <div class="header-akcii">
@@ -831,6 +831,7 @@
         </div>
     </div>
         <!--Слайдеры Отзывов и Клипов-->
+
         <div class="media">
             <div class="media-container">
                 <div class="media-title">
@@ -850,6 +851,7 @@
                 {% for review in reviews %}
                 <div class="swiper-slide">
                     <div class="swiper-slide-media">
+<<<<<<< HEAD
                         <div class="slider-media-container">
                             <div class="logo-avatar">
                                 {% if review.avatar %}
@@ -870,6 +872,25 @@
                                 </div>
                                 <p class="comment_date">{{ review.date }}</p>
                             </div>
+=======
+                        <div class="logo-avatar">
+                            {% if review.avatar %}
+                                <img src="{{ review.avatar }}" alt="Аватар">
+                            {% else %}
+                                <h1 class="user-low">{{ review.name|first|upper }}</h1>
+                            {% endif %}
+                        <div class="user-name">{{ review.name }}</div>
+                        <div class="comment-date">
+                            <div class="rating-stars">
+                                {% for _ in review.grade|times %}
+                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
+                                {% endfor %}
+                                {% for _ in 5|sub:review.grade|times %}
+                                    <img src="{% static 'tomiko/img/icons/star-media-gray.svg' %}" alt="Оценка">
+                                {% endfor %}
+                            </div>
+                            <p class="comment_date">{{ review.date }}</p>
+>>>>>>> 972de62e93b15d3f2a0fd376b5386b636bccf64e
                         </div>
                     </div>
                 </div>
@@ -897,7 +918,7 @@
                 </div>
             </div>
             
-            <div class="swiper-clips">
+            <div class="swiper swiper-clips">
                 <div class="swiper-wrapper">
                     
                     {% for clip in clips %}

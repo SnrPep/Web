@@ -1,3 +1,4 @@
+
 .marquee {
     margin: 100px auto auto auto;
     max-width: 100%;
@@ -13,9 +14,26 @@
     border: none;
     cursor: pointer;
 }
+.logo-carousel {
+    width: 100%;
+    /* Ширина контейнера */
+    height: 100px;
+    /* Высота контейнера, подбирайте под ваши логотипы */
+    overflow: hidden;
+    
+    position: relative;
+}
+
+.marquee {
+    display: flex;
+    
+    white-space: nowrap;
+    animation: marquee 10s linear infinite;
+    width: 100%;
+}
 
 .marquee button{
-    gap: 70px;
+
     display: flex;
     width: 100%;
 }
@@ -27,13 +45,11 @@
 }
 
 
-
 .marquee div {
     display: flex;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
-    animation: marquee 20s linear infinite;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: marquee 1s linear infinite;
 
 }
 

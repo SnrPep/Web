@@ -60,7 +60,7 @@ class YandexRewiewSpider(scrapy.Spider):
             except:
                 name = None
             try:
-                date = review.css("span.business-review-view__date::text").css("span").get().replace(', отредактирован',
+                date = review.css("span.business-review-view__date").css("span::text").get().replace(', отредактирован',
                                                                                                      '')
             except:
                 date = None
@@ -72,6 +72,8 @@ class YandexRewiewSpider(scrapy.Spider):
                 avatar = review.css("a.business-review-view__user-icon::attr(href)").get()
             except:
                 avatar = None
+            if name is None:
+                name = "Anonimus"
             new_rewiew["name"] = name
             new_rewiew["date"] = date
             new_rewiew["avatar"] = avatar

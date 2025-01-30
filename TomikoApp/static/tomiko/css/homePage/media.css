@@ -55,14 +55,89 @@
 /*Слайдер отзывов*/
 .media-swiper {
     margin-top: 50px;
+<<<<<<< HEAD
     font-family: Arial, sans-serif;
     overflow: hidden;
+=======
+    width: 1400px;
+    height: 180px;
+
+
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    background-color: #001122;
+>>>>>>> 972de62e93b15d3f2a0fd376b5386b636bccf64e
     color: white;
     padding: 20px;
     width: 100%;
     padding: 20px 0;
 }
 
+<<<<<<< HEAD
+=======
+  .swiper-slide-media {
+      /* review_card */
+
+        /* Auto layout */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 24px;
+        gap: 16px;
+
+        width: 338px;
+        height: 82px;
+
+        background: #081E36;
+        border-radius: 16px;
+
+        /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+
+  }
+
+  .logo-avatar {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #A84CA8;
+      ;
+  }
+  .user-low{
+    position: absolute;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 70px;
+        color: #fff;
+        right: 12px;
+        bottom: -25px;
+  }
+
+  
+
+  .rating-stars {
+      font-size: 16px;
+      display: flex;
+  }
+
+  .comment_date {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-family: Inter, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      text-align: left;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+      color: #FFFFFF80;
+
+  }
+
+>>>>>>> 972de62e93b15d3f2a0fd376b5386b636bccf64e
 .swiper-slide-media {
    width: 100%;
    height: 80px;
@@ -81,6 +156,7 @@
     border-radius: 50%;
     background-color: #A84CA8;
     display: flex;
+<<<<<<< HEAD
     align-items: center;
     
 }
@@ -131,3 +207,11 @@
         color: rgba(255, 255, 255, 0.5);
         white-space: nowrap;
 }
+=======
+    transition: transform 0.3s ease-in-out;
+    
+}
+
+
+
+>>>>>>> 972de62e93b15d3f2a0fd376b5386b636bccf64e
