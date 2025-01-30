@@ -21,6 +21,7 @@
         font-weight: 700;
         font-style: normal;
         text-transform: uppercase;
+        color: #fff;
 }
 
 .about-p{
@@ -80,5 +81,52 @@
 
 .width-about{
     width: 1703px;
-    
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-about{
+    text-align: center;
+    font-family: Bebas-Neue, Arial, sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 48px;
+        
+        color: #fd554b;
+}
+.item-about-left{
+    display: flex;
+    text-align: center;
+    font-family: Inter;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 24px;
+        
+        color: #fff;
+}
+
+.flex-ab{
+    display: flex;
+    align-items: center;
+}
+
+.text-about{
+    text-align: left;
+}
+
+.width-container{
+    border-top: 1px solid #FFFFFF29;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.gray{
+    font-family: Inter;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 16.94px;
+        
+        color: rgba(255, 255, 255, 0.5019607843);
 }

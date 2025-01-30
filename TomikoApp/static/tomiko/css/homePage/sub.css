@@ -1,0 +1,80 @@
+.subscribe {
+    background-color: #081E36;;
+    padding: 20px;
+    border-radius: 30px;
+    width: 80%;
+        max-width: 1603px;
+            margin: 80px auto auto auto;
+    
+    color: white;
+}
+
+.subscribe-container {
+    display: flex;
+    align-items: center;
+        gap: 324px;
+}
+
+.subscribe-left .sub-img {  
+    max-width: 400px;
+    border-radius: 8px;
+}
+
+
+
+.subscribe-right {
+    max-width: 900px;
+}
+
+.sub-title h1 {
+    font-family:"Montserrat", serif;
+    text-transform: uppercase;
+    margin-top: 0px;
+    font-size: 54px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.sub-title span {
+    color: #ff3b3f;
+    /* Цвет для слова "Подпишись" */
+}
+
+.subscribe-links {
+    margin-top: 20px;
+}
+
+.social-link {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px 10px 8px 10px;
+    border-radius: 15px;
+    background-color: #FFFFFF33;
+    color: #0a0e27;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.vk:hover {
+    background-color: #4a76a8;
+    
+}
+
+.instagram:hover {
+
+    background-color: #4a76a8;
+}
+
+.link{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.link-media{
+    font-family: Inter;
+        font-size: 24px;
+        font-weight: 300;
+        color: #FFF;
+    display: flex;
+}

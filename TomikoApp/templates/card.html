@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Карточка</title>
-    
+    <link rel="icon" href="/path/to/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'tomiko/css/cardPage/header-card.css' %}">
     <link rel="stylesheet" href="{% static 'tomiko/css/cardPage/contact-card.css' %}">
     <link rel="stylesheet" href="{% static 'tomiko/css/cardPage/card-slider.css' %}">
@@ -23,15 +23,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <!-- Подключаем Swiper CSS -->
-    <<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" rel="stylesheet">
 </head>
 <body>
     <header class="header">
         <div class="header-line">
             <div class="header__nav">
                 <ul class="info-list">
-                    <li><a href="header-img"><img class="header-logo__ico header-link link-li"
+                    <li><a href="{% url 'home' %}"><img class="header-logo__ico header-link link-li"
                                 src="{% static 'tomiko/img/logo.svg' %}" alt=""></a></li>
                     <li><a class="header-link link-li" href="">Авто из Кореи</a></li>
                     <li><a class="header-link link-li" href="">Авто из Китая</a></li>
@@ -174,17 +173,17 @@
                     </div>
                 </div>
                 <div class="card-box">
-                    <div class="swiper-container gallery-top">
+                    <div class="swiper-container second-swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide"><img src="{% static 'tomiko/img/sliderImg/car1.png' %}" alt="Image 1"></div>
-                            <div class="swiper-slide"><img src="{% static 'tomiko/img/sliderImg/car2.png' %}"></div>
-                            <div class="swiper-slide"><img src="{% static 'tomiko/img/sliderImg/car3.png' %}"></div>
-                            <div class="swiper-slide"><img src="{% static 'tomiko/img/sliderImg/car4.png' %}"></div>
-                            <div class="swiper-slide"><img src="{% static 'tomiko/img/sliderImg/car5.png' %}"></div>
+                            <div class="swiper-slide"><img src="{% static 'tomiko/img/sliderImg/car2.png' %}" alt="Image 2"></div>
+                            <div class="swiper-slide"><img src="{% static 'tomiko/img/sliderImg/car3.png' %}" alt="Image 3"></div>
+                            <div class="swiper-slide"><img src="{% static 'tomiko/img/sliderImg/car4.png' %}" alt="Image 4"></div>
+                            <div class="swiper-slide"><img src="{% static 'tomiko/img/sliderImg/car1.png' %}" alt="Image 5"></div>
                         </div>
                         <!-- Добавляем стрелки навигации -->
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next second-swiper-button-next"></div>
+                        <div class="swiper-button-prev second-swiper-button-prev"></div>
                     </div>
                 </div>
             </div>
@@ -309,7 +308,8 @@
             </div>
         </div>
     </footer>
-
-    <script src="{% static 'tomiko/js/js-card/card-slider.js' %}"></script>
+    <script src="{% static 'tomiko/js/slider.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    
 </body>
 </html>

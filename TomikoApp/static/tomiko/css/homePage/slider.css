@@ -113,3 +113,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: all  ease-in-out;
 }
+
+.swiper-slide {
+    transition: transform 0.3s ease;
+}

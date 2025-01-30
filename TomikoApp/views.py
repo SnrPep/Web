@@ -41,6 +41,7 @@ def home_view(request):
     reviews = get_reviews()
     clips = get_clips()
     return render(request, "home.html", {"reviews": reviews, "clips": clips})
+# Create your views here.
 
 # Create your views here.
 def feedback_view(request):
