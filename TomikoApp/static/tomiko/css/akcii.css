@@ -1,5 +1,12 @@
+@font-face {
+    font-family: "Bebas-Neue-Cyrilic"; /* Название шрифта */
+    src: url("../../../../../static/tomiko/fonts/Bebas Neue Cyrilic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    font-family: Bebas Neue, sans-serif;
+    font-family: "Bebas-Neue-Cyrilic", sans-serif;
     margin-top: 100px;
     padding: 0;
     background-color: var(--main-bg-color);
