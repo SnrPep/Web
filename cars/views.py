@@ -54,7 +54,8 @@ def car_list(request, country=None):
             car.random_image = None
 
         # Добавляем базовую цену и цену с пошлинами
-        car.price_with_duty = car.get_price_with_duty()  # Цена с пошлинами из Redis
+        car.price_with_duty = car.get_price_with_duty() # Цена с пошлинами из Redis
+        car.price_with_duty2 = car.get_price_with_duty2()
 
     for car in popcars:
         if image_files:
@@ -114,6 +115,10 @@ def car_catalog(request, country=None):
 
 def car_detail(request, country, car_id, price):
     car = get_object_or_404(Cars, id=car_id)
+
+    # Получаем цену с учетом пошлины из Redis
+    price_with_duty = car.get_price_with_duty() or car.price  # Если нет данных, используем базовую цену
+
     # Путь к папке с изображениями
     image_folder = os.path.join(settings.MEDIA_ROOT, 'Tomiko Trade Photos')
 
@@ -122,12 +127,10 @@ def car_detail(request, country, car_id, price):
         f for f in os.listdir(image_folder) if os.path.isfile(os.path.join(image_folder, f))
     ]
 
-    if country:
-        cars = Cars.objects.filter(brand_country__country__iexact=country)
-    else:
-        cars = Cars.objects.all()  # Если страна не указана, показываем все автомобили
-    # cars = Cars.objects.all()
+    # Если страна указана, фильтруем автомобили по стране
+    cars = Cars.objects.filter(brand_country__country__iexact=country) if country else Cars.objects.all()
 
+    # Выбираем случайное изображение
     car.random_image = f"/media/Tomiko Trade Photos/{random.choice(image_files)}"
 
-    return render(request, 'car_detail.html', {'car': car, 'price': price})
+    return render(request, 'car_detail.html', {'car': car, 'price': price_with_duty})

@@ -178,10 +178,10 @@
                     {% for car in cars %}
                     <div class="card">
                         <div class="head">
-                            <a href="{% url 'car_detail' country=car.brand_country.country car_id=car.id price=car.price_with_duty %}" style="text-decoration: none; color: inherit;">
+                            <a href="{% url 'car_detail' country=car.brand_country.country car_id=car.id price=car.price_with_duty2 %}" style="text-decoration: none; color: inherit;">
                                 <span class="price">{{ car.brand_country.brand }} {{ car.model }}</span>
                             </a>
-                            <a href="{% url 'car_detail' country=car.brand_country.country car_id=car.id price=car.price_with_duty %}" style="text-decoration: none; color: inherit;">
+                            <a href="{% url 'car_detail' country=car.brand_country.country car_id=car.id price=car.price_with_duty2 %}" style="text-decoration: none; color: inherit;">
                                 <p>{{ car.year }} • {{ car.transmission }} • {{ car.mileage }} км</p>
                             </a>
                         </div>

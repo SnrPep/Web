@@ -122,6 +122,19 @@ class Cars(models.Model):
                 return car_prices.get("RUB")  # Возвращаем рассчитанную цену с пошлинами
         except redis.RedisError:
             return None  # Вернуть None, если Redis недоступен
+    def get_price_with_duty2(self):
+        """
+        Получить цену автомобиля с пошлинами (RUB) из Redis.
+        """
+        try:
+            car_prices = redis_client.get(f"car_prices:{self.id}")
+            if car_prices:
+                car_prices = json.loads(car_prices)
+                return car_prices.get("URL")  # Возвращаем рассчитанную цену с пошлинами
+        except redis.RedisError:
+            return None  # Вернуть None, если Redis недоступен
+
+
 
 
 

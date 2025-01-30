@@ -116,9 +116,12 @@ def recalculate_prices():
 
         def format_number(n: int) -> str:
             return f"{n:,}".replace(",", " ")
+
+        price = format_number(int(total_price))
         # Запись данных в словарь
         prices = {
-            "RUB": format_number(int(total_price)),
+            "RUB": price,
+            "URL": price.replace(' ', '_')
         }
         # Сохраняем данные в Redis
         try:
