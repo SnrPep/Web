@@ -2,6 +2,7 @@
     margin-top: 40px;
     align-items: center;
     justify-content: center;
+    z-index: 12;
 }
 
 .brand{
@@ -10,11 +11,29 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    display: inline-flex;
+}
+.logo-carousel {
+    width: 100%;
+    /* Ширина контейнера */
+    height: 100px;
+    /* Высота контейнера, подбирайте под ваши логотипы */
+    overflow: hidden;
     
-    
+    position: relative;
 }
 
+.marquee {
+    display: flex;
+    
+    white-space: nowrap;
+    animation: marquee 10s linear infinite;
+    width: 100%;
+}
+
+.marquee button{
+    display: flex;
+    width: 100%;
+}
 
 .brand:hover img {
     transform: scale(1.1);
@@ -22,21 +41,13 @@
     /* Увеличение размера на 10% */
 }
 
-.logo-carousel {
-    width: 100%;
-        /* Ширина контейнера */
-        height: 100px;
-        /* Высота контейнера, подбирайте под ваши логотипы */
-        overflow: hidden;
-    overflow: hidden;
-    position: relative;
-}
+
 
 .marquee {
     display: flex;
     overflow: hidden;
     white-space: nowrap;
-    animation: marquee 20s linear infinite;
+    animation: marquee 1s linear infinite;
 }
 
 

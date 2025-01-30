@@ -125,6 +125,7 @@ justify-content: center;
 }
 
 .reg{
+    left: 68px;
     bottom: -72px;
     position: absolute;
     rotate: -5deg;

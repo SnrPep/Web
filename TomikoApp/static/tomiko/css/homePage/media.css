@@ -50,7 +50,13 @@
 }
 
 .media-swiper {
+    margin-top: 50px;
+    width: 1400px;
+    height: 180px;
+
+
     font-family: Arial, sans-serif;
+    overflow: hidden;
     background-color: #001122;
     color: white;
     padding: 20px;
@@ -59,14 +65,26 @@
 }
 
   .swiper-slide-media {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      gap: 29px;
-      padding: 16px 24px;
-      border-radius: 16px;
-      background: #081e36;
-      max-width: 308px;
+      /* review_card */
+
+        /* Auto layout */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 24px;
+        gap: 16px;
+
+        width: 338px;
+        height: 82px;
+
+        background: #081E36;
+        border-radius: 16px;
+
+        /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+
   }
 
   .logo-avatar {
@@ -90,6 +108,7 @@
   
 
   .rating-stars {
+      font-size: 16px;
       display: flex;
   }
 
@@ -114,5 +133,9 @@
 
 .swiper-wrapper-media{
     display: flex;
+    transition: transform 0.3s ease-in-out;
     
 }
+
+
+

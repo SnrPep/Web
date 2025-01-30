@@ -1,60 +1,65 @@
-.clips{
-    margin: 0 auto;
-    max-width: 1703px;
+.clipls{
+    position: absolute;
+        max-width: 100%;
+        height: 200px;
+        background: #fff;
+        position: absolute; 
 }
 
 .clips-title{
-    width: 100%;
-    display: flex;
-    color: #fff;
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 50px;
-}
 
-.swiper-container {
-    width: 100%;
-    height: 300px;
-}
-
-.swiper-slide-clip {
+    max-width: 1424px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    
-    align-items: center;
-    height: 100%;
-    
 }
 
-.clips-img{
-    margin-right: 7px;
-    width: 150px;
-    height: 264px;
-    border-radius: 20px;
-}
-.clips-btn{
+.rectangle-clips{
     
+}
+.clips-logo{
     display: flex;
-    
-    padding: 10px;
-    background-color: #FFFFFF1A;
-    border-radius: 25px;
-    height: 30px;
-    width: 140px;
+    gap: 20px;
 }
-
 .stat{
+    padding: 15px;
+    background:rgba(255, 255, 255, 0.1);
     display: flex;
-    align-items: center;
+    align-items: end;
+    border-radius: 30px;
+    
+    
 }
 
 .clips-p{
-    font-family: Inter;
-        font-size: 14px;
-        font-weight: 600;
-        line-height: 19.6px;
-        text-align: center;
-        text-decoration: none;
-        color:#fff;
-        margin-left: 10px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.swiper-clips {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide-clip {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clips-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.clips-h{
+    color: #fff;
+    font-family: "Montserrat", serif;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.clips-btn{
+    display: flex;
+    align-items: center;
 }

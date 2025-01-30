@@ -19,9 +19,12 @@ def get_reviews():
         data = redis_client.get(key)
         if data:
             review = json.loads(data)
+            review["name"] = review.get("name", "Аноним")
+            print(review["name"], review["date"], key)
+            review["grade"] = int(review.get("grade", 0))# Подставляем "Аноним", если имени нет
             reviews.append(review)
 
-    return reviews[:10]  # Ограничим число отзывов
+    return reviews
 
 def get_clips():
     clips = []
@@ -39,8 +42,10 @@ def get_clips():
 
 def home_view(request):
     reviews = get_reviews()
+    t = len(reviews)
+    middle = round(sum(float(review.get("grade", 0)) for review in reviews) / t if t > 0 else 0, 1)
     clips = get_clips()
-    return render(request, "home.html", {"reviews": reviews, "clips": clips})
+    return render(request, "home.html", {"reviews": reviews, "clips": clips, "middle": middle})
 
 # Create your views here.
 def feedback_view(request):

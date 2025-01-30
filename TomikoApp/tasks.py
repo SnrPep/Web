@@ -113,14 +113,12 @@ def recalculate_prices():
         # Итоговая пошлина и итоговая стоимость автомобиля
         total_duty = customs_clearance + duty_rate + utilization_fee
         total_price = car_price_rub + total_duty
+
+        def format_number(n: int) -> str:
+            return f"{n:,}".replace(",", " ")
         # Запись данных в словарь
         prices = {
-            "RUB": total_price,
-            "USD": round(total_price / currency_rates.get("USD", 1), 2),
-            "EUR": round(total_price / currency_rates.get("EUR", 1), 2),
-            "CNY": round(total_price / currency_rates.get("CNY", 1), 2),
-            "JPY": round(total_price * 100.0 / currency_rates.get("JPY", 1), 2),
-            "CHF": round(total_price * 1000.0 / currency_rates.get("CHF", 1), 2),
+            "RUB": format_number(int(total_price)),
         }
         # Сохраняем данные в Redis
         try:

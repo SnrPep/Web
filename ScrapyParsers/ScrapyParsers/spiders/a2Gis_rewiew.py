@@ -66,9 +66,15 @@ class A2gisRewiewSpider(scrapy.Spider):
                 avatar = text[start:end]
             except:
                 avatar = None
+            try:
+                name = review.css("span._16s5yj36::text").get()
+            except:
+                name = None
 
+            if name is None:
+                name = "Anonimus"
             new_review = {
-                "name": review.css("span._16s5yj36::text").get(),
+                "name": name,
                 "date": review.css("._139ll30::text").get().replace(', отредактирован', ''),
                 "avatar": avatar,
                 "grade": grade,
