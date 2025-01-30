@@ -4,14 +4,14 @@
     font-family: "Inter", serif;
         font-weight: 300;
         color: #fff;
-    margin: 50px 10px 0 10px;
+    margin: 50px 20px 0 20px;
     max-width: 100%;
 }
 
 .form-container {
     background-color: #081E36;
     /* Темный блок формы */
-    padding: 20px;
+    padding: 40px;
     border-radius: 30px;
     width: 640px;
     height: 428px;
@@ -60,13 +60,34 @@
     height: 80px;
 }
 
-.form-column {
+.form-row {
     display: flex;
+    gap: 20px; /* Расстояние между полями */
     justify-content: space-between;
-    gap: 10px;
 }
 
-.form-column input {
+.input-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Чтобы поля занимали равное пространство */
+}
+
+.input-group p {
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.input-group input {
+    padding: 12px;
+    border-radius: 30px;
+    width: 100%;
+}
+
+.input-group textarea {
+    padding: 12px;
+    border-radius: 15px;
     width: 100%;
 }
 
@@ -88,9 +109,8 @@
 }
 
 .checkbox-group label span {
-    color: #D51117;
-    /* Красный цвет ссылки */
-    text-decoration: underline;
+    color: #ce3d42;
+    text-decoration: none;
 }
 
 .submit-btn {

@@ -246,6 +246,8 @@
                         <div class="head">
                             <a href="{% url 'car_detail' country=car.brand_country.country car_id=car.id %}" style="text-decoration: none; color: inherit;">
                                 <span class="price">{{ car.brand_country.brand }} {{ car.model }}</span>
+                            </a>
+                            <a href="{% url 'car_detail' country=car.brand_country.country car_id=car.id %}" style="text-decoration: none; color: inherit;">
                                 <p>{{ car.year }} • {{ car.transmission }} • {{ car.mileage }} км</p>
                             </a>
                         </div>
@@ -308,20 +310,23 @@
                     </div>
                     <div class="form-container">
                         <div class="form-group">
-                            <div>
-                                Имя
-                            </div>
-
-                            <div class="form-column">
-                                <input type="text" placeholder="Введите имя" />
-                                <input type="tel" value="+7" />
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <p>Имя</p>
+                                    <input type="text" placeholder="Введите имя" />
+                                </div>
+                                <div class="input-group">
+                                    <p>Телефон</p>
+                                    <input type="tel" value="+7" />
+                                </div>
                             </div>
                         </div>
+
                         <div class="form-group">
-                            <div>
-                                Уточните свой вопрос
+                            <div class="input-group">
+                                <p>Уточните свой вопрос</p>
+                                <textarea placeholder="Введите текст сообщения, укажите страну, марку и год машины."></textarea>
                             </div>
-                            <textarea placeholder="Введите текст сообщения, укажите страну, марку и год машины."></textarea>
                         </div>
                         <div class="checkbox-group">
                             <input type="checkbox" id="privacy-policy" />
