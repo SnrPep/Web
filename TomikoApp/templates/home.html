@@ -13,9 +13,11 @@
     <link rel="stylesheet" href="{% static 'tomiko/css/homePage/footer.css' %}">
     <link rel="stylesheet" href="{% static 'tomiko/css/homePage/brands.css' %}">
     <link rel="stylesheet" href="{% static 'tomiko/css/homePage/stage.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/homePage/sub.css' %}">
     <link rel="stylesheet" href="{% static 'tomiko/css/homePage/media.css' %}">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="{% static 'tomiko/css/homePage/about.css' %}">
+    <link rel="stylesheet" href="{% static 'tomiko/css/homePage/carusel-info.css' %}">
     <link rel="stylesheet" href="{% static 'tomiko/css/homePage/contact.css' %}">
     <link rel="stylesheet" href="{% static 'tomiko/css/homePage/popup.css' %}">
     <link rel="stylesheet" href="{% static 'tomiko/css/homePage/popup-cost.css' %}">
@@ -273,6 +275,7 @@
                 <div class="swiper-button-next"></div>
             </div>
         </div>
+        </div>
 
         <div class="slider-container">
             <h2 class="slider-title">Популярные авто<br><span>из Китая</span><img src="{% static 'tomiko/img/icons/china.svg' %}" alt=""></h2>
@@ -362,9 +365,6 @@
                             <div class="action-button">Оставить заявку</div>
                         </div>
                     </div>
-                    
-                    
-
                 </div>
             </div>
             <div>
@@ -373,7 +373,7 @@
                 <div class="swiper-button-next"></div>
             </div>
         </div>
-        
+        </div>
         <div class="slider-container">
             <h2 class="slider-title">Популярные авто<br><span>из Японии</span><img src="{% static 'tomiko/img/icons/japan.svg' %}" alt=""></h2>
             
@@ -473,154 +473,104 @@
                 <div class="swiper-button-next"></div>
             </div>
         </div>
-        <!--
-        <div class="slider-container">
-            <h2 class="slider-title">Популярные авто<br><span>из Японии</span><img src="{% static 'tomiko/img/icons/japan.svg' %}" alt=""></h2>
-            
-            <div class="swiper">
-                <div class="swiper-wrapper">
-                    <!- Карточка автомобиля 
-                    <div class="swiper-slide">
-                        <div class="car-card">
-                            <div class="car-image">
-                                <img src="{% static 'tomiko/img/sliderImg/car1.png' %}" alt="Ssangyong All New Rexton">
-                            </div>
-                            <div class="car-info">
-                                <p class="car-title">Ssangyong All New Rexton</p>
-                                <p class="car-details">2020 - 100 000 км - 2.2 л</p>
-                                <p class="car-price">3 360 000 ₽</p>
-                                <div class="action-button">Оставить заявку</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="car-card">
-                            <div class="car-image">
-                                <img src="{% static 'tomiko/img/sliderImg/car2.png' %}" alt="Hyundai Santa Fe">
-                            </div>
-                            <div class="car-info">
-                                <p class="car-title">Hyundai Santa Fe</p>
-                                <p class="car-details">2020 - 54 101 км - 2.2 л</p>
-                                <p class="car-price">2 970 000 ₽</p>
-                                <div class="action-button">Оставить заявку</div>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="swiper-slide">
-                        <div class="car-card">
-                            <div class="car-image">
-                                <img src="{% static 'tomiko/img/sliderImg/car3.png' %}" alt="Geely Monjaro">
-                            </div>
-                            <div class="car-info">
-                                <p class="car-title">Geely Monjaro</p>
-                                <p class="car-details">2021 - 12 000 км - 2.0 л</p>
-                                <p class="car-price">2 846 000 ₽</p>
-                                <div class="action-button">Оставить заявку</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="car-card">
-                            <div class="car-image">
-                                <img src="{% static 'tomiko/img/sliderImg/car3.png' %}" alt="Geely Monjaro">
-                            </div>
-                            <div class="car-info">
-                                <p class="car-title">Geely Monjaro</p>
-                                <p class="car-details">2021 - 12 000 км - 2.0 л</p>
-                                <p class="car-price">2 846 000 ₽</p>
-                                <div class="action-button">Оставить заявку</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="car-card">
-                            <div class="car-image">
-                                <img src="{% static 'tomiko/img/sliderImg/car1.png' %}" alt="Ssangyong All New Rexton">
-                            </div>
-                            <div class="car-info">
-                                <p class="car-title">Ssangyong All New Rexton</p>
-                                <p class="car-details">2020 - 100 000 км - 2.2 л</p>
-                                <p class="car-price">3 360 000 ₽</p>
-                                <div class="action-button">Оставить заявку</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="car-card">
-                            <div class="car-image">
-                                <img src="{% static 'tomiko/img/sliderImg/car4.png' %}" alt="Kia Sportage">
-                            </div>
-                        <div class="car-info">
-                                <p class="car-title">Kia Sportage</p>
-                                <p class="car-details">2022 - 43 064 км - 1.6 л</p>
-                                <p class="car-price">2 820 000 ₽</p>
-                            <div class="action-button">Оставить заявку</div>
-                        </div>
-                    </div>
-                    
-                    
-
-                </div>
-            </div>
-            <div>
-            
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-            </div>
+    <!--Карусель брендов-->
+    <div class="marquee">
+        <div>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoBMV.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoToyota.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoAudi.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoKi.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoMerc.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoHyndai.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoChery.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoChevrolet.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoCircl.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoHaval.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoJac.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoDaewoo.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logo1.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoBMV.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoToyota.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoAudi.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoKi.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoMerc.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoHyndai.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoChery.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoChevrolet.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoCircl.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoHaval.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoJac.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoDaewoo.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logo1.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoBMV.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoToyota.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoAudi.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoKi.svg' %}" alt="">
+            </button>
+            <button class="brand">
+                <img src="{% static 'tomiko/img/logoBrands/logoMerc.svg' %}" alt="">
+            </button>
         </div>
-        -->
-        <!--Карусель брендов-->
-        <div class="logo-brands">
-            <div class="logo-carousel">
-                <div class="marquee">
-                    <button class="brand">
-                        <img src="{% static 'tomiko/img/logoBrands/logoBMV.svg' %}" alt="">
-                    </button>
-                    <button class="brand">
-                        <img src="{% static 'tomiko/img/logoBrands/logoToyota.svg' %}" alt="">
-                    </button>
-                    <button class="brand">
-                        <img src="{% static 'tomiko/img/logoBrands/logoAudi.svg' %}" alt="">
-                    </button>
-                    <button class="brand">
-                        <img src="{% static 'tomiko/img/logoBrands/logoKi.svg' %}" alt="">
-                    </button>
-                    <button class="brand">
-                        <img src="{% static 'tomiko/img/logoBrands/logoMerc.svg' %}" alt="">
-                    </button>
-                    <button class="brand">
-                        <img src="{% static 'tomiko/img/logoBrands/logoHyndai.svg' %}" alt="">
-                    </button>
-                    <button class="brand">
-                        <img src="{% static 'tomiko/img/logoBrands/logoChery.svg' %}" alt="">
-                    </button>
-                    <button class="brand">
-                        <img src="{% static 'tomiko/img/logoBrands/logoChevrolet.svg' %}" alt="">
-                    </button>
-                    <button class="brand">
-                        <img src="{% static 'tomiko/img/logoBrands/logoCircl.svg' %}" alt="">
-                    </button>
-                    <button class="brand">
-                        <img src="{% static 'tomiko/img/logoBrands/logoHaval.svg' %}" alt="">
-                    </button>
-                    <button class="brand">
-                        <img src="{% static 'tomiko/img/logoBrands/logoJac.svg' %}" alt="">
-                    </button>
-                    <button class="brand">
-                        <img src="{% static 'tomiko/img/logoBrands/logoDaewoo.svg' %}" alt="">
-                    </button>
-                    <button class="brand">
-                        <img src="{% static 'tomiko/img/logoBrands/logo1.svg' %}" alt="">
-                    </button>
-                </div>
-                
-            </div>
-        </div>
+    </div>
         <div class="stage-container">
             <img src="{% static 'tomiko/img/bg-img-stage.png' %}" alt="" class="stage-img">
             <div class="stage_block">
@@ -712,9 +662,6 @@
             </div>
             
         </div>
-        
-        
-
         <div class="about-us">
             <div class="about-block">
                 <div class="titles">
@@ -734,15 +681,171 @@
                 </div>
             </div>
             <div class="width-about">
-
+                <div class="width-container">
+                    <div class="item-about">
+                        <h1>5 +</h1>
+                        <p class="gray">Лет на рынке</p>
+                    </div>
+                    <div class="item-about">
+                        <h1>4 000 +</h1>
+                        <p class="gray">довольных клиентов</p>
+                    </div>
+                    <div class="item-about-left">
+                        <div class="flex-ab">
+                            <img src="{% static 'tomiko/img/icons/like.png' %}" alt="">
+                            <p class="text-about">Прозрачное ценообразование с
+                                <br>
+                                подробным разъяснением затрат на
+                                <br>каждом этапе
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item-about-left">
+                        <div class="flex-ab">
+                            <img src="{% static 'tomiko/img/icons/list.png' %}" alt="">
+                            <p class="text-about">Полное сопровождение и
+                                <br>
+                                предоставление фото/видео
+                                <br>отчета на протяжение всей сделки
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item-about-left">
+                        <div class="flex-ab">
+                            <img src="{% static 'tomiko/img/icons/handle.png' %}" alt="">
+                            <p class="text-about">Проверенные
+                                <br>
+                                поставщики
+                                
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="about-bg">
                 
             
             </div>
         </div>
+    <div class="marque-text-red">
+        <div>
+            <h1><a href="">Денежное вознаграждение за рекомендацию</a></h1>
+            <span class="red-line">|</span>
+            <h1><a href="">Оплата депозита двумя частями</a></h1>
+            <span class="red-line">|</span>
+            <h1><a href="">Система лояльности для оптовых заказов</a></h1>
+            <span class="red-line">|</span>
+        </div>
+        <div>
+            <h1><a href="">Денежное вознаграждение за рекомендацию</a></h1>
+            <span class="red-line">|</span>
+            <h1><a href="">Оплата депозита двумя частями</a></h1>
+            <span class="red-line">|</span>
+            <h1><a href="">Система лояльности для оптовых заказов</a></h1>
+            <span class="red-line">|</span>
+        </div>
+        <div>
+            <h1><a href="">Денежное вознаграждение за рекомендацию</a></h1>
+            <span class="red-line">|</span>
+            <h1><a href="">Оплата депозита двумя частями</a></h1>
+            <span class="red-line">|</span>
+            <h1><a href="">Система лояльности для оптовых заказов</a></h1>
+            <span class="red-line">|</span>
+        </div>
+        <div>
+            <h1><a href="">Денежное вознаграждение за рекомендацию</a></h1>
+            <span class="red-line">|</span>
+            <h1><a href="">Оплата депозита двумя частями</a></h1>
+            <span class="red-line">|</span>
+            <h1><a href="">Система лояльности для оптовых заказов</a></h1>
+            <span class="red-line">|</span>
+        </div>
+        <div>
+            <h1><a href="">Денежное вознаграждение за рекомендацию</a></h1>
+            <span class="red-line">|</span>
+            <h1><a href="">Оплата депозита двумя частями</a></h1>
+            <span class="red-line">|</span>
+            <h1><a href="">Система лояльности для оптовых заказов</a></h1>
+            <span class="red-line">|</span>
+        </div>
+        <div>
+            <h1><a href="">Денежное вознаграждение за рекомендацию</a></h1>
+            <span class="red-line">|</span>
+            <h1><a href="">Оплата депозита двумя частями</a></h1>
+            <span class="red-line">|</span>
+            <h1><a href="">Система лояльности для оптовых заказов</a></h1>
+            <span class="red-line">|</span>
+        </div>
+    </div>
+
+    <!--Text-gray-->
+    <div class="marque-text-gray">
+        <div>
+            <h1><a href="">Денежное вознаграждение за рекомендацию</a></h1>
+            <span class="red-line">|</span>
+            <h1><a href="">Оплата депозита двумя частями</a></h1>
+            <span class="red-line">|</span>
+            <h1><a href="">Система лояльности для оптовых заказов</a></h1>
+            <span class="red-line">|</span>
+        </div>
+        <div>
+            <h1><a href="">Денежное вознаграждение за рекомендацию</a></h1>
+            <span class="red-line">|</span>
+            <h1><a href="">Оплата депозита двумя частями</a></h1>
+            <span class="red-line">|</span>
+            <h1><a href="">Система лояльности для оптовых заказов</a></h1>
+            <span class="red-line">|</span>
+        </div>
+        <div>
+            <h1><a href="">Денежное вознаграждение за рекомендацию</a></h1>
+            <span class="red-line">|</span>
+            <h1><a href="">Оплата депозита двумя частями</a></h1>
+            <span class="red-line">|</span>
+            <h1><a href="">Система лояльности для оптовых заказов</a></h1>
+            <span class="red-line">|</span>
+        </div>
+        <div>
+            <h1><a href="">Денежное вознаграждение за рекомендацию</a></h1>
+            <span class="red-line">|</span>
+            <h1><a href="">Оплата депозита двумя частями</a></h1>
+            <span class="red-line">|</span>
+            <h1><a href="">Система лояльности для оптовых заказов</a></h1>
+            <span class="red-line">|</span>
+        </div>
+        <div>
+            <h1><a href="">Денежное вознаграждение за рекомендацию</a></h1>
+            <span class="red-line">|</span>
+            <h1><a href="">Оплата депозита двумя частями</a></h1>
+            <span class="red-line">|</span>
+            <h1><a href="">Система лояльности для оптовых заказов</a></h1>
+            <span class="red-line">|</span>
+        </div>
+        <div>
+            <h1><a href="">Денежное вознаграждение за рекомендацию</a></h1>
+            <span class="red-line">|</span>
+            <h1><a href="">Оплата депозита двумя частями</a></h1>
+            <span class="red-line">|</span>
+            <h1><a href="">Система лояльности для оптовых заказов</a></h1>
+            <span class="red-line">|</span>
+        </div>
+    </div>
         <!--Слайдеры Отзывов и Клипов-->
-        <div class="swiper media-swiper">
+
+        <div class="media">
+            <div class="media-container">
+                <div class="media-title">
+                    <h1 style="margin-bottom: 0px;">Отзывы <img class="media-img" src="{% static 'tomiko/img/icons/strar.png' %}" alt=""> 4.9</h1>
+                </div>
+                <div class="comment_links">
+                    <a class="a-links" href="https://2gis.ru/vladivostok/firm/70000001067259118/tab/reviews">VL справочник<img
+                            src="{% static 'tomiko/img/icons/arrow.png' %}" alt="" class="arrow-media"></a>
+                    <a class="a-links" href="https://www.vl.ru/pravyj-rul-avto-iz-yaponii">2ГИС<img src="{% static 'tomiko/img/icons/arrow.png' %}"
+                            alt="" class="arrow-media"></a>
+                    <a class="a-links" href="https://yandex.ru/maps/org/pravy_rul/114125692870/reviews/?ll=131.886877%2C43.098752&tab=reviews&z=15">Яндекс
+                        карты<img src="{% static 'tomiko/img/icons/arrow.png' %}" alt="" class="arrow-media"></a>
+                </div>
+            </div>
+            <div class="swiper media-swiper">
             <div class="swiper-wrapper">
                 {% for review in reviews %}
                 <div class="swiper-slide">
@@ -753,7 +856,6 @@
                             {% else %}
                                 <h1 class="user-low">{{ review.name|first|upper }}</h1>
                             {% endif %}
-                        </div>
                         <div class="user-name">{{ review.name }}</div>
                         <div class="comment-date">
                             <div class="rating-stars">
@@ -776,13 +878,20 @@
         </div>
         
         <div class="clips">
+            
             <div class="clips-title">
-                <img src="{% static 'tomiko/img/icons/clipVector.svg' %}" alt=""><h1 class="clips-h">Клипы</h1>
+                <div class="clips-logo">
+                    <img src="{% static 'tomiko/img/icons/clipVector.svg' %}" alt="">
+                    <h1 class="clips-h">Клипы</h1>
+                </div>
+                
                 <div class="clips-btn">
                     <a href="https://vk.com/tomiko_trade">
                         <div class="stat">
-                            <img src="{% static 'tomiko/img/icons/VK-ico.svg' %}" alt="ВК">
-                            <p class="clips-p">Подписаться</p>
+                            <a href="http://www.w3.org/2000/svg">
+                                <img src="{% static 'tomiko/img/icons/VK-ico.svg' %}" alt="ВК"><p class="clips-p">Подписаться</p>
+                                
+                            </a>
                         </div>
                     </a>
                 </div>
@@ -801,7 +910,39 @@
                 <div class="swiper-pagination"></div>
             </div>
         </div>
-        
+        <section class="subscribe">
+            <div class="subscribe-container">
+                <div class="subscribe-left">
+                    <img class="sub-img" src="{% static 'tomiko/img/sub.png' %}" alt="Подпишись">
+                </div>
+                <div class="subscribe-right">
+                    <div class="sub-title">
+                        <h1>
+                            <span>Подпишись</span>, чтобы не пропустить выгодные предложения от нашей компании!
+                        </h1>
+                    </div>
+                    <div class="subscribe-links">
+                        <div class="link">
+                            <a href="https://vk.com/tomiko_trade" class="social-link vk"><img src="{% static 'tomiko/img/icons/vk-img.png' %}" alt="">
+                            </a>
+                            <div class="link-media">
+                                <div class="VK-link"><a href="https://www.instagram.com/praviyrul.jp?igsh=N3VucnNibWsyZzVk">VK</a></div>
+                                <div class="VK-img"><a href="https://www.instagram.com/praviyrul.jp?igsh=N3VucnNibWsyZzVk"><img class="arrow-media" src="{% static 'tomiko/img/icons/arrow.png' %}" alt=""></a></div>
+                            </div>
+                        </div>
+                        <div class="link">
+                            <a href="https://www.instagram.com/praviyrul.jp?igsh=N3VucnNibWsyZzVk" class="social-link instagram"><img src="{% static 'tomiko/img/icons/inst-img.png' %}" alt=""></a>
+                            <div class="link-media">
+
+                                <div class="VK-link"><a href="https://www.instagram.com/praviyrul.jp?igsh=N3VucnNibWsyZzVk">Instagram</a></div>
+                                <div class="VK-img"><a href="https://www.instagram.com/praviyrul.jp?igsh=N3VucnNibWsyZzVk"><img class="arrow-media" src="{% static 'tomiko/img/icons/arrow.png' %}" alt=""></a></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
         <div class="contact-info">
             <div class="contact-con">
                 <div class="title-block">
@@ -854,6 +995,7 @@
 
             </div>
         </div>
+        
     </main>
     
     <footer>
@@ -923,6 +1065,8 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="{% static 'tomiko/js/sliderReview.js' %}"></script>
     <script src="{% static 'tomiko/js/slider.js' %}"></script>
+    <script src="{% static 'tomiko/js/sliderMedia.js' %}"></script>
+
     <script src="{% static 'tomiko/js/checkPopup.js' %}"></script>
     <script src="{% static 'tomiko/js/checkPopupCost.js' %}"></script>
     <script src="{% static 'tomiko/js/sliderClips.js' %}"></script>

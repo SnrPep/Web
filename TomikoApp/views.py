@@ -45,7 +45,10 @@ def home_view(request):
     t = len(reviews)
     middle = round(sum(float(review.get("grade", 0)) for review in reviews) / t if t > 0 else 0, 1)
     clips = get_clips()
+
     return render(request, "home.html", {"reviews": reviews, "clips": clips, "middle": middle})
+# Create your views here.
+
 
 # Create your views here.
 def feedback_view(request):

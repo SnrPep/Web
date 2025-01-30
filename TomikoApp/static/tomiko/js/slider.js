@@ -28,18 +28,18 @@ const swiper = new Swiper('.swiper', {
     spaceBetween: 20,               // Расстояние между карточками
 
     loop: false,
+
     navigation: {
         nextEl: '.swiper-button-next',  // Элементы для переключения
         prevEl: '.swiper-button-prev',
     },
 
+
     on: {
         slideChangeTransitionEnd: function () {
-
             document.querySelectorAll('.swiper-slide').forEach(slide => {
                 slide.classList.remove('big');
             });
-
 
             const visibleSlides = swiper.slides.slice(swiper.activeIndex, swiper.activeIndex + swiper.params.slidesPerView);
             if (visibleSlides[0]) {
@@ -48,6 +48,7 @@ const swiper = new Swiper('.swiper', {
         },
     },
 });
+
 
 const swiperVideo = new Swiper('.swiper-clips', {
     loop: true,
@@ -76,7 +77,6 @@ var swiperMedia = new Swiper('.media-swiper', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
-
 });
 
 

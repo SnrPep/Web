@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "Bebas-Neue-Cyrilic"; /* Название шрифта */
+    src: url("../../../../../static/tomiko/fonts/Bebas Neue Cyrilic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     background: var(--main-bg-color);
     padding: 0;
@@ -20,7 +27,7 @@ body {
     font-family: "Inter", serif;
     font-weight: 600;
     font-size: 16px;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 .header__items, .td-info, .header-link, .header-media, .header-number {
@@ -32,7 +39,7 @@ body {
     color: white;
     list-style-type: none;
     text-decoration: none;
-    font-family: "Bebas Neue", serif;
+    font-family: "Bebas-Neue-Cyrilic", serif;
     font-size: 1.5rem;
 }
 
@@ -79,16 +86,16 @@ body {
 }
 
 li {
-    margin-right: 25px;
+    margin-right: 10px;
     /* Добавляем отступ между элементами */
 }
 
 .link-li{
-    margin-right: 20px;
+    margin-right: 16px;
 }
 
 .header-number{
-    font-family: "Bebas Neue", serif;
+    font-family: "Bebas-Neue-Cyrilic", serif;
     font-size: 24px;
     color: #fff;
     opacity: 1;

@@ -1,8 +1,10 @@
-.logo-brands{
-    margin-top: 40px;
-    align-items: center;
-    justify-content: center;
-    z-index: 12;
+
+.marquee {
+    margin: 100px auto auto auto;
+    max-width: 100%;
+    display: flex;
+    gap: 20px;
+    position: absolute;
 }
 
 .brand{
@@ -31,6 +33,7 @@
 }
 
 .marquee button{
+
     display: flex;
     width: 100%;
 }
@@ -42,24 +45,28 @@
 }
 
 
-
-.marquee {
+.marquee div {
     display: flex;
     overflow: hidden;
     white-space: nowrap;
     animation: marquee 1s linear infinite;
+
 }
 
+.marquee h1 {
+    width: 100%;
+    white-space: nowrap;
+    display: flex;
+    gap: 10px;
+
+}
 
 @keyframes marquee {
+    200% {
+        transform: translateX(100%);
+    }
+
     100% {
-            transform: translateX(100%);
-        }
-    
-        
-    100%{
-            transform: translateX(-100%);
-        }
-    
-        
+        transform: translateX(-100%);
+    }
 }

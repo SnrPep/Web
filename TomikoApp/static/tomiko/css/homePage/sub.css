@@ -61,10 +61,18 @@
 }
 
 .instagram:hover {
-
     color: white;
 }
 
 .link{
     margin-top: 10px;
+}
+
+.link-media{
+    font-family: Inter;
+        font-size: 24px;
+        font-weight: 300;
+        color: #FFF;
+    display: flex;
+
 }
