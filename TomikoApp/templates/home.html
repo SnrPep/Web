@@ -1,4 +1,5 @@
 {% load static %}
+{% load custom_filters %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -741,177 +742,37 @@
             </div>
         </div>
         <!--Слайдеры Отзывов и Клипов-->
-        <div class="media">
-            <div class="media-container">
-                <div class="media-title">
-                    <h1 style="margin-bottom: 0px;">Отзывы <img class="media-img" src="{% static 'tomiko/img/icons/strar.png' %}" alt=""> 4.9</h1>
-                </div>
-                <div class="comment_links">
-                    <a class="a-links" href="https://2gis.ru/vladivostok/firm/70000001067259118/tab/reviews">VL справочник<img
-                            src="{% static 'tomiko/img/icons/arrow.png' %}" alt="" class="arrow-media"></a>
-                    <a class="a-links" href="https://www.vl.ru/pravyj-rul-avto-iz-yaponii">2ГИС<img src="{% static 'tomiko/img/icons/arrow.png' %}"
-                            alt="" class="arrow-media"></a>
-                    <a class="a-links" href="https://yandex.ru/maps/org/pravy_rul/114125692870/reviews/?ll=131.886877%2C43.098752&tab=reviews&z=15">Яндекс
-                        карты<img src="{% static 'tomiko/img/icons/arrow.png' %}" alt="" class="arrow-media"></a>
-                </div>
-            </div>
-            <div class="media-swiper">
-                <div class="swiper-wrapper-media">
-                    <div class="element-flex">
-                        <div class="swiper-slide-media">
-                            <div class="logo-avatar">
-                                <h1 class="user-low">ТП</h1>
-                            </div>
-                            <div class="user-name">
-                                Татьяна<br>Птицына
-                            </div>
-                            <div class="comment-date">
-                                <div class="rating-stars">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                </div>
-                                <p class="comment_date">15 октября 2024 г.</p>
-                            </div>
+        <div class="swiper review-swiper">
+            <div class="swiper-wrapper">
+                {% for review in reviews %}
+                <div class="swiper-slide">
+                    <div class="swiper-slide-media">
+                        <div class="logo-avatar">
+                            {% if review.avatar %}
+                                <img src="{{ review.avatar }}" alt="Аватар">
+                            {% else %}
+                                <h1 class="user-low">{{ review.name|first|upper }}</h1>
+                            {% endif %}
                         </div>
-                        <div class="swiper-slide-media">
-                            <div class="logo-avatar">
-                                <h1 class="user-low">ТП</h1>
+                        <div class="user-name">{{ review.name }}</div>
+                        <div class="comment-date">
+                            <div class="rating-stars">
+                                {% for _ in review.grade|times %}
+                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
+                                {% endfor %}
+                                {% for _ in 5|sub:review.grade|times %}
+                                    <img src="{% static 'tomiko/img/icons/star-media-gray.svg' %}" alt="Оценка">
+                                {% endfor %}
                             </div>
-                            <div class="user-name">
-                                Татьяна<br>Птицына
-                            </div>
-                            <div class="comment-date">
-                                <div class="rating-stars">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                </div>
-                                <p class="comment_date">15 октября 2024 г.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="element-flex">
-                        <div class="swiper-slide-media">
-                            <div class="logo-avatar">
-                                <h1 class="user-low">ТП</h1>
-                            </div>
-                            <div class="user-name">
-                                Татьяна<br>Птицына
-                            </div>
-                            <div class="comment-date">
-                                <div class="rating-stars">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                </div>
-                                <p class="comment_date">15 октября 2024 г.</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide-media">
-                            <div class="logo-avatar">
-                                <h1 class="user-low">ТП</h1>
-                            </div>
-                            <div class="user-name">
-                                Татьяна<br>Птицына
-                            </div>
-                            <div class="comment-date">
-                                <div class="rating-stars">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                </div>
-                                <p class="comment_date">15 октября 2024 г.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="element-flex">
-                        <div class="swiper-slide-media">
-                            <div class="logo-avatar">
-                                <h1 class="user-low">ТП</h1>
-                            </div>
-                            <div class="user-name">
-                                Татьяна<br>Птицына
-                            </div>
-                            <div class="comment-date">
-                                <div class="rating-stars">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                </div>
-                                <p class="comment_date">15 октября 2024 г.</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide-media">
-                            <div class="logo-avatar">
-                                <h1 class="user-low">ТП</h1>
-                            </div>
-                            <div class="user-name">
-                                Татьяна<br>Птицына
-                            </div>
-                            <div class="comment-date">
-                                <div class="rating-stars">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                </div>
-                                <p class="comment_date">15 октября 2024 г.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="element-flex">
-                        <div class="swiper-slide-media">
-                            <div class="logo-avatar">
-                                <h1 class="user-low">ТП</h1>
-                            </div>
-                            <div class="user-name">
-                                Татьяна<br>Птицына
-                            </div>
-                            <div class="comment-date">
-                                <div class="rating-stars">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                </div>
-                                <p class="comment_date">15 октября 2024 г.</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide-media">
-                            <div class="logo-avatar">
-                                <h1 class="user-low">ТП</h1>
-                            </div>
-                            <div class="user-name">
-                                Татьяна<br>Птицына
-                            </div>
-                            <div class="comment-date">
-                                <div class="rating-stars">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                </div>
-                                <p class="comment_date">15 октября 2024 г.</p>
-                            </div>
+                            <p class="comment_date">{{ review.date }}</p>
                         </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
-            </div>
+            <div class="swiper-button-next review-next"></div>
+            <div class="swiper-button-prev review-prev"></div>
+            <div class="swiper-pagination review-pagination"></div>
         </div>
         
         <div class="clips">
@@ -929,66 +790,13 @@
             
             <div class="swiper-clips">
                 <div class="swiper-wrapper">
+                    {% for clip in clips %}
                     <div class="swiper-slide-clip">
-                        <a href="" class="clips-links">
-                            <img class="clips-img" src="{% static 'tomiko/img/sliderClips/clip1.png' %}" alt="">
+                        <a href="{{ clip.Link }}" class="clips-links">
+                            <img class="clips-img" src="{{ clip.Prewiew }}" alt="">
                         </a>
                     </div>
-                    <div class="swiper-slide-clip">
-                        <a href="" class="clips-links">
-                            <img class="clips-img" src="{% static 'tomiko/img/sliderClips/clip2.png' %}" alt="">
-                        </a>
-                    </div>
-                    <div class="swiper-slide-clip">
-                        <a href="" class="clips-links">
-                            <img class="clips-img" src="{% static 'tomiko/img/sliderClips/clip3.png' %}" alt="">
-                        </a>
-                    </div>
-                    <div class="swiper-slide-clip">
-                        <a href="" class="clips-links">
-                            <img class="clips-img" src="{% static 'tomiko/img/sliderClips/clip4.png' %}" alt="">
-                        </a>
-                    </div>
-                    <div class="swiper-slide-clip">
-                        <a href="" class="clips-links">
-                            <img class="clips-img" src="{% static 'tomiko/img/sliderClips/clip5.png' %}" alt="">
-                        </a>
-                    </div>
-                    <div class="swiper-slide-clip">
-                        <a href="" class="clips-links">
-                            <img class="clips-img" src="{% static 'tomiko/img/sliderClips/clip6.png' %}" alt="">
-                        </a>
-                    </div>
-                    <div class="swiper-slide-clip">
-                        <a href="" class="clips-links">
-                            <img class="clips-img" src="{% static 'tomiko/img/sliderClips/clip7.png' %}" alt="">
-                        </a>
-                    </div>
-                    <div class="swiper-slide-clip">
-                        <a href="" class="clips-links">
-                            <img class="clips-img" src="{% static 'tomiko/img/sliderClips/clip8.png' %}" alt="">
-                        </a>
-                    </div>
-                    <div class="swiper-slide-clip">
-                        <a href="" class="clips-links">
-                            <img class="clips-img" src="{% static 'tomiko/img/sliderClips/clip9.png' %}" alt="">
-                        </a>
-                    </div>
-                    <div class="swiper-slide-clip">
-                        <a href="" class="clips-links">
-                            <img class="clips-img" src="{% static 'tomiko/img/sliderClips/clip10.png' %}" alt="">
-                        </a>
-                    </div>
-                    <div class="swiper-slide-clip">
-                        <a href="" class="clips-links">
-                            <img class="clips-img" src="{% static 'tomiko/img/sliderClips/clip11.png' %}" alt="">
-                        </a>
-                    </div>
-                    <div class="swiper-slide-clip">
-                        <a href="" class="clips-links">
-                            <img class="clips-img" src="{% static 'tomiko/img/sliderClips/clip12.png' %}" alt="">
-                        </a>
-                    </div>
+                    {% endfor %}
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -1113,11 +921,12 @@
     </footer>    
     
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="{% static 'tomiko/js/sliderReview.js' %}"></script>
     <script src="{% static 'tomiko/js/slider.js' %}"></script>
     <script src="{% static 'tomiko/js/checkPopup.js' %}"></script>
     <script src="{% static 'tomiko/js/checkPopupCost.js' %}"></script>
     <script src="{% static 'tomiko/js/sliderClips.js' %}"></script>
-    
+
     
    
 </body>
