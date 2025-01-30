@@ -1,9 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Каталог машин</title>
+    <link rel="stylesheet" href="{% static 'tomiko/css/catalog_slider.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body>
     <h1>Каталог машин</h1>
@@ -85,5 +88,105 @@
             });
         });
     </script>
+
+    <div class="slider-container">
+                <h2 class="slider-title">Популярные авто<br><span>из {{country}}</span><img src="{% static 'tomiko/img/icons/korea.svg' %}" alt="">
+                </h2>
+
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Карточка автомобиля -->
+                        <div class="swiper-slide">
+                            <div class="car-card">
+                                <div class="car-image">
+                                    <img src="{% static 'tomiko/img/sliderImg/car1.png' %}" alt="Ssangyong All New Rexton">
+                                </div>
+                                <div class="car-info">
+                                    <p class="car-title">Ssangyong All New Rexton</p>
+                                    <p class="car-details">2020 - 100 000 км - 2.2 л</p>
+                                    <p class="car-price">3 360 000 ₽</p>
+                                    <div class="action-button">Оставить заявку</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="car-card">
+                                <div class="car-image">
+                                    <img src="{% static 'tomiko/img/sliderImg/car2.png' %}" alt="Hyundai Santa Fe">
+                                </div>
+                                <div class="car-info">
+                                    <p class="car-title">Hyundai Santa Fe</p>
+                                    <p class="car-details">2020 - 54 101 км - 2.2 л</p>
+                                    <p class="car-price">2 970 000 ₽</p>
+                                    <div class="action-button">Оставить заявку</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="car-card">
+                                <div class="car-image">
+                                    <img src="{% static 'tomiko/img/sliderImg/car3.png' %}" alt="Geely Monjaro">
+                                </div>
+                                <div class="car-info">
+                                    <p class="car-title">Geely Monjaro</p>
+                                    <p class="car-details">2021 - 12 000 км - 2.0 л</p>
+                                    <p class="car-price">2 846 000 ₽</p>
+                                    <div class="action-button">Оставить заявку</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="car-card">
+                                <div class="car-image">
+                                    <img src="{% static 'tomiko/img/sliderImg/car3.png' %}" alt="Geely Monjaro">
+                                </div>
+                                <div class="car-info">
+                                    <p class="car-title">Geely Monjaro</p>
+                                    <p class="car-details">2021 - 12 000 км - 2.0 л</p>
+                                    <p class="car-price">2 846 000 ₽</p>
+                                    <div class="action-button">Оставить заявку</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="car-card">
+                                <div class="car-image">
+                                    <img src="{% static 'tomiko/img/sliderImg/car1.png' %}" alt="Ssangyong All New Rexton">
+                                </div>
+                                <div class="car-info">
+                                    <p class="car-title">Ssangyong All New Rexton</p>
+                                    <p class="car-details">2020 - 100 000 км - 2.2 л</p>
+                                    <p class="car-price">3 360 000 ₽</p>
+                                    <div class="action-button">Оставить заявку</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="car-card">
+                                <div class="car-image">
+                                    <img src="{% static 'tomiko/img/sliderImg/car4.png' %}" alt="Kia Sportage">
+                                </div>
+                            <div class="car-info">
+                                    <p class="car-title">Kia Sportage</p>
+                                    <p class="car-details">2022 - 43 064 км - 1.6 л</p>
+                                    <p class="car-price">2 820 000 ₽</p>
+                                <div class="action-button">Оставить заявку</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <!-- Добавляем стрелки -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+            </div>
+        <script src="{% static 'tomiko/js/slider.js' %}"></script>
 </body>
 </html>
