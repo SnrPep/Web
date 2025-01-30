@@ -1,27 +1,29 @@
-.media{
-    margin: 250px auto auto auto;
-        max-width: 1424px;
-        align-items: center;
-        justify-content: center;
+.media {
+    margin: 300px auto auto auto;
+    max-width: 1424px;
+    align-items: center;
+    justify-content: center;
 }
 
-.media-title{
-    
+.media-title {
+    color: #fff;
     width: 100%;
     font-size: 30px;
-        font-family: "Montserrat", serif;
-        font-weight: 700;
-        font-style: normal;
-        text-transform: uppercase;
-        display: flex;
+    font-family: "Montserrat", serif;
+    font-weight: 700;
+    font-style: normal;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
-.media-img{
-    
+.media-img {
+    padding: 10px;
     transform: scale(2);
 }
 
-.media-img-bg{
+.media-img-bg {
     margin: 50px;
     width: 1703px;
 }
@@ -31,26 +33,32 @@
     margin-left: 10px;
 
 }
-.a-links{
+
+.a-links {
     display: flex;
     margin-left: 25px;
     text-align: end;
 }
-.comment_links{
+
+.comment_links {
     display: flex;
-        justify-content: flex-end;
-        /* Выравнивание по правому краю */
-        width: 100%;
-        /* Занимает всю ширину контейнера */
+    justify-content: flex-end;
+    /* Выравнивание по правому краю */
+    width: 100%;
+    /* Занимает всю ширину контейнера */
 }
 
-.media-container{
+.media-container {
     display: flex;
     align-items: end;
 }
-
+/*Слайдер отзывов*/
 .media-swiper {
     margin-top: 50px;
+<<<<<<< HEAD
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+=======
     width: 1400px;
     height: 180px;
 
@@ -58,12 +66,15 @@
     font-family: Arial, sans-serif;
     overflow: hidden;
     background-color: #001122;
+>>>>>>> 972de62e93b15d3f2a0fd376b5386b636bccf64e
     color: white;
     padding: 20px;
     width: 100%;
     padding: 20px 0;
 }
 
+<<<<<<< HEAD
+=======
   .swiper-slide-media {
       /* review_card */
 
@@ -126,16 +137,81 @@
 
   }
 
+>>>>>>> 972de62e93b15d3f2a0fd376b5386b636bccf64e
 .swiper-slide-media {
-    margin-bottom: 10px;
-    margin-right: 16px;
+   width: 100%;
+   height: 80px;
+   
+
 }
 
-.swiper-wrapper-media{
+.swiper-slide{
+    background-color: #081e36;
+}
+
+.logo-avatar {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #A84CA8;
     display: flex;
+<<<<<<< HEAD
+    align-items: center;
+    
+}
+
+.user-low {
+    position: absolute;
+    text-align: center;
+    justify-content: center;
+    right: 13px;
+    
+}
+
+.slider-media-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: 0px;
+}
+
+
+.rating-stars img{
+    width: 16px;
+    height: 16px;
+    margin: 0;
+}
+
+.stars {
+    display: flex;
+}
+
+.stars-icons{
+    display:lex
+}
+
+
+.pa{
+    margin: 0;
+    display: inline-block !important;
+}
+
+.comment-date{
+    font-family: Inter;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 20px;
+        color: rgba(255, 255, 255, 0.5);
+        white-space: nowrap;
+}
+=======
     transition: transform 0.3s ease-in-out;
     
 }
 
 
 
+>>>>>>> 972de62e93b15d3f2a0fd376b5386b636bccf64e

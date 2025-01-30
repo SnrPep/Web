@@ -28,19 +28,32 @@ const swiper = new Swiper('.swiper', {
     spaceBetween: 20,               // Расстояние между карточками
 
     loop: false,
+<<<<<<< HEAD
+=======
 
+>>>>>>> 972de62e93b15d3f2a0fd376b5386b636bccf64e
     navigation: {
         nextEl: '.swiper-button-next',  // Элементы для переключения
         prevEl: '.swiper-button-prev',
     },
 
+<<<<<<< HEAD
+    on: {
+        slideChangeTransitionEnd: function () {
+
+=======
 
     on: {
         slideChangeTransitionEnd: function () {
+>>>>>>> 972de62e93b15d3f2a0fd376b5386b636bccf64e
             document.querySelectorAll('.swiper-slide').forEach(slide => {
                 slide.classList.remove('big');
             });
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 972de62e93b15d3f2a0fd376b5386b636bccf64e
             const visibleSlides = swiper.slides.slice(swiper.activeIndex, swiper.activeIndex + swiper.params.slidesPerView);
             if (visibleSlides[0]) {
                 visibleSlides[0].classList.add('big');
@@ -49,18 +62,27 @@ const swiper = new Swiper('.swiper', {
     },
 });
 
+<<<<<<< HEAD
+const swiperVideo = new Swiper('.swiper-clips', {
+    loop: false,
+    slidesPerView: 9,
+    spaceBetween: 1,
+=======
 
 const swiperVideo = new Swiper('.swiper-clips', {
     loop: true,
+>>>>>>> 972de62e93b15d3f2a0fd376b5386b636bccf64e
     slidesPerView: 9,
     spaceBetween: 40,
     freeMode: true,
+    loop: 'true',
     mousewheel: {
         forceToAxis: true
     },
     wrapperClass: 'swiper-wrapper',
     slideClass: 'swiper-slide-clip',
-    noSwiping: true
+    
+    
 });
 
 var swiperMedia = new Swiper('.media-swiper', {
@@ -77,12 +99,11 @@ var swiperMedia = new Swiper('.media-swiper', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
+<<<<<<< HEAD
+
+=======
+>>>>>>> 972de62e93b15d3f2a0fd376b5386b636bccf64e
 });
-
-
-
-
-
 
 
 
