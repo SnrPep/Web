@@ -473,6 +473,7 @@
                 <div class="swiper-button-next"></div>
             </div>
         </div>
+    </div>
     <!--Карусель брендов-->
     <div class="marquee">
         <div>
@@ -844,46 +845,36 @@
                         карты<img src="{% static 'tomiko/img/icons/arrow.png' %}" alt="" class="arrow-media"></a>
                 </div>
             </div>
-            <div class="media-swiper">
-                <div class="swiper-wrapper-media">
-                    <div class="">
-                        <div class="swiper-slide-media">
+            <div class="swiper media-swiper">
+            <div class="swiper-wrapper">
+                {% for review in reviews %}
+                <div class="swiper-slide">
+                    <div class="swiper-slide-media">
+                        <div class="slider-media-container">
                             <div class="logo-avatar">
-                                <h1 class="user-low">ТП</h1>
+                                {% if review.avatar %}
+                                    <img src="{{ review.avatar }}" alt="Аватар">
+                                {% else %}
+                                    <h1 class="user-low">{{ review.name|first|upper }}</h1>
+                                {% endif %}
                             </div>
-                            <div class="user-name">
-                                Татьяна<br>Птицына
-                            </div>
+                            <div class="user-name"><br>{{ review.name }}</div>
                             <div class="comment-date">
                                 <div class="rating-stars">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
+                                    {% for _ in review.grade|times %}
+                                        <p class="pa"><img class="stars" src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка"></p>
+                                    {% endfor %}
+                                    {% for _ in 5|sub:review.grade|times %}
+                                        <img src="{% static 'tomiko/img/icons/star-media-gray.svg' %}" alt="Оценка">
+                                    {% endfor %}
                                 </div>
-                                <p class="comment_date">15 октября 2024 г.</p>
+                                <p class="comment_date">{{ review.date }}</p>
                             </div>
-                        </div>
-                        <div class="user-name">{{ review.name }}</div>
-                        <div class="comment-date">
-                            <div class="rating-stars">
-                                {% for _ in review.grade|times %}
-                                    <img src="{% static 'tomiko/img/icons/star-media.svg' %}" alt="Оценка">
-                                {% endfor %}
-                                {% for _ in 5|sub:review.grade|times %}
-                                    <img src="{% static 'tomiko/img/icons/star-media-gray.svg' %}" alt="Оценка">
-                                {% endfor %}
-                            </div>
-                            <p class="comment_date">{{ review.date }}</p>
                         </div>
                     </div>
                 </div>
                 {% endfor %}
             </div>
-            <div class="swiper-button-next review-next"></div>
-            <div class="swiper-button-prev review-prev"></div>
-            <div class="swiper-pagination review-pagination"></div>
         </div>
         
         <div class="clips">
@@ -908,6 +899,7 @@
             
             <div class="swiper-clips">
                 <div class="swiper-wrapper">
+                    
                     {% for clip in clips %}
                     <div class="swiper-slide-clip">
                         <a href="{{ clip.Link }}" class="clips-links">
@@ -916,9 +908,12 @@
                     </div>
                     {% endfor %}
                 </div>
-                <div class="swiper-pagination"></div>
+                
+            </div>
+            
             </div>
         </div>
+            <div class="rectangle-line"></div>
         <section class="subscribe">
             <div class="subscribe-container">
                 <div class="subscribe-left">

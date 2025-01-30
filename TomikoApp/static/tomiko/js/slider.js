@@ -26,21 +26,21 @@ const sliders = document.querySelectorAll('.slider-wrapper');
 const swiper = new Swiper('.swiper', {
     slidesPerView: 4,               // Количество видимых карточек
     spaceBetween: 20,               // Расстояние между карточками
-    
-    loop: false, 
+
+    loop: false,
     navigation: {
         nextEl: '.swiper-button-next',  // Элементы для переключения
         prevEl: '.swiper-button-prev',
     },
-    
+
     on: {
         slideChangeTransitionEnd: function () {
-            
+
             document.querySelectorAll('.swiper-slide').forEach(slide => {
                 slide.classList.remove('big');
             });
 
-            
+
             const visibleSlides = swiper.slides.slice(swiper.activeIndex, swiper.activeIndex + swiper.params.slidesPerView);
             if (visibleSlides[0]) {
                 visibleSlides[0].classList.add('big');
@@ -49,51 +49,39 @@ const swiper = new Swiper('.swiper', {
     },
 });
 
-const swiperVideo = new Swiper('.swiper_clip', {
+const swiperVideo = new Swiper('.swiper-clips', {
     loop: false,
-    slidesPerView: 'auto',
+    slidesPerView: 9,
+    spaceBetween: 1,
+    slidesPerView: 9,
     spaceBetween: 40,
     freeMode: true,
+    loop: 'true',
     mousewheel: {
         forceToAxis: true
     },
     wrapperClass: 'swiper-wrapper',
     slideClass: 'swiper-slide-clip',
-    noSwiping: true
+    
+    
 });
 
 var swiperMedia = new Swiper('.media-swiper', {
-    loop: true,
-    slidesPerView: 1, // Количество слайдов, видимых одновременно
+    direction: 'horizontal',
+    loop: false,
+    slidesPerView: 4, // Количество слайдов, видимых одновременно
     spaceBetween: 16, // Расстояние между слайдами
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
+    grid: {
+        rows: 2,        // Только для отзывов!
+        fill: "row"    // Заполнение сверху вниз
     },
+
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
-    breakpoints: {
-        640: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-        },
-        768: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-        },
-        1024: {
-            slidesPerView: 4,
-            spaceBetween: 40,
-        },
-    }
+
 });
-
-
-
-
-
 
 
 

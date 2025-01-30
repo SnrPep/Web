@@ -24,7 +24,7 @@
         color: #fff;
 }
 
-.about-p{
+.about-p span{
     color: #fff;
         font-family: "Inter", serif;
         
@@ -46,7 +46,7 @@
 .about-font{
     letter-spacing: 1px;
     font-family: "Inter", serif;
-    
+    color: fff;
         font-weight: 400;
         font-size: 18px;
         line-height: 27px;
