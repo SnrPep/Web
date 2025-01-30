@@ -32,15 +32,19 @@ def car_list(request, country=None):
     car_filter = CarFilter(request.GET, queryset=cars, country=country)
     if country == "Корея":
         country_name = "Кореи"
-        country_name_eng = "/static/tomiko/img/icons/korea.svg"
+        imgFlag = "/static/tomiko/img/icons/korea.svg"
+        country_name_eng = ""
     elif country == "Япония":
         country_name = "Японии"
-        country_name_eng = "/static/tomiko/img/icons/japan.svg"
+        imgFlag = "/static/tomiko/img/icons/japan.svg"
+        country_name_eng = ""
     elif country == "Китай":
         country_name = "Китая"
-        country_name_eng = "/static/tomiko/img/icons/china.svg"
+        imgFlag = "/static/tomiko/img/icons/china.svg"
+        country_name_eng = ""
     else:
         country_name = ""
+        imgFlag = ""
         country_name_eng = ""
 
     for car in car_filter.qs:
@@ -65,7 +69,7 @@ def car_list(request, country=None):
     page_number = request.GET.get('page')
     cars = paginator.get_page(page_number)
 
-    return render(request, 'car_list.html', {'filter': car_filter, 'cars': cars, 'request': request, 'country': country, 'country_name': country_name, 'country_name_eng': country_name_eng, 'popular_cars': popcars})
+    return render(request, 'car_list.html', {'filter': car_filter, 'cars': cars, 'request': request, 'country': country, 'country_name': country_name, 'imgFlag': imgFlag,'country_name_eng': country_name_eng, 'popular_cars': popcars})
 
 
 def get_models_by_brand(request):
@@ -108,7 +112,7 @@ def car_catalog(request, country=None):
 
     return render(request, 'car_catalog.html', {'filter': car_filter, 'cars': car_filter.qs})
 
-def car_detail(request, country, car_id):
+def car_detail(request, country, car_id, price):
     car = get_object_or_404(Cars, id=car_id)
     # Путь к папке с изображениями
     image_folder = os.path.join(settings.MEDIA_ROOT, 'Tomiko Trade Photos')
@@ -126,4 +130,4 @@ def car_detail(request, country, car_id):
 
     car.random_image = f"/media/Tomiko Trade Photos/{random.choice(image_files)}"
 
-    return render(request, 'car_detail.html', {'car': car})
+    return render(request, 'car_detail.html', {'car': car, 'price': price})

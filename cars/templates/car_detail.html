@@ -1,29 +1,3 @@
-{#<!DOCTYPE html>#}
-{#<html lang="ru">#}
-{#<head>#}
-{#    <meta charset="UTF-8">#}
-{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
-{#    <title>{{ car.brand_country.brand }} {{ car.model }}</title>#}
-{#</head>#}
-{#<body>#}
-{#    <p>Год выпуска: {{ car.year }}</p>#}
-{#    <p>Пробег: {{ car.mileage }} км</p>#}
-{#    <p>КПП: {{ car.transmission }}</p>#}
-{#    <p>Привод: {{ car.drive }}</p>#}
-{#    <p>Цвет: {{ car.color }}</p>#}
-{##}
-{#    {% if car.random_image %}#}
-{#        <img src="{{ car.random_image }}" alt="{{ car.brand_country.brand }} {{ car.model }}">#}
-{#    {% else %}#}
-{#        <img src="/static/default-car.jpg" alt="Изображение отсутствует">#}
-{#    {% endif %}#}
-{##}
-{#    <br>#}
-{#    <a href="{% url 'car_list_by_country' country=car.brand_country.country %}">← Назад в каталог</a>#}
-{#</body>#}
-{#</html>#}
-{##}
-{##}
 {#{% load static %}#}
 {#<!DOCTYPE html>#}
 {#<html lang="en">#}
@@ -255,17 +229,25 @@
                 <div class="nav">
                     <a href="/">Главная</a>
                      •
-                    <a href="cars/{{ country }}/">Автомобили из {{ country }}</a>
+                    {% if car.brand_country.country == "Корея" %}
+                        <a href="/cars/{{ car.brand_country.country }}/">Автомобили из Кореи</a>
+                    {% elif car.brand_country.country == "Китай" %}
+                        <a href="/cars/{{ car.brand_country.country }}/">Автомобили из Китая</a>
+                    {% elif car.brand_country.country == "Япония" %}
+                        <a href="/cars/{{ car.brand_country.country }}/">Автомобили из Японии</a>
+                    {% else %}
+                        <a href="/cars/{{ car.brand_country.country }}/">Автомобили из {{ car.brand_country.country }}</a>
+                    {% endif %}
                     •
-                    <a href="">{{ car.brand_country.brand }} {{ car.model }}</a>
+                    <a href="">{{ car.brand_country.brand }} {{ car.model }} {{ car.year }}</a>
                 </div>
                 <div class="card-content">
                     <div class="card-info">
-                        <h1 class="title bebas">{{ car.brand_country.brand }} {{ car.model }}</h1>
+                        <h1 class="title bebas">{{ car.brand_country.brand }} {{ car.model }} {{ car.year }}</h1>
                         <div class="card-text">
                             <div class="card-price bebas">
                                 <div>
-                                    {{ car.price_with_duty }}
+                                    {{ price }}
                                     <span class="rub">₽</span>
                                 </div>
                             </div>
@@ -287,7 +269,7 @@
                                             Год выпуска:
                                         </td>
                                         <td>
-                                            <span>2020 г.</span>
+                                            <span>{{ car.year }}</span>
                                         </td>
                                     </tr>
                                     <tr>
@@ -303,7 +285,7 @@
                                             Страна:
                                         </td>
                                         <td>
-                                            <span>Корея</span>
+                                            <span>{{ car.brand_country.country}}</span>
                                         </td>
                                     </tr>
                                     <tr>
@@ -311,15 +293,7 @@
                                             КПП:
                                         </td>
                                         <td>
-                                            <span>Автомат</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-gray">
-                                            Объем двигателя:
-                                        </td>
-                                        <td>
-                                            <span>2.2 л.</span>
+                                            <span>{{ car.transmission }}</span>
                                         </td>
                                     </tr>
                                     <tr>
@@ -327,7 +301,7 @@
                                             Мощность двигателя:
                                         </td>
                                         <td>
-                                            <span>202 л.с.</span>
+                                            <span>{{ car.engine_volume }} л.с. </span>
                                         </td>
                                     </tr>
                                     <tr>
@@ -335,7 +309,7 @@
                                             Привод:
                                         </td>
                                         <td>
-                                            <span>Полный</span>
+                                            <span>{{ car.drive }}</span>
                                         </td>
                                     </tr>
                                     <tr>
@@ -343,7 +317,7 @@
                                             Цвет:
                                         </td>
                                         <td>
-                                            <span>Черный</span>
+                                            <span>{{ car.color }}</span>
                                         </td>
                                     </tr>
                                     <tr>
@@ -351,23 +325,7 @@
                                             Пробег:
                                         </td>
                                         <td>
-                                            <span>50 355 км</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-gray">
-                                            Комплектация:
-                                        </td>
-                                        <td>
-                                            <span>Prestige</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-gray">
-                                            Руль:
-                                        </td>
-                                        <td>
-                                            <span>Левый</span>
+                                            <span>{{ car.mileage}} км</span>
                                         </td>
                                     </tr>
                                 </tbody>

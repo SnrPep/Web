@@ -54,7 +54,7 @@
             </div>
             <div class="catalog-title-block">
                 <h1 class="catalog-title">Автомобили из {{ country_name }} </h1>
-                <img src="{{ country_name_eng }}" alt="{{ country_name_eng }}">
+                <img src="{{ imgFlag }}" alt="{{ imgFlag }}">
             </div>
 
             <form method="get" class="filters">
@@ -119,7 +119,7 @@
             </script>
 
             <div class="slider-container">
-                <h2 class="slider-title">Популярные авто<img src="{{ country_name_eng }}" alt="{{ country_name_eng }}"></h2>
+                <h2 class="slider-title">Популярные авто<img src="{{ imgFlag }}" alt="{{ imgFlag }}"></h2>
                 <div class="swiper">
                     <div class="swiper-wrapper">
                         {% for popcar in popular_cars %}
@@ -178,10 +178,10 @@
                     {% for car in cars %}
                     <div class="card">
                         <div class="head">
-                            <a href="{% url 'car_detail' country=car.brand_country.country car_id=car.id %}" style="text-decoration: none; color: inherit;">
+                            <a href="{% url 'car_detail' country=car.brand_country.country car_id=car.id price=car.price_with_duty %}" style="text-decoration: none; color: inherit;">
                                 <span class="price">{{ car.brand_country.brand }} {{ car.model }}</span>
                             </a>
-                            <a href="{% url 'car_detail' country=car.brand_country.country car_id=car.id %}" style="text-decoration: none; color: inherit;">
+                            <a href="{% url 'car_detail' country=car.brand_country.country car_id=car.id price=car.price_with_duty %}" style="text-decoration: none; color: inherit;">
                                 <p>{{ car.year }} • {{ car.transmission }} • {{ car.mileage }} км</p>
                             </a>
                         </div>
