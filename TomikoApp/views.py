@@ -57,3 +57,6 @@ def akcii(request):
 
 def about(request):
     return render(request, 'about.html')
+
+def custom_404(request):
+    return render(request, 'custom_404.html')

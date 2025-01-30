@@ -12,5 +12,6 @@ urlpatterns = [
     path("akcii/", views.akcii, name="akcii"),
     path("feedback/", views.feedback_view, name="feedback"),
     path("about/", views.about, name="about"),
+    path("404/", views.custom_404, name="404"),
 ]
 
